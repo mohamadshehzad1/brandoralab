@@ -1,4 +1,3 @@
-// app/blog/[slug]/page.js
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -8,7 +7,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TableOfContents from "@/components/Toc";
-import Sidebarad from "@/components/Sidebarad"; // ✅ Affiliate banner
+import Sidebarad from "@/components/Sidebarad";
 
 export async function generateStaticParams() {
   const postsDirectory = path.join(process.cwd(), "posts");
@@ -51,7 +50,6 @@ export default async function BlogPost({ params }) {
   const fileContents = await fs.promises.readFile(filePath, "utf8");
   const { data: frontmatter, content } = matter(fileContents);
 
-  // ✅ Dynamic banner props from frontmatter
   const bannerProps = {
     heading: frontmatter.bannerHeading || "Exclusive for readers",
     question: frontmatter.bannerQuestion || "Want to try this hosting?",
@@ -69,15 +67,18 @@ export default async function BlogPost({ params }) {
 
       {/* MAIN CONTAINER */}
       <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8">
-        
         {/* ------------------ MAIN BLOG CONTENT ------------------ */}
         <article className="bg-white shadow-lg rounded-2xl p-6">
-          
           {/* Breadcrumb Navigation */}
           <nav className="text-sm mb-4 text-gray-500">
-            <Link href="/" className="hover:underline">Home</Link> /{" "}
-            <Link href="/blog" className="hover:underline">Blog</Link> /{" "}
-            <span className="text-gray-700">{frontmatter.title}</span>
+            <Link href="/" className="hover:underline">
+              Home
+            </Link>{" "}
+            /{" "}
+            <Link href="/blog" className="hover:underline">
+              Blog
+            </Link>{" "}
+            / <span className="text-gray-700">{frontmatter.title}</span>
           </nav>
 
           {/* Blog Cover Image */}
@@ -102,8 +103,8 @@ export default async function BlogPost({ params }) {
             {frontmatter.date ? ` | ${frontmatter.date}` : ""}
           </div>
 
-          {/* ===== MOBILE: TOC AFTER INTRODUCTION ===== */}
-          <div className="block md:hidden mb-8 bg-gray-50 rounded-xl p-5 border-l-4 border-blue-500">
+          {/* ✅ Mobile TOC inside the article (before first h2) */}
+          <div className="block md:hidden mb-6">
             <TableOfContents />
           </div>
 
@@ -154,7 +155,10 @@ export default async function BlogPost({ params }) {
                     component: ({ href, children }) => {
                       if (href?.startsWith("/")) {
                         return (
-                          <Link href={href} className="text-blue-600 font-semibold hover:underline">
+                          <Link
+                            href={href}
+                            className="text-blue-600 font-semibold hover:underline"
+                          >
                             {children}
                           </Link>
                         );
@@ -179,20 +183,17 @@ export default async function BlogPost({ params }) {
           </div>
         </article>
 
-        {/* ------------------ DESKTOP SIDEBAR ------------------ */}
-        <aside className="hidden md:flex flex-col sticky top-28 self-start h-[calc(100vh-120px)]">
-          <div className="flex flex-col gap-6 overflow-y-auto">
+        {/* ------------------ SIDEBAR ------------------ */}
+        <aside className="hidden md:flex flex-col sticky top-28 self-start h-fit md:h-[calc(100vh-120px)]">
+          {/* ✅ TOC above Sidebarad for desktop */}
+          <div className="mb-6">
             <TableOfContents />
           </div>
+
           <div className="mt-auto pt-4 border-t border-gray-200">
             <Sidebarad {...bannerProps} />
           </div>
         </aside>
-      </div>
-
-      {/* ===== MOBILE: BANNER AT VERY BOTTOM ===== */}
-      <div className="block md:hidden px-4 pb-8 max-w-6xl mx-auto">
-        <Sidebarad {...bannerProps} />
       </div>
 
       {/* FOOTER */}
