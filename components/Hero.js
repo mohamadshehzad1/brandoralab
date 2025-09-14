@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import AosAnimation from './AosAnimation';
-import HeroVideo from './HeroVideo';
 
 const HeroSection = () => (
 
@@ -54,8 +53,6 @@ const HeroSection = () => (
       </div>
 
     </div>
-    {/* hero video */}
-    <HeroVideo lazy />
   </div>
 );
 

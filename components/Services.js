@@ -21,9 +21,7 @@ const Services = () => {
             </div>
 
             <div className="relative mx-auto max-w-5xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
-                {ServicesData.map((elm, i) => (
-                    <ServicesCard key={i} elm={elm} index={i} />
-                ))}
+
             </div>
         </section>
     );
