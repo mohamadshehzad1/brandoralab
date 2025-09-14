@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import logo from '@/public/logodark.png'; // Adjust the path as necessary
+import logo from '../public/logodark.png';
 
 
 const MobileMenu = dynamic(() => import('./MobileMenu'), {

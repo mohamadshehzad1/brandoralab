@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from '@/public/logodark.png'; // Adjust the path as necessary
+import logo from '../public/logodark.png';
 
 const Footer = () => {
     return (
