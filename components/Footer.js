@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from '../public/logodark.png';
 
 const Footer = () => {
     return (
@@ -24,7 +23,7 @@ const Footer = () => {
                         <div className="text-2xl font-bold">
                             <Link href="/">
                                 <Image
-                                    src={logo}
+                                    src="/logodark.png"
                                     alt="Agency Logo"
                                     className="h-10 w-auto cursor-pointer"
                                     width={100}

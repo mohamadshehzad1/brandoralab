@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import logo from '../public/logodark.png';
 
 
 const MobileMenu = dynamic(() => import('./MobileMenu'), {
@@ -36,7 +35,7 @@ const Header = () => {
         {/* Logo */}
         <Link href="/">
           <Image
-            src={logo}
+            src="/logodark.png"
             alt="Agency Logo"
             className="h-10 w-auto"
             width={100}
