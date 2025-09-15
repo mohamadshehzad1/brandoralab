@@ -28,7 +28,7 @@ export default function CategoriesGrid() {
             Explore Affiliate Blog Categories
           </h2>
           <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">
-            Curated guides, tools, and resources to grow your affiliate blog —
+            Curated guides, tools, and resources to grow your affiliate blog
             from hosting to SEO.
           </p>
         </div>

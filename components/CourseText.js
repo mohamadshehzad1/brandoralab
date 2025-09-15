@@ -22,7 +22,7 @@ const CourseText = () => {
                         <li><strong>IBAN:</strong> PK38BKIP0312800027550001</li>
                     </ul>
                     <p className="mt-4 text-gray-700">
-                        To confirm your <strong>payment</strong>, send the payment screenshot on whatsApp to <strong>+44 7360 506217</strong>.
+                        To confirm your <strong>payment</strong>, send the payment screenshot on whatsApp to <strong></strong>.
                     </p>
                 </div>
 

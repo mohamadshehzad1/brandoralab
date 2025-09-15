@@ -135,13 +135,13 @@ const Footer = () => {
                             </p>
                             <ul className="mt-2 space-y-2">
                                 <li className="transition-colors duration-300 text-white">
-                                    10 Haslingden Drive, BD95HR, West Yorkshire, UK
+                                    
                                 </li>
                                 <li className="transition-colors duration-300 text-white">
                                     info@brandoralab.com
                                 </li>
                                 <li className="transition-colors duration-300 text-white">
-                                    +44 7360 506217
+                                    
                                 </li>
                             </ul>
                         </div>
