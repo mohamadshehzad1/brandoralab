@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import logo from '@/public/logo.png';
 
 
 const MobileMenu = dynamic(() => import('./MobileMenu'), {
@@ -33,15 +34,16 @@ const Header = () => {
     <>
       <header className="relative bg-v flex justify-between items-center px-6 bg-transparent z-20 w-full">
         {/* Logo */}
-        <Link href="/">
-          <Image
-            src="/logodark.png"
-            alt="Agency Logo"
-            className="h-10 w-auto"
-            width={100}
-            height={100}
-          />
-        </Link>
+          <Link href="/">
+            <Image
+              src={logo}
+              alt="brandoralab logo"
+              className="h-10 w-auto"
+              width={100}
+              height={100}
+              loading="lazy"
+            />
+          </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex flex-grow justify-center items-center" aria-label="Main navigation">

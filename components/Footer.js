@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import logo from '@/public/logo.png';
 
 const Footer = () => {
     return (
@@ -21,16 +22,16 @@ const Footer = () => {
                 <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6">
                     <div className="md:max-w-md lg:col-span-2">
                         <div className="text-2xl font-bold">
-                            <Link href="/">
-                                <Image
-                                    src="/logodark.png"
-                                    alt="Agency Logo"
-                                    className="h-10 w-auto cursor-pointer"
-                                    width={100}
-                                    height={100}
-                                    loading='lazy'
-                                />
-                            </Link>
+                     <Link href="/">
+                     <Image
+                     src={logo}
+                      alt="brandoralab logo"
+                      className="h-10 w-auto"
+                      width={100}
+                      height={100}
+                      loading="lazy"
+                      />
+                     </Link>
                         </div>
                         <div className="mt-4 lg:max-w-sm">
                             <p className="text-sm text-white">
