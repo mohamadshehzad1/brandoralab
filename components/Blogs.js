@@ -1,4 +1,4 @@
-import { blogData } from '@/Data/BlogsData';
+import { blogData } from '@/Data/blogData';
 import BlogCard from './BlogCard';
 import Link from 'next/link';
 
@@ -12,7 +12,7 @@ const Blogs = () => {
             <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 mx-auto">
                 {/* Grid */}
                 <div className="grid lg:grid-cols-3 gap-6">
-                    {blogData.slice(0, 3).map((blog, index) => (
+                    {blogData.slice(0, 6).map((blog, index) => (
                         <BlogCard blog={blog} key={index} />
                     ))}
                 </div>

@@ -64,6 +64,11 @@ const Header = () => {
                   Domains
                 </Link>
               </li>
+              <li>
+              <Link href="/all-blogs" className="hover:text-blue-500">
+                  Blogs
+              </Link>
+              </li>
 
               {/* <li>
                 <Link href="#services" className="hover:text-blue-500 ">
