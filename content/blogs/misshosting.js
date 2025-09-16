@@ -30,7 +30,7 @@ const MissHostingContent = () => {
       <section className="container mx-auto px-5 md:px-0 max-w-3xl py-8 border-b border-gray-200">
         <div className="flex items-center gap-4">
           <img
-            src="https://placehold.co/100x100"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1758028381/brandora-writer_twazw5.png"
             alt="Author photo"
             className="w-12 h-12 rounded-full"
           />
@@ -186,6 +186,9 @@ const misshosting = {
   date: "September 14, 2024",
   description:
     "Thinking about MissHosting? Read our honest, experience-based review covering uptime, customer support, ease of use, and pricing.",
+  
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1757848297/misshosting_sqdbuz.avif",
+  
   keywords: [
     "MissHosting review",
     "MissHosting web hosting",
