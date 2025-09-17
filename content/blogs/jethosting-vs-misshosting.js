@@ -2,46 +2,21 @@
 import React from "react"
 import Link from "next/link"
 
-const JetVsMissHostingContent = () => {
+const JetHostingVsMissHostingContent = () => {
   return (
     <main>
       {/* Cover Section with Breadcrumbs */}
-      <section className="relative w-full h-72 md:h-96 flex items-center justify-center bg-gray-900 text-white">
-        <img
-          src="https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/jethosting-vs-misshosting_yaml26.avif"
-          alt="Jet Hosting vs Miss Hosting 2025 cover image with comparison graphic"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-        />
-        <div className="relative z-10 text-center max-w-3xl px-5">
-          <nav className="text-sm mb-2 text-gray-200">
-            <Link href="/" className="hover:underline">Home</Link> / <span>Web Hosting Comparisons</span>
-          </nav>
-          <h1 className="text-3xl md:text-5xl font-bold leading-snug">
-            Jet Web Hosting vs Miss Hosting (2025): An Honest, Hands-On Comparison
-          </h1>
-          <p className="mt-3 text-gray-300">
-            We tested speed, uptime, support, and pricing so you don’t have to. Read our full Jet Hosting vs Miss Hosting review and verdict.
-          </p>
-        </div>
-      </section>
+      <section className="relative w-full h-48 sm:h-72 md:h-96 bg-gray-900">
+  <img
+    src="https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/jethosting-vs-misshosting_yaml26.avif"
+    alt="Jet Hosting vs Miss Hosting 2025 cover image with comparison graphic"
+    className="absolute inset-0 w-full h-full object-cover opacity-70"
+  />
+</section>
 
-      {/* Author + Meta Info */}
-      <section className="container mx-auto px-5 md:px-0 max-w-3xl py-8 border-b border-gray-200">
-        <div className="flex items-center gap-4">
-          <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1758028381/brandora-writer_twazw5.png"
-            alt="Author avatar"
-            className="w-12 h-12 rounded-full"
-          />
-          <div>
-            <p className="text-base font-semibold text-gray-800">By John Doe</p>
-            <p className="text-sm text-gray-500">Published on September 16, 2024 • Updated 2024</p>
-          </div>
-        </div>
-      </section>
 
       {/* Blog Content */}
-      <section className="container mx-auto px-5 md:px-0 max-w-3xl py-10 prose prose-lg text-gray-800">
+      <section className="container mx-auto px-5 md:px-0 max-w-3xl py-20 prose prose-lg text-gray-800">
         <p>
           Choosing between <strong>Jet Hosting</strong> and <strong>Miss Hosting</strong> can feel like a close call both promise good value,
           but deliver different strengths. In this head-to-head comparison I tested both services on real WordPress sites, ran speed tests,
@@ -322,7 +297,7 @@ const jetVsMissHosting = {
     "miss hosting customer service",
     "does jet hosting have free migration",
   ],
-  content: JetVsMissHostingContent,
+  content: JetHostingVsMissHostingContent,
 }
 
 export default jetVsMissHosting

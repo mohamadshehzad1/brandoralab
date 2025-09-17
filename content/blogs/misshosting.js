@@ -12,33 +12,6 @@ const MissHostingContent = () => {
           alt="MissHosting Review Cover"
           className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
-        <div className="relative z-10 text-center max-w-3xl px-5">
-          <nav className="text-sm mb-2">
-            <Link href="/" className="hover:underline">Home</Link> / <span>Web Hosting Reviews</span>
-          </nav>
-          <h1 className="text-3xl md:text-5xl font-bold leading-snug">
-            MissHosting Review: Is This the Stress-Free Web Host You&apos;ve Been Looking For?
-          </h1>
-          <p className="mt-3 text-gray-200">
-            Thinking about MissHosting? Read our honest, experience-based review covering uptime,
-            customer support, ease of use, and pricing.
-          </p>
-        </div>
-      </section>
-
-      {/* Author + Meta Info */}
-      <section className="container mx-auto px-5 md:px-0 max-w-3xl py-8 border-b border-gray-200">
-        <div className="flex items-center gap-4">
-          <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1758028381/brandora-writer_twazw5.png"
-            alt="Author photo"
-            className="w-12 h-12 rounded-full"
-          />
-          <div>
-            <p className="text-base font-semibold text-gray-800">By John Doe</p>
-            <p className="text-sm text-gray-500">Published on September 14, 2024</p>
-          </div>
-        </div>
       </section>
 
       {/* Blog Content */}
