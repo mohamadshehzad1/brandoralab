@@ -1,6 +1,7 @@
 // content/blogs/misshosting.js
 import React from "react"
 import Link from "next/link"
+import CTA from "@/components/Cta";
 
 const MissHostingContent = () => {
   return (
@@ -30,9 +31,9 @@ const MissHostingContent = () => {
 
         <p>Let’s get started.</p>
 
-        <h2 className="text-2xl font-bold mt-10">First Impressions: Signing Up and Getting Started</h2>
+        <h2 className="text-2xl font-bold mt-10"> 1. 👋 First Impressions: Signing Up and Getting Started:</h2>
         <p>
-          The journey with any web host begins at their website. MissHosting’s site is straightforward—no flashy, overwhelming animations,
+          The journey with any web host begins at their website. MissHosting’s site is straightforward no flashy, overwhelming animations,
           just clear information about their plans. I appreciated that. I wasn’t being upsold a dozen add-ons I didn’t understand before
           I’d even created an account.
         </p>
@@ -52,7 +53,7 @@ const MissHostingContent = () => {
           If you’re new to this, cPanel is the control panel for your website. It’s where you manage everything from emails to databases. MissHosting uses a standard cPanel interface, and this is a huge plus.
         </p>
 
-        <h2 className="text-2xl font-bold mt-10">The Real Test: Performance and Reliability</h2>
+        <h2 className="text-2xl font-bold mt-10">2. 📈 The Real Test: Performance and Reliability:</h2>
         <p>
           Let’s be honest: this is what matters most. All the features in the world are useless if your website is slow or, worse, constantly down.
         </p>
@@ -67,15 +68,15 @@ const MissHostingContent = () => {
           className="rounded-lg shadow-md my-6"
         />
 
-        <h2 className="text-2xl font-bold mt-10">Customer Support Experience</h2>
+        <h2 className="text-2xl font-bold mt-10">3. 🤝 Customer Support Experience:</h2>
         <p>
-          MissHosting offers 24/7 support primarily through a ticket system. I tested this out with a few questions—one simple and one a bit more technically complex.
+          MissHosting offers 24/7 support primarily through a ticket system. I tested this out with a few questions one simple and one a bit more technically complex.
         </p>
         <p>The response times were impressive. For my basic question about setting up an email account, I had a helpful, step-by-step reply within an hour.</p>
 
-        <h2 className="text-2xl font-bold mt-10">Ease of Use for Beginners</h2>
+        <h2 className="text-2xl font-bold mt-10">4. 🚶‍♀️ Ease of Use for Beginners:</h2>
         <p>
-          If you’re new to hosting, MissHosting makes it easy with one-click installs, a standard cPanel, and a website builder for quick setup.
+          If you’re new to hosting, MissHosting makes it easy with one-click installs, a standard cPanel, and a website builder for quick setup. In fact, when you sign up to any hosting plan, you receive an email for, them containing all the important information like cpanel details, Nameservers, SMTP details etc.
         </p>
 
         <section className="my-10 flex justify-center">
@@ -102,7 +103,7 @@ const MissHostingContent = () => {
           />
         </section>
 
-        <h2 className="text-2xl font-bold mt-10">What You Get for Your Money</h2>
+        <h2 className="text-2xl font-bold mt-10">5. 💰What You Get for Your Money:</h2>
         <p>
           MissHosting is positioned in the budget hosting market, but it doesn’t feel cheap. The value is exceptional. For just a few dollars a month, you get:
         </p>
@@ -120,7 +121,7 @@ const MissHostingContent = () => {
           className="rounded-lg shadow-md my-6"
         />
 
-        <h2>My Final Verdict: Who is MissHosting For?</h2>
+        <h2>🎯 My Final Verdict: Who is MissHosting For?</h2>
         <p>After using it hands-on, I can confidently recommend MissHosting, but to a specific audience.</p>
         <ul className="list-disc list-inside space-y-2">
           <li>First-time website owners who need a simple, all-in-one solution.</li>
@@ -131,22 +132,12 @@ const MissHostingContent = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-16 mt-12">
-        <div className="container mx-auto px-5 md:px-0 max-w-3xl text-center">
-          <h3 className="text-3xl font-bold mb-4">Ready to Try MissHosting?</h3>
-          <p className="mb-6 text-lg">
-            Unlock exclusive discounts on MissHosting plans and start building your website today.
-          </p>
-          <a
-            href="https://tracking.missaffiliate.com/aff_c?offer_id=30&aff_id=6559"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-indigo-600 font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition"
-          >
-            Claim Your MissHosting Discount →
-          </a>
-        </div>
-      </section>
+      <CTA
+        heading="Exclusively for our Readers!"
+        offer="🔥 Get 90% OFF On MissHosting"
+        buttonText="Avail Now"
+        buttonLink="https://tracking.missaffiliate.com/aff_c?offer_id=30&aff_id=6559"
+      />
     </main>
   )
 }

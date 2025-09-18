@@ -28,7 +28,7 @@ export default function sitemap() {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/all-blogs`,
+      url: `${baseUrl}/blogs`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,

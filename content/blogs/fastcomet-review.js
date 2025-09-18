@@ -2,6 +2,7 @@
 import React from "react"
 import Link from "next/link"
 import SEO from "@/components/SEO" // optional - see notes below
+import CTA from "@/components/Cta";
 
 const FastCometContent = () => {
   return (
@@ -204,16 +205,13 @@ const FastCometContent = () => {
           </p>
 
           {/* CTA */}
-          <section className="my-8 text-center">
-            <a
-              href="https://example-affiliate.fastcomet.com/aff?link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-indigo-800 transition"
-            >
-              Visit FastComet — Check Plans & Deals
-            </a>
-          </section>
+   {/* CTA Section */}
+   <CTA
+        heading="Exclusively for our Readers!"
+        offer="🔥 Get 90% OFF On FastComet Plans"
+        buttonText="Avail Now"
+        buttonLink="https://tracking.missaffiliate.com/aff_c?offer_id=30&aff_id=6559"
+      />
 
           {/* FAQ */}
           <h2 className="text-2xl font-bold mt-8">FAQ</h2>
