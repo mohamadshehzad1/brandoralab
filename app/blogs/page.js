@@ -11,9 +11,10 @@ const BlogsPage = () => {
       <Header />
       </div>
       
-      <main className="max-w-5xl mx-auto py-10 px-4">
-        <h1 className="text-4xl font-bold mb-6">Our Blogs</h1>
-        <div className="grid gap-6 md:grid-cols-2">
+      <main className="max-w-7xl mx-auto py-10 px-4">
+      <h1 className="text-5xl font-bold mb-6 text-center">Our Blogs</h1>
+
+        <div className="grid gap-3 md:grid-cols-3">
           {blogData.map((blog) => (
             <div
               key={blog.id}
