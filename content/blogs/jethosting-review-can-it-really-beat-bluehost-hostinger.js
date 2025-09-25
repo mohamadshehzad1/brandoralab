@@ -2,6 +2,8 @@
 import React from "react"
 import Link from "next/link"
 import CTA from "@/components/Cta";
+import ProsConsCard from "@/components/Proscons";
+import KeyTakeaways from "@/components/KeyTakeaways";
 
 const JethostingReviewContent = () => {
   return (
@@ -36,6 +38,16 @@ const JethostingReviewContent = () => {
         </p>
 
         <p>Let’s get started.</p>
+
+        <KeyTakeaways
+        points={[
+        "Beginner-friendly with cPanel and 1-click WordPress install.",
+        "NVMe SSD + LiteSpeed for 5× faster load times.",
+        "Free SSL, WAF, malware protection, DDoS defense included.",
+        "Free migrations, domain, and backups save extra costs.",
+        "Transparent pricing with 60-day money-back guarantee.",
+         ]}
+        />
 
         {/* Heading 1 */}
 
@@ -82,6 +94,31 @@ const JethostingReviewContent = () => {
           In fact, one case study reported a <strong>5× speed improvement</strong> after migrating a business site to Jethosting. 
           This is rare hard data in an industry full of vague "fast hosting" claims.
         </p>
+        {/* Ad Section - Network Solutions Leaderboard */}
+        <div className="w-full flex justify-center my-8">
+        <a
+        rel="sponsored"
+        href="https://network-solutions.7eer.net/c/3600799/2331427/555"
+        target="_blank"
+        id="2331427"
+        className="block"
+        >
+        <img
+        src="//a.impactradius-go.com/display-ad/555-2331427"
+        alt="Network Solutions Hosting Leaderboard Ad"
+        width="970"
+        height="250"
+        className="rounded-lg shadow-md hover:shadow-xl transition max-w-full h-auto"
+        />
+        </a>
+       <img
+       height="0"
+       width="0"
+       src="https://network-solutions.7eer.net/i/3600799/2331427/555"
+       style={{ position: "absolute", visibility: "hidden" }}
+       alt=""
+       />
+       </div>
 
 
         <h3 className="text-xl font-semibold mt-6">2.2 Security Without Extra Fees</h3>
@@ -154,22 +191,22 @@ const JethostingReviewContent = () => {
 
 
         <h2 className="text-2xl font-bold mt-10">4. ⚖️ Pros and Cons of Jethosting</h2>
-        <h3 className="text-xl font-semibold mt-6">Pros</h3>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Very affordable entry-level pricing.</li>
-          <li>Security features included at no extra cost.</li>
-          <li>Free domain, SSL, CDN, backups, and migrations.</li>
-          <li>US and EU server choices.</li>
-          <li>Great support reputation.</li>
-          <li>Performance stack (LiteSpeed + NVMe) optimized for WordPress.</li>
-        </ul>
+        <ProsConsCard
+  pros={[
+    "Very affordable entry-level pricing.",
+    "Security features included at no extra cost.",
+    "Free domain, SSL, CDN, backups, and migrations.",
+    "US and EU server choices.",
+    "Great support reputation.",
+    "Performance stack (LiteSpeed + NVMe) optimized for WordPress.",
+  ]}
+  cons={[
+    "Newer provider, so long-term reliability data is limited.",
+    "Lacks ISO/SOC2 certifications some enterprises require.",
+    "Still fewer data center choices compared to giants like AWS or Google Cloud.",
+  ]}
+/>
 
-        <h3 className="text-xl font-semibold mt-6">Cons</h3>
-        <ul className="list-disc list-inside space-y-2">
-          <li>Newer provider, so long-term reliability data is limited.</li>
-          <li>Lacks ISO/SOC2 certifications some enterprises require.</li>
-          <li>Still fewer data center choices compared to giants like AWS or Google Cloud.</li>
-        </ul>
 
 
 
