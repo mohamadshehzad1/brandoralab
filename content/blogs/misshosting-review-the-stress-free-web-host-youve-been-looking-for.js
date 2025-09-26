@@ -1,4 +1,4 @@
-// content/blogs/misshosting.js
+// content/blogs/misshosting-review-the-stress-free-web-host-youve-been-looking-for.js
 import React from "react"
 import Link from "next/link"
 import CTA from "@/components/Cta";
@@ -144,7 +144,7 @@ const MissHostingContent = () => {
 
 /* Blog metadata + exported object */
 const misshosting = {
-  slug: "misshosting-review",
+  slug: "misshosting-review-the-stress-free-web-host-youve-been-looking-for",
   title: "MissHosting Review: Is This the Stress-Free Web Host You've Been Looking For?",
   author: "John Doe",
   date: "September 14, 2024",
