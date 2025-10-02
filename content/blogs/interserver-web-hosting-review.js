@@ -42,16 +42,14 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
       }
     },
     "itemReviewed": {
-      "@type": "Service",
-      "name": "InterServer Web Hosting",
-      "description": "Budget web hosting service offering shared hosting plans starting at $2.50/month",
-      "provider": {
-        "@type": "Organization",
-        "name": "InterServer",
-        "url": "https://www.interserver.net"
+      "@type": "Product",
+      "name": "InterServer Standard Web Hosting",
+      "description": "Shared web hosting plan for websites and blogs",
+      "category": "Web Hosting",
+      "brand": {
+        "@type": "Brand",
+        "name": "InterServer"
       },
-      "serviceType": "Web Hosting",
-      "areaServed": "Worldwide",
       "offers": {
         "@type": "Offer",
         "price": "2.50",
@@ -60,7 +58,7 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
           "@type": "UnitPriceSpecification",
           "priceType": "https://schema.org/ListPrice",
           "priceCurrency": "USD",
-          "billingIncrement": "1",
+          "billingIncrement": 1,
           "unitCode": "MON"
         }
       }
@@ -85,7 +83,6 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
     />
   );
 };
-
 const BreadcrumbJsonLd = () => {
   const json = {
     "@context": "https://schema.org",
