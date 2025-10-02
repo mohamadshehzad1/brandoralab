@@ -5,6 +5,7 @@ import jethostingreviewcanitreallybeatbluehosthostinger from './jethosting-revie
 import pointinterserverdomaintonetworksolutions from './point-interserver-domain-to-network-solutions'
 import misshostingthestressfreewebhostyouvebeenlookingfor from './misshosting-review-the-stress-free-web-host-youve-been-looking-for'
 import bestUkHosting from './best-cheap-uk-hosting-small-businesses-2025'
+import interServerReview from './interserver-web-hosting-review'
 // later: import more blogs here (like payment-gateway.js, themes.js, etc)
 
 export const blogData = [
@@ -14,6 +15,7 @@ export const blogData = [
   jethostingreviewcanitreallybeatbluehosthostinger,
   pointinterserverdomaintonetworksolutions,
   bestUkHosting,
-  bestwebhostingfornewbloggersin2025
+  bestwebhostingfornewbloggersin2025,
+  interServerReview
   // more blogs here
 ]
