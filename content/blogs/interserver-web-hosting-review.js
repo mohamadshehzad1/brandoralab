@@ -41,6 +41,30 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
         "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/interserver-review_mgxseq.avif"
       }
     },
+    "itemReviewed": {
+      "@type": "Service",
+      "name": "InterServer Web Hosting",
+      "description": "Budget web hosting service offering shared hosting plans starting at $2.50/month",
+      "provider": {
+        "@type": "Organization",
+        "name": "InterServer",
+        "url": "https://www.interserver.net"
+      },
+      "serviceType": "Web Hosting",
+      "areaServed": "Worldwide",
+      "offers": {
+        "@type": "Offer",
+        "price": "2.50",
+        "priceCurrency": "USD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceType": "https://schema.org/ListPrice",
+          "priceCurrency": "USD",
+          "billingIncrement": "1",
+          "unitCode": "MON"
+        }
+      }
+    },
     "reviewBody": "9-month independent test and review of InterServer's $2.50 plan with raw data, TTFB, uptime minutes and real-world comparisons to Bluehost and Hostinger.",
     "reviewRating": {
       "@type": "Rating",
@@ -50,7 +74,7 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://your-site.example/blogs/interserver-web-hosting-review"
+      "@id": "https://brandoralab.com/blogs/interserver-web-hosting-review"
     }
   };
 
@@ -67,13 +91,85 @@ const BreadcrumbJsonLd = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://your-site.example/" },
-      { "@type": "ListItem", "position": 2, "name": "Blogs", "item": "https://your-site.example/blogs" },
-      { "@type": "ListItem", "position": 3, "name": "InterServer Web Hosting Review", "item": "https://your-site.example/blogs/interserver-web-hosting-review" }
+      { 
+        "@type": "ListItem", 
+        "position": 1, 
+        "name": "Home", 
+        "item": "https://brandoralab.com/" 
+      },
+      { 
+        "@type": "ListItem", 
+        "position": 2, 
+        "name": "Blogs", 
+        "item": "https://brandoralab.com/blogs" 
+      },
+      { 
+        "@type": "ListItem", 
+        "position": 3, 
+        "name": "InterServer Web Hosting Review", 
+        "item": "https://brandoralab.com/blogs/interserver-web-hosting-review" 
+      }
     ]
   };
   return (
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }} />
+  );
+};
+
+// Additional Schema.org for Web Hosting Service
+const ServiceJsonLd = () => {
+  const json = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "InterServer Web Hosting",
+    "description": "Affordable web hosting services with WordPress support, email hosting, and reliable uptime starting at $2.50 per month",
+    "provider": {
+      "@type": "Organization",
+      "name": "InterServer",
+      "url": "https://www.interserver.net"
+    },
+    "areaServed": "Worldwide",
+    "serviceType": "Web Hosting",
+    "category": "Internet Services",
+    "offers": {
+      "@type": "Offer",
+      "price": "2.50",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceType": "https://schema.org/ListPrice",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      },
+      "eligibleRegion": {
+        "@type": "Country",
+        "name": "Worldwide"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "InterServer Hosting Plans",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Standard Web Hosting",
+            "description": "Basic shared hosting plan perfect for blogs and small websites"
+          },
+          "price": "2.50",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+    />
   );
 };
 
@@ -141,6 +237,7 @@ const InterServerContent = () => {
 
       <ArticleJsonLd title={title} datePublished={"2025-10-02"} dateModified={"2025-10-02"} rating={rating} />
       <BreadcrumbJsonLd />
+      <ServiceJsonLd />
 
       {/* Cover / header */}
       <section className="relative w-full h-72 md:h-96 flex items-center justify-center bg-gray-800 text-white">
@@ -162,7 +259,7 @@ const InterServerContent = () => {
           points={quickSummaryPoints}
         />
 
-        <h2 className="text-2xl font-bold mt-6">Is InterServer a Good Web Host? A 9-Month, Data-Driven Review</h2>
+        <h1 className="text-3xl font-bold mt-6">Is InterServer a Good Web Host? A 9-Month, Data-Driven Review</h1>
         <p>
           For the past nine months, I've been running a rigorous test on InterServer's web hosting. 
           I purchased their $2/month plan, meticulously tracked performance, ran speed tests, 
@@ -357,149 +454,149 @@ const InterServerContent = () => {
 
         {/* Methodology & Raw Data Section */}
         <section id="methodology" className="mt-8 bg-white p-4 rounded-lg shadow-sm border">
-  <h3 className="text-xl font-semibold">Test Methodology & Raw Data</h3>
-  <p className="mt-2 text-sm text-gray-700">Transparency is critical for a credible review. Below is exactly how we tested and the raw runs we recorded. Feel free to download the full CSV file for your own analysis.</p>
-  <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
-    <li>Tools used: GTmetrix (Web Vitals + Waterfall), WebPageTest, WP Benchmark plugin.</li>
-    <li>Test locations: US-East (consistent across runs).</li>
-    <li>Template used: Envato Elements default template (as shipped) — to reflect typical user setups.</li>
-    <li>Runs: Multiple runs per host across different dates (see CSV below); all tests performed from clean cache where applicable or with caching enabled for production-like results (each run labeled).</li>
-  </ul>
+          <h3 className="text-xl font-semibold">Test Methodology & Raw Data</h3>
+          <p className="mt-2 text-sm text-gray-700">Transparency is critical for a credible review. Below is exactly how we tested and the raw runs we recorded. Feel free to download the full CSV file for your own analysis.</p>
+          <ul className="list-disc list-inside mt-2 text-sm text-gray-700">
+            <li>Tools used: GTmetrix (Web Vitals + Waterfall), WebPageTest, WP Benchmark plugin.</li>
+            <li>Test locations: US-East (consistent across runs).</li>
+            <li>Template used: Envato Elements default template (as shipped) — to reflect typical user setups.</li>
+            <li>Runs: Multiple runs per host across different dates (see CSV below); all tests performed from clean cache where applicable or with caching enabled for production-like results (each run labeled).</li>
+          </ul>
 
-  <div className="mt-4">
-    <a
-      className="inline-block px-4 py-2 bg-blue-600 text-white rounded shadow-sm hover:bg-blue-700 text-sm font-medium"
-      href={`data:text/csv;charset=utf-8,${encodeCSV(RAW_CSV)}`}
-      download="interserver-9-months-raw-data.csv"
-    >
-      📊 Download Raw CSV (All Runs)
-    </a>
-  </div>
-
-  {/* Desktop Table (hidden on mobile) */}
-  <div className="hidden md:block mt-4 overflow-x-auto">
-    <table className="w-full text-sm text-left border-collapse border border-gray-200">
-      <thead className="bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 text-white">
-        <tr>
-          <th className="p-3 font-semibold border border-gray-300">Date</th>
-          <th className="p-3 font-semibold border border-gray-300">Host</th>
-          <th className="p-3 font-semibold border border-gray-300">Tool</th>
-          <th className="p-3 font-semibold border border-gray-300">TTFB (ms)</th>
-          <th className="p-3 font-semibold border border-gray-300">Fully Loaded (s)</th>
-          <th className="p-3 font-semibold border border-gray-300">Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        {RAW_CSV.split("\n").slice(1).map((row, idx) => {
-          if (!row.trim()) return null;
-          const [date, host, location, tool, run, ttfb, full, notes] = row.split(",");
-          return (
-            <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-              <td className="p-3 border border-gray-200 font-medium">{date}</td>
-              <td className="p-3 border border-gray-200">
-                <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                  host === 'InterServer' ? 'bg-green-100 text-green-800' : 
-                  host === 'Hostinger' ? 'bg-blue-100 text-blue-800' : 
-                  'bg-red-100 text-red-800'
-                }`}>
-                  {host}
-                </span>
-              </td>
-              <td className="p-3 border border-gray-200">{tool}</td>
-              <td className="p-3 border border-gray-200 font-mono text-sm">{ttfb}ms</td>
-              <td className="p-3 border border-gray-200 font-mono text-sm">{full}s</td>
-              <td className="p-3 border border-gray-200 text-xs text-gray-600">{notes}</td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
-  </div>
-
-  {/* Mobile Cards (shown on mobile) */}
-  <div className="md:hidden mt-4 space-y-4">
-    {RAW_CSV.split("\n").slice(1).map((row, idx) => {
-      if (!row.trim()) return null;
-      const [date, host, location, tool, run, ttfb, full, notes] = row.split(",");
-      
-      return (
-        <div key={idx} className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
-          {/* Header with Date and Host */}
-          <div className="flex justify-between items-start mb-3">
-            <div className="flex items-center gap-2">
-              <span className="text-sm font-semibold text-gray-900">{date}</span>
-              <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                host === 'InterServer' ? 'bg-green-100 text-green-800' : 
-                host === 'Hostinger' ? 'bg-blue-100 text-blue-800' : 
-                'bg-red-100 text-red-800'
-              }`}>
-                {host}
-              </span>
-            </div>
-            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Run {run}</span>
+          <div className="mt-4">
+            <a
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded shadow-sm hover:bg-blue-700 text-sm font-medium"
+              href={`data:text/csv;charset=utf-8,${encodeCSV(RAW_CSV)}`}
+              download="interserver-9-months-raw-data.csv"
+            >
+              📊 Download Raw CSV (All Runs)
+            </a>
           </div>
 
-          {/* Performance Metrics */}
-          <div className="grid grid-cols-2 gap-3 mb-3">
-            <div className="text-center p-2 bg-blue-50 rounded-lg">
-              <div className="text-xs text-gray-600 font-medium">TTFB</div>
-              <div className="text-sm font-mono font-bold text-blue-700">{ttfb}ms</div>
-            </div>
-            <div className="text-center p-2 bg-green-50 rounded-lg">
-              <div className="text-xs text-gray-600 font-medium">Load Time</div>
-              <div className="text-sm font-mono font-bold text-green-700">{full}s</div>
-            </div>
+          {/* Desktop Table (hidden on mobile) */}
+          <div className="hidden md:block mt-4 overflow-x-auto">
+            <table className="w-full text-sm text-left border-collapse border border-gray-200">
+              <thead className="bg-gradient-to-r from-indigo-500 via-blue-500 to-cyan-500 text-white">
+                <tr>
+                  <th className="p-3 font-semibold border border-gray-300">Date</th>
+                  <th className="p-3 font-semibold border border-gray-300">Host</th>
+                  <th className="p-3 font-semibold border border-gray-300">Tool</th>
+                  <th className="p-3 font-semibold border border-gray-300">TTFB (ms)</th>
+                  <th className="p-3 font-semibold border border-gray-300">Fully Loaded (s)</th>
+                  <th className="p-3 font-semibold border border-gray-300">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {RAW_CSV.split("\n").slice(1).map((row, idx) => {
+                  if (!row.trim()) return null;
+                  const [date, host, location, tool, run, ttfb, full, notes] = row.split(",");
+                  return (
+                    <tr key={idx} className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <td className="p-3 border border-gray-200 font-medium">{date}</td>
+                      <td className="p-3 border border-gray-200">
+                        <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                          host === 'InterServer' ? 'bg-green-100 text-green-800' : 
+                          host === 'Hostinger' ? 'bg-blue-100 text-blue-800' : 
+                          'bg-red-100 text-red-800'
+                        }`}>
+                          {host}
+                        </span>
+                      </td>
+                      <td className="p-3 border border-gray-200">{tool}</td>
+                      <td className="p-3 border border-gray-200 font-mono text-sm">{ttfb}ms</td>
+                      <td className="p-3 border border-gray-200 font-mono text-sm">{full}s</td>
+                      <td className="p-3 border border-gray-200 text-xs text-gray-600">{notes}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
 
-          {/* Tool and Notes */}
-          <div className="space-y-2 text-xs">
-            <div className="flex justify-between">
-              <span className="text-gray-600 font-medium">Tool:</span>
-              <span className="text-gray-900">{tool}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-600 font-medium">Location:</span>
-              <span className="text-gray-900">{location}</span>
-            </div>
-            {notes && (
+          {/* Mobile Cards (shown on mobile) */}
+          <div className="md:hidden mt-4 space-y-4">
+            {RAW_CSV.split("\n").slice(1).map((row, idx) => {
+              if (!row.trim()) return null;
+              const [date, host, location, tool, run, ttfb, full, notes] = row.split(",");
+              
+              return (
+                <div key={idx} className="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+                  {/* Header with Date and Host */}
+                  <div className="flex justify-between items-start mb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="text-sm font-semibold text-gray-900">{date}</span>
+                      <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
+                        host === 'InterServer' ? 'bg-green-100 text-green-800' : 
+                        host === 'Hostinger' ? 'bg-blue-100 text-blue-800' : 
+                        'bg-red-100 text-red-800'
+                      }`}>
+                        {host}
+                      </span>
+                    </div>
+                    <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">Run {run}</span>
+                  </div>
+
+                  {/* Performance Metrics */}
+                  <div className="grid grid-cols-2 gap-3 mb-3">
+                    <div className="text-center p-2 bg-blue-50 rounded-lg">
+                      <div className="text-xs text-gray-600 font-medium">TTFB</div>
+                      <div className="text-sm font-mono font-bold text-blue-700">{ttfb}ms</div>
+                    </div>
+                    <div className="text-center p-2 bg-green-50 rounded-lg">
+                      <div className="text-xs text-gray-600 font-medium">Load Time</div>
+                      <div className="text-sm font-mono font-bold text-green-700">{full}s</div>
+                    </div>
+                  </div>
+
+                  {/* Tool and Notes */}
+                  <div className="space-y-2 text-xs">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600 font-medium">Tool:</span>
+                      <span className="text-gray-900">{tool}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600 font-medium">Location:</span>
+                      <span className="text-gray-900">{location}</span>
+                    </div>
+                    {notes && (
+                      <div>
+                        <span className="text-gray-600 font-medium block mb-1">Notes:</span>
+                        <span className="text-gray-900">{notes}</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Summary Stats */}
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+            <h4 className="text-sm font-semibold text-gray-900 mb-3">📈 Performance Summary</h4>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
-                <span className="text-gray-600 font-medium block mb-1">Notes:</span>
-                <span className="text-gray-900">{notes}</span>
+                <div className="text-xs text-gray-600">Avg TTFB</div>
+                <div className="text-lg font-bold text-blue-600">~150ms</div>
+                <div className="text-xs text-gray-500">InterServer</div>
               </div>
-            )}
+              <div>
+                <div className="text-xs text-gray-600">Best Load Time</div>
+                <div className="text-lg font-bold text-green-600">1.18s</div>
+                <div className="text-xs text-gray-500">With caching</div>
+              </div>
+              <div>
+                <div className="text-xs text-gray-600">Test Duration</div>
+                <div className="text-lg font-bold text-purple-600">9 months</div>
+                <div className="text-xs text-gray-500">8 test runs</div>
+              </div>
+              <div>
+                <div className="text-xs text-gray-600">Tools Used</div>
+                <div className="text-lg font-bold text-orange-600">3</div>
+                <div className="text-xs text-gray-500">GTmetrix, WebPageTest, WP Benchmark</div>
+              </div>
+            </div>
           </div>
-        </div>
-      );
-    })}
-  </div>
-
-  {/* Summary Stats */}
-  <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
-    <h4 className="text-sm font-semibold text-gray-900 mb-3">📈 Performance Summary</h4>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-      <div>
-        <div className="text-xs text-gray-600">Avg TTFB</div>
-        <div className="text-lg font-bold text-blue-600">~150ms</div>
-        <div className="text-xs text-gray-500">InterServer</div>
-      </div>
-      <div>
-        <div className="text-xs text-gray-600">Best Load Time</div>
-        <div className="text-lg font-bold text-green-600">1.18s</div>
-        <div className="text-xs text-gray-500">With caching</div>
-      </div>
-      <div>
-        <div className="text-xs text-gray-600">Test Duration</div>
-        <div className="text-lg font-bold text-purple-600">9 months</div>
-        <div className="text-xs text-gray-500">8 test runs</div>
-      </div>
-      <div>
-        <div className="text-xs text-gray-600">Tools Used</div>
-        <div className="text-lg font-bold text-orange-600">3</div>
-        <div className="text-xs text-gray-500">GTmetrix, WebPageTest, WP Benchmark</div>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
         {/* Key Takeaways Component */}
         <KeyTakeaways 
