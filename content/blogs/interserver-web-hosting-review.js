@@ -25,7 +25,7 @@ const encodeCSV = (s) => encodeURIComponent(s);
 const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
   const json = {
     "@context": "https://schema.org",
-    "@type": "Review",
+    "@type": "BlogPosting",
     "headline": title,
     "author": {
       "@type": "Person",
@@ -41,32 +41,59 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
         "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/interserver-review_mgxseq.avif"
       }
     },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://brandoralab.com/blogs/interserver-web-hosting-review"
+    },
+    "description": "9-month independent test and review of InterServer's $2.50 plan with raw data, TTFB, uptime minutes and real-world comparisons to Bluehost and Hostinger."
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
+    />
+  );
+};
+
+const ReviewJsonLd = () => {
+  const json = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "headline": "InterServer Review 2025: 9-Month Test Reveals Shocking Results",
+    "author": {
+      "@type": "Person",
+      "name": "BrandoraLab"
+    },
+    "datePublished": "2025-10-02",
+    "dateModified": "2025-10-02",
+    "publisher": {
+      "@type": "Organization",
+      "name": "BrandoraLab",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/interserver-review_mgxseq.avif"
+      }
+    },
     "itemReviewed": {
-      "@type": "Product",
-      "name": "InterServer Standard Web Hosting",
-      "description": "Shared web hosting plan for websites and blogs",
-      "category": "Web Hosting",
-      "brand": {
-        "@type": "Brand",
-        "name": "InterServer"
+      "@type": "Service",
+      "name": "InterServer Web Hosting",
+      "description": "Shared web hosting service",
+      "provider": {
+        "@type": "Organization",
+        "name": "InterServer",
+        "url": "https://www.interserver.net"
       },
       "offers": {
         "@type": "Offer",
         "price": "2.50",
-        "priceCurrency": "USD",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "priceType": "https://schema.org/ListPrice",
-          "priceCurrency": "USD",
-          "billingIncrement": 1,
-          "unitCode": "MON"
-        }
+        "priceCurrency": "USD"
       }
     },
     "reviewBody": "9-month independent test and review of InterServer's $2.50 plan with raw data, TTFB, uptime minutes and real-world comparisons to Bluehost and Hostinger.",
     "reviewRating": {
       "@type": "Rating",
-      "ratingValue": rating,
+      "ratingValue": "6.9",
       "bestRating": "10",
       "worstRating": "0"
     },
@@ -83,6 +110,7 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
     />
   );
 };
+
 const BreadcrumbJsonLd = () => {
   const json = {
     "@context": "https://schema.org",
@@ -113,67 +141,10 @@ const BreadcrumbJsonLd = () => {
   );
 };
 
-// Additional Schema.org for Web Hosting Service
-const ServiceJsonLd = () => {
-  const json = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "InterServer Web Hosting",
-    "description": "Affordable web hosting services with WordPress support, email hosting, and reliable uptime starting at $2.50 per month",
-    "provider": {
-      "@type": "Organization",
-      "name": "InterServer",
-      "url": "https://www.interserver.net"
-    },
-    "areaServed": "Worldwide",
-    "serviceType": "Web Hosting",
-    "category": "Internet Services",
-    "offers": {
-      "@type": "Offer",
-      "price": "2.50",
-      "priceCurrency": "USD",
-      "priceSpecification": {
-        "@type": "UnitPriceSpecification",
-        "priceType": "https://schema.org/ListPrice",
-        "priceCurrency": "USD",
-        "billingIncrement": 1,
-        "unitCode": "MON"
-      },
-      "eligibleRegion": {
-        "@type": "Country",
-        "name": "Worldwide"
-      }
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "InterServer Hosting Plans",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Standard Web Hosting",
-            "description": "Basic shared hosting plan perfect for blogs and small websites"
-          },
-          "price": "2.50",
-          "priceCurrency": "USD"
-        }
-      ]
-    }
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
-    />
-  );
-};
-
 const InterServerContent = () => {
   const title = "InterServer Review 2025: 9-Month Test Reveals Shocking Results";
   const published = "October 2, 2025";
-  const rating = 6.9;
+  const rating = "6.9";
 
   // Quick Summary Data
   const quickSummaryPoints = [
@@ -233,8 +204,8 @@ const InterServerContent = () => {
       />
 
       <ArticleJsonLd title={title} datePublished={"2025-10-02"} dateModified={"2025-10-02"} rating={rating} />
+      <ReviewJsonLd />
       <BreadcrumbJsonLd />
-      <ServiceJsonLd />
 
       {/* Cover / header */}
       <section className="relative w-full h-72 md:h-96 flex items-center justify-center bg-gray-800 text-white">
@@ -271,15 +242,8 @@ const InterServerContent = () => {
           After nearly a year of data collection, I have a lot to say. Let's dive into the details.
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">First Impressions: A Clunky, Confusing Interface</h2>
+        <h2 className="text-2xl font-bold mt-6">👋1. First Impressions: A Clunky, Confusing Interface:</h2>
 
-        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759154338/trap-of-free-builders_ksuu2h.avif"
-            alt="InterServer control panel interface - functional but confusing for beginners"
-            className="w-full h-full object-cover opacity-70"
-          />
-        </section>
 
         <p>
           Let's start with the biggest drawback: <strong>the user interface.</strong>
@@ -287,10 +251,18 @@ const InterServerContent = () => {
 
         <p>
           I believe the worst thing about InterServer is its control panel. It's confusing, 
-          especially for a first time website owner. For example, even though I only purchased 
+          especially for a first-time website owner. For example, even though I only purchased 
           web hosting, my dashboard actively displays every single service InterServer offers  
           twice with most sections being completely empty.
         </p>
+
+        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759494859/InterServers-control-panel-1366x669_jvcpja.avif"
+            alt="InterServer control panel interface - functional but confusing for beginners"
+            className="w-full h-full object-cover opacity-70"
+          />
+        </section>
 
         <p>
           To actually work on my website, I had to click one of the smallest buttons on the 
@@ -305,6 +277,16 @@ const InterServerContent = () => {
         </p>
 
         <h3 className="text-xl font-semibold mt-4">The Silver Lining: It's Snappy and Functional</h3>
+      
+              <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759495550/interserver-direct-admin-dashboard_uonssi.avif"
+            alt="InterServer direct admin control panel interface"
+            className="w-full h-full object-cover opacity-70"
+          />
+        </section>
+      
+      
         <p>
           And you know what? That mentality pays off. The interface is incredibly snappy. 
           There's no lag or excessive loading screens. You'll likely only use a handful of 
@@ -312,33 +294,35 @@ const InterServerContent = () => {
           it becomes smooth sailing.
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">Setting Up a Website: A Straightforward Process</h2>
+        <h2 className="text-2xl font-bold mt-6">2. Setting Up a Website: A Straightforward Process:</h2>
         <p>
           Creating my test website was simple using InterServer's automatic WordPress installer. 
           I just needed to create my login details and press install. No problems here.
         </p>
 
         <p>
-          Of course, the default WordPress installation looks well, like a default WordPress site. 
-          To create a realistic test, I downloaded a pre made template from Envato Elements. 
+          Of course, the default WordPress installation looks... well, like a default WordPress site. 
+          To create a realistic test, I downloaded a pre-made template from Envato Elements. 
           I chose this method because most people build sites this way, and these templates are 
-          often poorly optimized with excess code providing a true test of performance, not just an ideal scenario.
+          often poorly optimized with excess code providing a true test of performance, not just 
+          an ideal scenario.
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">Performance Deep Dive: Where the $2.50 Plan Shows Its Limits</h2>
+        <h2 className="text-2xl font-bold mt-6">📈 3. Performance Deep Dive: Where the $2.50 Plan Shows Its Limits:</h2>
         
-        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759154338/expensive-web-hostings_qugtwz.avif"
-            alt="InterServer performance testing with WP Benchmark - database limitations revealed"
-            className="w-full h-full object-cover opacity-70"
-          />
-        </section>
 
         <p>
           Once the design was loaded, I used the WP Benchmark plugin to test the server's performance. 
           This is where the holes in the budget plan began to show.
         </p>
+
+        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759495550/interserver-tests_bbrukx.avif"
+            alt="InterServer performance testing with WP Benchmark - database limitations revealed"
+            className="w-full h-full object-cover opacity-70"
+          />
+        </section>
 
         <ul className="list-disc list-inside space-y-2">
           <li>✅ <strong>CPU & Memory:</strong> Good</li>
@@ -351,10 +335,10 @@ const InterServerContent = () => {
           large amounts of data uploaded in a short period, though it handles simple queries extremely well.
         </p>
 
-        <h3 className="text-xl font-semibold mt-4">The Reason: Process Limits</h3>
+        <h3 className="text-xl font-semibold mt-4">3.1 The Reason: Process Limits:</h3>
         <p>
           This makes perfect sense. InterServer's standard plans are limited to <strong>30 processes per second.</strong> 
-          Think of it like trying to squeeze 31 people through a door at once—it just doesn't work. 
+          Think of it like trying to squeeze 31 people through a door at once it just doesn't work. 
           You need a larger door.
         </p>
 
@@ -363,9 +347,9 @@ const InterServerContent = () => {
           and Bluehost doesn't even disclose their limit (which is rarely a good sign).
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">Real-World Speed Test: How Does It Compare?</h2>
+        <h2 className="text-2xl font-bold mt-6">4. Real-World Speed Test: How Does It Compare?</h2>
         <p>
-          Theory is one thing; real-world performance is another. I cloned my website onto 
+          Theory is one thing real-world performance is another. I cloned my website onto 
           Bluehost and Hostinger's premium plans and recorded the loading times in an incognito window.
         </p>
 
@@ -375,9 +359,19 @@ const InterServerContent = () => {
           To understand why, I used GT Metrics. Here's the breakdown:
         </p>
 
+        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759496707/interserver-test-score-against-Bluehost-And-Hostinger_1_b861lh.avif"
+            alt="InterServer performance against Bluehost and Hostinger - GTmetrix results"
+            className="w-full h-full object-cover opacity-70"
+          />
+        </section>
+
+
         <ul className="list-disc list-inside space-y-2">
-          <li><strong>InterServer Fully Loaded:</strong> 1.2 seconds</li>
-          <li><strong>Bluehost Fully Loaded:</strong> Almost 4 times slower</li>
+          <li><strong>InterServer Fully Loaded:</strong> 1.50 seconds</li>
+          <li><strong>Hostinger Fully Loaded:</strong> 2.12 seconds</li>
+          <li><strong>Bluehost Fully Loaded:</strong> 3.02 seconds. Almost 4 times slower</li>
         </ul>
 
         <p>
@@ -386,7 +380,7 @@ const InterServerContent = () => {
           That 250ms difference might seem small, but it cascades, slowing down every subsequent element that needs to load.
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">The Verdict: Who Is This Plan For?</h2>
+        <h2 className="text-2xl font-bold mt-6">5. The Verdict: Who Is This Plan For?</h2>
 
         {/* Replace manual pros/cons tables with ProsConsCard component */}
         <Proscons
@@ -398,15 +392,23 @@ const InterServerContent = () => {
         <HostInfoBox 
           bestFor="Bloggers, small business sites, and portfolios on a tight budget."
           rating="⭐ 6.9 / 10"
-          link="https://www.interserver.net/r/999999" // Replace with actual affiliate link
+          link="https://www.interserver.net/r/999999"
         />
 
-        <p><strong>My Recommendation:</strong></p>
+        <p><strong>🎯 My Recommendation:</strong></p>
         <p>
           I would <strong>NOT</strong> host a complex e-commerce store on this $2.50 plan, 
           where users are constantly performing actions and interacting with the database. 
           However, for blogs, small business brochure sites, and portfolios, it offers incredible value.
         </p>
+
+        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759497441/interserver-server-tests_epaqzx.avif"
+            alt="InterServer server response tests results - GTmetrix results"
+            className="w-full h-full object-cover opacity-70"
+          />
+        </section>
 
         <p>
           <strong>Performance Score: 6.9/10</strong> — which is pretty incredible for just $2.50.
@@ -421,7 +423,13 @@ const InterServerContent = () => {
         <p>
           Like many web hosts, InterServer uses introductory pricing.
         </p>
-
+        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759494858/InterServer-customer-support-interaction-1366x671_vip2pl.avif"
+            alt="InterServer prices plans and coupons - first month for one cent"
+            className="w-full h-full object-cover opacity-70"
+          />
+        </section>
         <ul className="list-disc list-inside space-y-2">
           <li><strong>First Term:</strong> Discounted price (e.g., $2.50/month)</li>
           <li><strong>Upon Renewal:</strong> Price increases to the standard rate of ~$7/month</li>
