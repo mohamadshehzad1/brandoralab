@@ -384,7 +384,7 @@ const BestHostingContent = () => {
           top recommendation. Their "Launch Assist" program alone is worth its weight in gold for a new blogger.
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">FAQs</h2>
+        <h2 className="text-2xl font-bold mt-6">❓ FAQs</h2>
 
         <div className="space-y-4">
           <details className="p-4 border rounded-lg">
