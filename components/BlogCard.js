@@ -6,11 +6,16 @@ const BlogCard = ({ blog }) => {
     <div className="border rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col">
       {/* Blog Image */}
       {blog.imageUrl && (
-        <Image
-          src={blog.imageUrl}
-          alt={blog.title}
-          className="w-full h-48 object-cover rounded-md mb-4"
-        />
+        <div className="relative w-full h-48 mb-4">
+          <Image
+            src={blog.imageUrl}
+            alt={blog.title}
+            fill   // ✅ auto-fills the container, no need to define width/height manually
+            className="object-cover rounded-md"
+            sizes="(max-width: 768px) 100vw, 400px" // optional optimization hint
+            priority={false}
+          />
+        </div>
       )}
 
       {/* Blog Title */}

@@ -9,6 +9,10 @@ import interServerReview from './interserver-web-hosting-review'
 import cloud86Review from './cloud86-web-hosting-review'
 import veerotechReview from './veerotech-web-hosting-review'
 import hostisoReview from './hostiso-web-hosting-review'
+import a2hostingReview from './a2-hosting-review-turbo-speed-tested'
+import dreamhostReview from './dreamhost-review'
+import scalahostingReview from './scalahosting-review'
+import accuwebHostingReview from './accuweb-hosting-review'
 // later: import more blogs here (like payment-gateway.js, themes.js, etc)
 
 export const blogData = [
@@ -23,5 +27,10 @@ export const blogData = [
   cloud86Review,
   veerotechReview,
   hostisoReview,
+  a2hostingReview,
+  dreamhostReview,
+  scalahostingReview,
+  accuwebHostingReview,
+
   // more blogs here
 ]
