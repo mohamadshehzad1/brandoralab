@@ -212,6 +212,7 @@ const interserverDomainBlog = {
   title: "How to Point Your InterServer Domain to Network Solutions (Beginner’s Guide)",
   author: "BrandoraLab",
   date: "September 25, 2025",
+  type: "tutorial", // tutorial, guide, case-study
   description:
     "Learn how to point your InterServer domain to Network Solutions by updating nameservers. A beginner-friendly tutorial with step-by-step instructions, images, and troubleshooting tips.",
   

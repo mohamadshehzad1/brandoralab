@@ -3,7 +3,8 @@ import dynamic from 'next/dynamic';
 // Critical components for initial load
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import CategoriesGrid from '@/components/CategoriesGrid'; // ✅ fix: use CategoriesGrid
+import CategoriesGrid from '@/components/CategoriesGrid'; // 
+import Tutorials from '@/components/Tutorials'; 
 
 // Dynamically imported components (disable SSR for client-heavy ones)
 const Projects = dynamic(() => import('@/components/Projects'), { ssr: false });
@@ -28,6 +29,7 @@ export default function Home() {
       {/* Put Categories before Blogs for better UX */}
       <CategoriesGrid />
       <Blogs />
+      <Tutorials />
       <Services />
       <Tech />
       <DigitalMarketing />
