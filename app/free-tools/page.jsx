@@ -11,13 +11,13 @@ const ToolsPage = () => {
             imgSrc: tool01,
             title: "IP CHECKER",
             description: "Quickly identify your public IP address and obtain detailed information about your network. Ideal for troubleshooting and security checks.",
-            url: 'https://Brandora Lab.net/tools/ip-detailer/'
+            url: 'https://brandoralab.com/free-tools/ipchecker/'
         },
         {
             imgSrc: tool02,
             title: "IP LOOKUP",
             description: "Discover detailed information about an IP address, including geolocation data, country, timezone details, and more.",
-            url: 'https://Brandora Lab.net/tools/ip-detailer/ip-lookup'
+            url: 'https://brandoralab.com/free-tools/iplookup/'
         },
     ];
 
