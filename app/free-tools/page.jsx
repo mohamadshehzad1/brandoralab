@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import ToolsCard from "@/components/ToolsCard";
 import tool01 from '@/public/ipchecker.webp'
 import tool02 from '@/public/iplookup.webp'
+import tool03 from '@/public/Dnschecker.jpg';
 
 
 const ToolsPage = () => {
@@ -19,6 +20,12 @@ const ToolsPage = () => {
             description: "Discover detailed information about an IP address, including geolocation data, country, timezone details, and more.",
             url: 'https://brandoralab.com/free-tools/iplookup/'
         },
+        {
+            imgSrc: tool03, 
+            title: "DNS PROPAGATION CHECKER",
+            description: "Check the propagation status of your DNS records across multiple servers worldwide. Ensure your domain changes are live and accessible.",
+            url: 'https://brandoralab.com/free-tools/dns-propagation/'
+          },
     ];
 
 
