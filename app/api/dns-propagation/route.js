@@ -1,69 +1,111 @@
 // app/api/dns/route.js
 export const dynamic = "force-dynamic";
+export const runtime = "nodejs"; // Node for server-side DNS lookups
 import { NextResponse } from "next/server";
-import dns from 'dns/promises';
 
-const dnsServers = [
-  { name: "Google DNS", ip: "8.8.8.8", flag: "🇺🇸", location: "Global" },
-  { name: "Cloudflare", ip: "1.1.1.1", flag: "🇺🇸", location: "Global" },
-  { name: "Quad9", ip: "9.9.9.9", flag: "🇨🇭", location: "Europe" },
-  { name: "OpenDNS", ip: "208.67.222.222", flag: "🇺🇸", location: "Global" },
-  { name: "Comodo", ip: "8.26.56.26", flag: "🇺🇸", location: "Global" },
-];
+let dns;
+try {
+  // Only import dns/promises if running on Node (not Edge)
+  dns = await import("dns/promises");
+} catch {
+  dns = null;
+}
 
+/**
+ * Helper function — fallback DNS-over-HTTPS queries
+ */
+async function resolveWithDoH(domain, type = "A") {
+  const dohProviders = [
+    `https://dns.google/resolve?name=${encodeURIComponent(domain)}&type=${type}`,
+    `https://cloudflare-dns.com/dns-query?name=${encodeURIComponent(domain)}&type=${type}`,
+    `https://dns.quad9.net/dns-query?name=${encodeURIComponent(domain)}&type=${type}`,
+  ];
+
+  for (const url of dohProviders) {
+    try {
+      const response = await fetch(url, {
+        headers: { Accept: "application/dns-json" },
+      });
+      if (!response.ok) continue;
+      const data = await response.json();
+
+      if (data.Answer && data.Answer.length > 0) {
+        return {
+          success: true,
+          records: data.Answer,
+          resolved: true,
+          source: url.includes("google")
+            ? "Google DoH"
+            : url.includes("cloudflare")
+            ? "Cloudflare DoH"
+            : "Quad9 DoH",
+        };
+      }
+    } catch {
+      continue;
+    }
+  }
+
+  return { success: false, resolved: false, error: "All DoH providers failed" };
+}
+
+/**
+ * API Route
+ */
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const domain = searchParams.get("domain");
   const type = searchParams.get("type") || "A";
-  const serverIp = searchParams.get("server") || "8.8.8.8";
+  const server = searchParams.get("server") || "8.8.8.8";
 
   if (!domain) {
     return NextResponse.json({ error: "Domain is required" }, { status: 400 });
   }
 
-  // Validate domain format
-  const domainRegex = /^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})+$/;
-  if (!domainRegex.test(domain)) {
-    return NextResponse.json({ error: "Invalid domain format" }, { status: 400 });
-  }
+  const startTime = Date.now();
 
-  try {
-    // Set custom DNS server
-    dns.setServers([serverIp]);
+  // Step 1: Try native Node DNS first
+  if (dns) {
+    try {
+      dns.setServers([server]);
+      const records = await dns.resolve(domain, type);
+      const responseTime = Date.now() - startTime;
 
-    const startTime = Date.now();
-    const records = await dns.resolve(domain, type);
-    const responseTime = Date.now() - startTime;
-
-    return NextResponse.json({
-      success: true,
-      domain,
-      type,
-      server: serverIp,
-      records: Array.isArray(records) ? records : [records],
-      responseTime,
-      resolved: true
-    });
-
-  } catch (error) {
-    // Check if it's a "not found" error or real error
-    if (error.code === 'ENOTFOUND' || error.code === 'NXDOMAIN') {
       return NextResponse.json({
         success: true,
         domain,
         type,
-        server: serverIp,
-        records: [],
-        responseTime: Date.now() - startTime,
-        resolved: false,
-        message: "Domain not found"
+        server,
+        resolved: true,
+        records: Array.isArray(records) ? records : [records],
+        responseTime,
+        method: "Node DNS",
       });
+    } catch (error) {
+      // fallback if not found or error
+      if (["ENOTFOUND", "NXDOMAIN"].includes(error.code)) {
+        return NextResponse.json({
+          success: true,
+          domain,
+          type,
+          server,
+          records: [],
+          resolved: false,
+          responseTime: Date.now() - startTime,
+          message: "Domain not found via Node DNS",
+        });
+      }
     }
-
-    return NextResponse.json({
-      success: false,
-      error: error.message,
-      resolved: false
-    }, { status: 500 });
   }
+
+  // Step 2: Use DNS-over-HTTPS fallback
+  const dohResult = await resolveWithDoH(domain, type);
+  dohResult.responseTime = Date.now() - startTime;
+
+  return NextResponse.json({
+    domain,
+    type,
+    server,
+    ...dohResult,
+  });
 }
