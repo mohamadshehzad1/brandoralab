@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
-import logo from '@/public/logo.png';
+import logo from '@/public/brandora-lab-logo.png'
 
 
 const MobileMenu = dynamic(() => import('./MobileMenu'), {
@@ -39,8 +39,9 @@ const Header = () => {
               src={logo}
               alt="brandoralab logo"
               className="h-10 w-auto"
-              width={100}
-              height={100}
+              width={250}
+              height={48}
+              
               loading="lazy"
             />
           </Link>

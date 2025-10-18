@@ -7,6 +7,7 @@ import KeyTakeaways from "@/components/KeyTakeaways";
 import Proscons from "@/components/Proscons";
 import QuickSummary from "@/components/QuickSummary";
 import Toc from "@/components/Toc";
+import AuthorBox from "@/components/AuthorBox";
 import { CheckCircle, XCircle, Zap, Star, Clock, DollarSign, Cpu } from "lucide-react";
 
 const RAW_CSV = `date,host,test_location,tool,run,ttfb_ms,fully_loaded_s,notes
@@ -208,7 +209,7 @@ const InterServerContent = () => {
       <BreadcrumbJsonLd />
 
       {/* Cover / header */}
-      <section className="relative w-full h-72 md:h-96 flex items-center justify-center bg-gray-800 text-white">
+      <section className="relative w-full h-72 md:h-96 flex items-center justify-center text-white">
         <img
           src="https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/interserver-review_mgxseq.avif"
           alt="InterServer web hosting review after 9 months of testing - performance and reliability analysis"
@@ -660,17 +661,7 @@ const InterServerContent = () => {
 
       </section>
 
-      {/* Author Box */}
-      <section className="max-w-3xl mx-auto px-5 md:px-0 py-6">
-        <div className="flex items-center gap-4 bg-white border rounded-lg p-4 shadow-sm">
-          <img src="https://res.cloudinary.com/dpgspconw/image/upload/v1759154339/web-hosting-for-bloggers_cbnl6u.avif" alt="BrandoraLab" className="w-16 h-16 rounded-md object-cover" />
-          <div>
-            <div className="text-sm text-gray-600">By</div>
-            <div className="text-base font-semibold">BrandoraLab</div>
-            <div className="text-sm text-gray-600 mt-1">Senior content writer, SEO expert, and hands-on hosting tester who runs long-term hosting tests to surface real-world performance.</div>
-          </div>
-        </div>
-      </section>
+      <AuthorBox />
 
       {/* FAQ JSON-LD for rich results */}
       <script

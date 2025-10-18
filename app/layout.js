@@ -7,12 +7,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Brandora Lab",
   description: "Brandora Lab is a digital agency offering services like web development, SEO, digital marketing, and video editing.",
-  keywords: "digital agency, web development, SEO, digital marketing, video editing",
+  keywords: "digital agency, web development, SEO, digital marketing, video editing, blogs, Hosting, Domain, hosting tutorial, Domain tutorial,",
   author: "Brandora Lab",
   robots: "index, follow",
   icons: {
-    icon: ['/favicon.ico?v=4'],
-    apple: ['/apple-touch-icon.png?=v4'],
+    icon: ['/favicon.png?v=4'],
+    apple: ['/favicon.png?v=4'],
   },
 };
 

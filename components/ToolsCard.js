@@ -1,27 +1,52 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Globe, Search, Server } from "lucide-react"; // ✅ Lucide icons
 
-const ToolsCard = ({ imgSrc, title, description, url }) => {
-    return (
-      <Link target="_blank" href={url} className="overflow-hidden h-[300px] bg-gray-100 cursor-pointer rounded-xl relative group">
-        <div className="rounded-xl z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-black/80 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
-          <div>
-            <div className=" p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-10 transform transition duration-300 ease-in-out">
-              <div className="font-bold">{title}</div>
-              <div className="opacity-60 text-sm">{description}</div>
-            </div>
-          </div>
-        </div>
-        <Image
-          alt={title}
-          className="object-cover w-full  group-hover:scale-110 transition duration-300 ease-in-out"
-          src={imgSrc}
-          width={300}
-          height={500}
-        />
-      </Link>
-    );
+const ToolsCard = ({ title, description, url }) => {
+  // Map tool names to icons
+  const getIcon = (name) => {
+    switch (name.toLowerCase()) {
+      case "ip checker":
+        return <Globe className="w-10 h-10 text-blue-500" strokeWidth={1.8} />;
+      case "ip lookup":
+        return <Search className="w-10 h-10 text-green-500" strokeWidth={1.8} />;
+      case "dns propagation checker":
+      case "dns checker":
+        return <Server className="w-10 h-10 text-purple-500" strokeWidth={1.8} />;
+      default:
+        return <Globe className="w-10 h-10 text-gray-400" strokeWidth={1.8} />;
+    }
   };
-  
-  export default ToolsCard;
-  
+
+  return (
+    <Link
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      prefetch={false}
+      className="group flex flex-col items-center justify-start rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-out p-6 text-center"
+      aria-label={title}
+    >
+      {/* Icon */}
+      <div className="w-16 h-16 mb-4 flex items-center justify-center rounded-full bg-gray-50 border border-gray-100 group-hover:border-blue-400 transition-all duration-300">
+        {getIcon(title)}
+      </div>
+
+      {/* Title */}
+      <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">
+        {description}
+      </p>
+
+      {/* Hover CTA */}
+      <div className="opacity-0 group-hover:opacity-100 mt-3 transition-opacity duration-300">
+        <span className="text-blue-600 text-sm font-medium">Open Tool →</span>
+      </div>
+    </Link>
+  );
+};
+
+export default ToolsCard;

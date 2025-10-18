@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from '@/public/logo.png';
+import logo from '@/public/brandora-lab-logo.png';
 
 const Footer = () => {
     return (
@@ -27,7 +27,7 @@ const Footer = () => {
                      src={logo}
                       alt="brandoralab logo"
                       className="h-10 w-auto"
-                      width={100}
+                      width={160}
                       height={100}
                       loading="lazy"
                       />

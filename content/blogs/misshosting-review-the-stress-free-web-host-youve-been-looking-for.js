@@ -1,5 +1,6 @@
 // content/blogs/misshosting-review-the-stress-free-web-host-youve-been-looking-for.js
 import React from "react";
+import Link from "next/link"
 import CTA from "@/components/Cta";
 import SEO from "@/components/SEO";
 import HostInfoBox from "@/components/HostInfoBox";
