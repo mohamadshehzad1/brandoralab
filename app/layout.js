@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SchemaMarkup from "@/components/SchemaMarkup"; // ← ADD THIS IMPORT
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const inter = Inter({ subsets: ["latin"] });
 
