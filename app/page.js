@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 
 // Critical components for initial load
-import Header from '@/components/Header';
+import Header from '../components/Header';
 import Hero from '@/components/Hero';
 import CategoriesGrid from '@/components/CategoriesGrid'; // 
 import Tutorials from '@/components/Tutorials'; 
