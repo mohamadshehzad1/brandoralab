@@ -10,6 +10,10 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ToolUniqueFeatures from './components/ToolUniqueFeatures';
+import BenefitsSection from "./components/BenefitsSection";
+import HowItWorks from "./components/HowItWorks";
+import FAQSection from "./components/FAQSection";
+import CallToActionSection from "./components/CallToActionSection";
 
 export default function ImageCompressorPage() {
   const [originalImage, setOriginalImage] = useState(null);
@@ -444,167 +448,8 @@ export default function ImageCompressorPage() {
           </section>
 
           <ToolUniqueFeatures />
-
-          {/* 📊 BENEFITS SECTION */}
-          <section className="max-w-6xl mx-auto mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Why Image Compression is Essential for Your Website
-              </h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Optimized images are crucial for SEO, user experience, and website performance. 
-                Here's how our image compressor helps you achieve better results:
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <BarChart3 className="w-8 h-8 text-blue-600" />,
-                  title: "Boost SEO Rankings",
-                  description: "Google prioritizes fast-loading websites. Compressed images improve page speed scores, directly impacting your search engine rankings and visibility."
-                },
-                {
-                  icon: <Clock className="w-8 h-8 text-green-600" />,
-                  title: "Faster Loading Times",
-                  description: "Reduce bounce rates by delivering content instantly. Every second of load time reduction can increase conversions by up to 7%."
-                },
-                {
-                  icon: <Globe className="w-8 h-8 text-purple-600" />,
-                  title: "Better User Experience",
-                  description: "Mobile users on slow connections will appreciate fast-loading images. Improve engagement and reduce abandonment rates."
-                },
-                {
-                  icon: <Server className="w-8 h-8 text-orange-600" />,
-                  title: "Reduce Bandwidth Costs",
-                  description: "Smaller images mean less server load and bandwidth usage, saving money on hosting and CDN services."
-                },
-                {
-                  icon: <Image className="w-8 h-8 text-red-600" />,
-                  title: "Maintain Visual Quality",
-                  description: "Our advanced algorithms preserve image quality while significantly reducing file size. No visible loss in clarity or detail."
-                },
-                {
-                  icon: <Users className="w-8 h-8 text-teal-600" />,
-                  title: "Mobile Optimization",
-                  description: "With mobile-first indexing, optimized images are essential for ranking well in mobile search results and providing smooth experiences."
-                }
-              ].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200"
-                >
-                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-          {/* 🔧 HOW IT WORKS SECTION */}
-          <section className="max-w-6xl mx-auto mb-20 bg-white rounded-2xl shadow-lg border border-gray-200 p-8 md:p-12">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                How Our Image Compression Technology Works
-              </h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Understanding the technical process behind our advanced image optimization
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                {
-                  step: "1",
-                  title: "Upload & Analyze",
-                  description: "Our system analyzes your image's metadata, color profile, and compression potential"
-                },
-                {
-                  step: "2",
-                  title: "Smart Optimization",
-                  description: "AI algorithms identify optimal compression settings while preserving visual quality"
-                },
-                {
-                  step: "3",
-                  title: "Format Selection",
-                  description: "Automatic format optimization (WebP, JPEG, PNG) based on content type"
-                },
-                {
-                  step: "4",
-                  title: "Quality Assurance",
-                  description: "Final quality check ensures no visible degradation before download"
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mb-4 mx-auto">
-                    {step.step}
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-gray-600 text-sm">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* 🎯 TARGET AUDIENCE SECTION */}
-          <section className="max-w-6xl mx-auto mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Who Uses Our Image Compressor?
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Professionals across industries rely on our tool for their image optimization needs
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: "Web Developers",
-                  description: "Optimize website assets for better performance scores and Core Web Vitals"
-                },
-                {
-                  title: "SEO Specialists",
-                  description: "Improve page speed metrics and search engine rankings with optimized images"
-                },
-                {
-                  title: "Content Creators",
-                  description: "Reduce file sizes for blogs, social media, and digital publications"
-                },
-                {
-                  title: "E-commerce Stores",
-                  description: "Speed up product pages and improve conversion rates with fast-loading images"
-                },
-                {
-                  title: "Digital Marketers",
-                  description: "Create faster-loading ads and landing pages for better campaign performance"
-                },
-                {
-                  title: "Photographers",
-                  description: "Prepare images for online portfolios and client deliveries with optimal file sizes"
-                },
-                {
-                  title: "Bloggers",
-                  description: "Maintain visual quality while ensuring fast page loads for better reader experience"
-                },
-                {
-                  title: "Agency Teams",
-                  description: "Streamline client workflows with batch-ready image optimization tools"
-                }
-              ].map((audience, index) => (
-                <div key={index} className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">{audience.title}</h3>
-                  <p className="text-gray-600 text-sm">{audience.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <BenefitsSection />
+          <HowItWorks />
 
           {/* 💻 PROFESSIONAL TECHNICAL SPECIFICATIONS */}
           <section className="max-w-6xl mx-auto mb-20">
@@ -835,86 +680,9 @@ export default function ImageCompressorPage() {
               </div>
             </div>
           </section>
-
-          {/* ❓ FAQ SECTION */}
-          <section className="max-w-4xl mx-auto mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-gray-600 text-lg">
-                Everything you need to know about image compression and optimization
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  question: "Is this image compressor completely free to use?",
-                  answer: "Yes, our online image compressor is 100% free with no hidden costs, usage limits, or watermarks. You can compress unlimited images without registration."
-                },
-                {
-                  question: "How does image compression affect SEO?",
-                  answer: "Image compression significantly improves SEO by reducing page load times, which is a direct ranking factor for Google. Faster loading pages also reduce bounce rates and improve user experience metrics that search engines track."
-                },
-                {
-                  question: "Will my images be stored on your servers?",
-                  answer: "No, all image processing happens locally in your browser. Your files never leave your device, ensuring complete privacy and security. We don't have access to your images at any point."
-                },
-                {
-                  question: "What's the maximum file size I can compress?",
-                  answer: "There are no file size limitations. Our browser-based compression technology can handle images of any size, from small icons to high-resolution photographs and professional photography files."
-                },
-                {
-                  question: "Which image formats give the best compression results?",
-                  answer: "WebP typically offers the best compression ratios while maintaining quality. For photographs, optimized JPEG provides excellent results. PNG is best for graphics with transparency. Our tool automatically selects the optimal format."
-                },
-                {
-                  question: "How much can I expect to reduce image file sizes?",
-                  answer: "Most images can be reduced by 60-80% without noticeable quality loss. The exact compression ratio depends on the original image quality, format, and content type. Complex photographs typically achieve higher compression rates."
-                },
-                {
-                  question: "Does image compression work on mobile devices?",
-                  answer: "Yes, our image compressor is fully responsive and works perfectly on all mobile devices, tablets, and desktop computers. The interface is optimized for touch screens and mobile browsers."
-                },
-                {
-                  question: "Can I compress multiple images at once?",
-                  answer: "Currently, we support single-image compression for optimal quality control. For batch processing, you can quickly compress multiple images sequentially with our fast processing technology."
-                }
-              ].map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-200"
-                >
-                  <h3 className="font-semibold text-gray-900 mb-3 text-lg">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
-          {/* 🚀 FINAL CTA SECTION */}
-          <section className="max-w-4xl mx-auto text-center mb-20">
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-white">
-              <h2 className="text-3xl font-bold mb-4">
-                Ready to Optimize Your Images?
-              </h2>
-              <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
-                Start compressing your images now and experience faster websites, better SEO rankings, and improved user engagement.
-              </p>
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-lg"
-              >
-                Compress Your First Image Now
-              </button>
-            </div>
-          </section>
+          <FAQSection />
+          <CallToActionSection />
         </main>
-
         <Footer />
       </div>
     </>
