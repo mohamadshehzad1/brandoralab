@@ -10,7 +10,7 @@ export async function POST(req) {
       return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
 
-    // Validate file type
+    // ✅ Validate file type
     const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
     if (!allowedTypes.includes(file.type)) {
       return NextResponse.json({ 
@@ -18,22 +18,22 @@ export async function POST(req) {
       }, { status: 400 });
     }
 
-    // Validate file size (10MB limit)
-    const maxSize = 10 * 1024 * 1024; // 10MB
+    // ✅ Validate file size (10MB)
+    const maxSize = 10 * 1024 * 1024;
     if (file.size > maxSize) {
       return NextResponse.json({ 
         error: "File size too large. Please upload images smaller than 10MB." 
       }, { status: 400 });
     }
 
-    // Convert the uploaded file into a Buffer
+    // ✅ Convert uploaded file to Buffer
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    // Create FormData for sending to reSmush.it
+    // ✅ Create proper FormData for reSmush.it
     const uploadForm = new FormData();
-    uploadForm.append("files", new Blob([buffer]), file.name);
+    uploadForm.append("files", new File([buffer], file.name, { type: file.type }));
 
-    // Make POST request to reSmush.it API
+    // ✅ Send to reSmush.it (secure HTTPS)
     const response = await fetch("https://api.resmush.it/?qlty=80", {
       method: "POST",
       body: uploadForm,
@@ -45,20 +45,25 @@ export async function POST(req) {
 
     const result = await response.json();
 
-    // Handle reSmush.it errors
     if (result.error) {
       return NextResponse.json({ 
         error: result.error_long || result.error || "Compression failed" 
       }, { status: 400 });
     }
 
+    // ✅ Force HTTPS for image URLs to avoid Mixed Content
+    let optimizedImage = result.dest;
+    if (optimizedImage && optimizedImage.startsWith("http://")) {
+      optimizedImage = optimizedImage.replace("http://", "https://");
+    }
+
     return NextResponse.json({
       originalSize: result.src_size,
       compressedSize: result.dest_size,
       percent: result.percent,
-      optimizedImage: result.dest,
+      optimizedImage,
       fileName: file.name,
-      fileType: file.type
+      fileType: file.type,
     });
   } catch (err) {
     console.error("Image compression failed:", err);
