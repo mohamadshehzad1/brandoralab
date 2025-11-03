@@ -7,8 +7,9 @@ import {
   Search,
   Network,
   Rocket,
-  Sparkles
-} from "lucide-react"; // Lucide icons
+  Sparkles,
+  Image
+} from "lucide-react"; // Added Image icon
 
 const ToolsPage = () => {
   const cardsData = [
@@ -19,6 +20,15 @@ const ToolsPage = () => {
         "Find your perfect web hosting match with our AI-powered quiz. Get personalized recommendations based on your needs, budget, and technical level.",
       url: "https://brandoralab.com/free-tools/hosting-recommender/",
       bg: "from-purple-500 to-pink-500",
+      featured: true
+    },
+    {
+      icon: <Image className="w-8 h-8 text-white" />,
+      title: "AI Image Compressor",
+      description:
+        "Compress JPG, PNG, WebP & GIF images instantly with AI. Reduce file size by up to 80% without quality loss. Perfect for SEO & faster websites.",
+      url: "https://brandoralab.com/free-tools/image-compressor/",
+      bg: "from-cyan-500 to-blue-500",
       featured: true
     },
     {
@@ -53,7 +63,7 @@ const ToolsPage = () => {
     "@type": "ItemList",
     name: "Free Online Tools by BrandoraLab",
     description:
-      "Access free online tools including AI Hosting Recommender, IP Checker, IP Lookup, and DNS Propagation Checker to analyze and troubleshoot web infrastructure.",
+      "Access free online tools including AI Hosting Recommender, AI Image Compressor, IP Checker, IP Lookup, and DNS Propagation Checker to analyze and troubleshoot web infrastructure.",
     url: "https://brandoralab.com/free-tools",
     itemListElement: cardsData.map((card, index) => ({
       "@type": "ListItem",
@@ -100,6 +110,14 @@ const ToolsPage = () => {
           text: "Our AI Hosting Recommender is an intelligent quiz that analyzes your website needs, budget, and technical requirements to recommend the perfect hosting provider from 30+ options.",
         },
       },
+      {
+        "@type": "Question",
+        name: "How does the AI Image Compressor work?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our AI Image Compressor uses advanced algorithms to reduce image file sizes by up to 80% without visible quality loss, processing everything locally in your browser for maximum privacy and security.",
+        },
+      },
     ],
   };
 
@@ -125,16 +143,16 @@ const ToolsPage = () => {
   return (
     <>
       <Head>
-        <title>Free Online Tools - AI Hosting Recommender, IP & DNS Tools | BrandoraLab</title>
+        <title>Free Online Tools - AI Hosting Recommender, Image Compressor, IP & DNS Tools | BrandoraLab</title>
         <meta
           name="description"
-          content="Use BrandoraLab's free online tools — AI Hosting Recommender, IP Checker, IP Lookup, and DNS Propagation Checker. Trusted by developers, SEO experts, and network admins worldwide."
+          content="Use BrandoraLab's free online tools — AI Hosting Recommender, AI Image Compressor, IP Checker, IP Lookup, and DNS Propagation Checker. Trusted by developers, SEO experts, and network admins worldwide."
         />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Free Online Tools - AI Hosting Recommender, IP & DNS Tools | BrandoraLab" />
+        <meta property="og:title" content="Free Online Tools - AI Hosting Recommender, Image Compressor, IP & DNS Tools | BrandoraLab" />
         <meta
           property="og:description"
-          content="Free online tools from BrandoraLab: AI Hosting Recommender, IP Checker, IP Lookup, and DNS Propagation Checker for fast and accurate diagnostics."
+          content="Free online tools from BrandoraLab: AI Hosting Recommender, AI Image Compressor, IP Checker, IP Lookup, and DNS Propagation Checker for fast and accurate diagnostics."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://brandoralab.com/free-tools" />
@@ -180,7 +198,7 @@ const ToolsPage = () => {
       <section className="text-center max-w-4xl mx-auto px-6 mb-12">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
           <Sparkles className="w-4 h-4" />
-          New: AI Hosting Recommender
+          New: AI Hosting Recommender & AI Image Compressor
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Free Online Tools by BrandoraLab
@@ -191,28 +209,47 @@ const ToolsPage = () => {
         </p>
       </section>
 
-      {/* Featured Tool Banner */}
+      {/* Featured Tools Banner */}
       <section className="max-w-6xl mx-auto px-6 mb-8">
-        <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-6 text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">
-            🚀 Try Our New AI Hosting Recommender
-          </h2>
-          <p className="text-gray-700 mb-4 max-w-2xl mx-auto">
-            Take our 2-minute AI-powered quiz to find your perfect hosting match from 30+ providers. 
-            Get personalized recommendations based on your specific needs.
-          </p>
-          <Link
-            href="https://brandoralab.com/free-tools/hosting-recommender/"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
-          >
-            <Rocket className="w-5 h-5" />
-            Start AI Quiz
-          </Link>
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* AI Hosting Recommender Banner */}
+          <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-6 text-center">
+            <h2 className="text-xl font-bold text-gray-900 mb-3">
+              🚀 Try Our AI Hosting Recommender
+            </h2>
+            <p className="text-gray-700 mb-4 text-sm">
+              Take our 2-minute AI-powered quiz to find your perfect hosting match from 30+ providers.
+            </p>
+            <Link
+              href="https://brandoralab.com/free-tools/hosting-recommender/"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 text-sm"
+            >
+              <Rocket className="w-4 h-4" />
+              Start AI Quiz
+            </Link>
+          </div>
+
+          {/* AI Image Compressor Banner */}
+          <div className="bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-2xl p-6 text-center">
+            <h2 className="text-xl font-bold text-gray-900 mb-3">
+              🖼️ New AI Image Compressor
+            </h2>
+            <p className="text-gray-700 mb-4 text-sm">
+              Compress images by up to 80% without quality loss. Perfect for SEO and faster websites.
+            </p>
+            <Link
+              href="https://brandoralab.com/free-tools/image-compressor/"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 text-sm"
+            >
+              <Image className="w-4 h-4" />
+              Compress Images
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Tools Cards */}
-      <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 px-6 mb-20">
+      <section className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 px-6 mb-20">
         {cardsData.map((card, index) => (
           <Link
             key={index}
@@ -256,13 +293,20 @@ const ToolsPage = () => {
           <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
             Tool Categories
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Rocket className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Rocket className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="font-semibold text-gray-800 mb-2">AI & Hosting Tools</h3>
               <p className="text-gray-600 text-sm">Smart tools for hosting selection and optimization</p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-xl shadow-sm">
+              <div className="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Image className="w-6 h-6 text-cyan-600" />
+              </div>
+              <h3 className="font-semibold text-gray-800 mb-2">Image Optimization</h3>
+              <p className="text-gray-600 text-sm">AI-powered image compression and optimization</p>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-sm">
               <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -272,8 +316,8 @@ const ToolsPage = () => {
               <p className="text-gray-600 text-sm">IP analysis and network diagnostics</p>
             </div>
             <div className="text-center p-6 bg-white rounded-xl shadow-sm">
-              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Network className="w-6 h-6 text-purple-600" />
+              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Network className="w-6 h-6 text-orange-600" />
               </div>
               <h3 className="font-semibold text-gray-800 mb-2">DNS Tools</h3>
               <p className="text-gray-600 text-sm">Domain and DNS management utilities</p>
