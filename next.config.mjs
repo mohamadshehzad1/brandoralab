@@ -5,9 +5,6 @@ const nextConfig = {
     unoptimized: false,
     domains: [
       'res.cloudinary.com',
-      'hel1.static.resmush.it',
-      'hel2.static.resmush.it',
-      'api.resmush.it',
     ],
   },
 };
