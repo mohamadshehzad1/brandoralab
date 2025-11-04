@@ -2,13 +2,13 @@
 import React from "react"
 import Link from "next/link"
 
-const JetHostingVsMissHostingContent = () => {
+const JetHostVsMissHostingContent = () => {
   return (
     <main>
       {/* Cover Section with Breadcrumbs */}
       <section className="relative w-full h-48 sm:h-72 md:h-96 bg-gray-900">
   <img
-    src="https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/jethosting-vs-misshosting_yaml26.avif"
+    src="https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/JetHost-vs-misshosting_yaml26.avif"
     alt="Jet Hosting vs Miss Hosting 2025 cover image with comparison graphic"
     className="absolute inset-0 w-full h-full object-cover opacity-70"
   />
@@ -284,7 +284,7 @@ const jetVsMissHosting = {
   description:
     "Jet Hosting vs Miss Hosting — full hands-on comparison of speed, uptime, pricing, and support to help you choose the right host in 2024.",
   imageUrl:
-    "https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/jethosting-vs-misshosting_yaml26.avif",
+    "https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/JetHost-vs-misshosting_yaml26.avif",
   keywords: [
     "jet vs miss hosting",
     "jet hosting vs miss hosting",
@@ -297,7 +297,7 @@ const jetVsMissHosting = {
     "miss hosting customer service",
     "does jet hosting have free migration",
   ],
-  content: JetHostingVsMissHostingContent,
+  content: JetHostVsMissHostingContent,
 }
 
-export default jetVsMissHosting
+export default JetVsMissHosting

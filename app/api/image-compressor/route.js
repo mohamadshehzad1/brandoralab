@@ -1,12 +1,6 @@
 // app/api/image-compressor/route.js
 import { NextResponse } from "next/server";
 
-const ALLOWED_UPSTREAM_HOSTS = new Set([
-  "hel1.static.resmush.it",
-  "hel2.static.resmush.it",
-  "res.cloudinary.com",
-]);
-
 export async function POST(req) {
   try {
     const formData = await req.formData();
@@ -16,72 +10,77 @@ export async function POST(req) {
       return NextResponse.json({ error: "No file uploaded" }, { status: 400 });
     }
 
-    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp', 'image/gif'];
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     if (!allowedTypes.includes(file.type)) {
-      return NextResponse.json({ error: "Unsupported file type." }, { status: 400 });
+      return NextResponse.json({ error: "Unsupported file type. Only JPEG, PNG, and WebP are supported." }, { status: 400 });
     }
 
-    const maxSize = 10 * 1024 * 1024;
+    const maxSize = 10 * 1024 * 1024; // 10MB
     if (file.size > maxSize) {
-      return NextResponse.json({ error: "File size too large (<10MB)." }, { status: 400 });
+      return NextResponse.json({ error: "File size too large (max 10MB)." }, { status: 400 });
     }
 
-    // Convert to Buffer, then construct a proper File for FormData (server env)
-    const buffer = Buffer.from(await file.arrayBuffer());
-    const uploadForm = new FormData();
-    uploadForm.append("files", new File([buffer], file.name, { type: file.type }));
-
-    // Send to reSmush.it via HTTPS
-    const response = await fetch("https://api.resmush.it/?qlty=80", {
-      method: "POST",
-      body: uploadForm,
+    // Convert file to buffer
+    const buffer = await file.arrayBuffer();
+    
+    // TinyPNG API endpoint
+    const response = await fetch('https://api.tinify.com/shrink', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Basic ${Buffer.from(`api:${process.env.TINYPNG_API_KEY || 'Ccjkr5zJDdDwsW968KNnByFYQwJShgrf'}`).toString('base64')}`,
+        'Content-Type': 'application/octet-stream',
+      },
+      body: buffer,
     });
 
     if (!response.ok) {
-      throw new Error(`Compression API responded with status: ${response.status}`);
-    }
-
-    const result = await response.json();
-    if (result.error) {
-      return NextResponse.json({ error: result.error_long || result.error || "Compression failed" }, { status: 400 });
-    }
-
-    // Determine optimized image URL and convert to a proxied URL if upstream host is allowed
-    let optimizedImage = result.dest; // upstream URL, possibly http or https
-
-    // Normalize to https if upstream returns http
-    if (optimizedImage && optimizedImage.startsWith("http://")) {
-      optimizedImage = optimizedImage.replace(/^http:\/\//i, "https://");
-    }
-
-    // If upstream host is one we expect, transform into a proxied path on our domain:
-    const match = optimizedImage && optimizedImage.match(/^https?:\/\/([^/]+)\/(.*)$/i);
-    if (match) {
-      const upstreamHost = match[1];
-      const upstreamPath = match[2];
-
-      if (ALLOWED_UPSTREAM_HOSTS.has(upstreamHost)) {
-        // Build proxied URL using your public site origin (NEXT_PUBLIC_SITE_URL)
-        const origin = process.env.NEXT_PUBLIC_SITE_URL || "https://brandoralab.com";
-        // Ensure we do NOT double-encode. We'll encode path segments.
-        const encodedPath = upstreamPath.split("/").map(encodeURIComponent).join("/");
-        optimizedImage = `${origin.replace(/\/$/,'')}/api/proxy/${upstreamHost}/${encodedPath}`;
+      const error = await response.json();
+      console.error('TinyPNG API error:', error);
+      
+      if (response.status === 401) {
+        return NextResponse.json({ error: "Invalid API key" }, { status: 500 });
+      } else if (response.status === 429) {
+        return NextResponse.json({ error: "API limit exceeded" }, { status: 500 });
       } else {
-        // If not allowed, keep original but convert to https (best-effort)
-        optimizedImage = optimizedImage;
+        return NextResponse.json({ 
+          error: error.message || "Compression failed" 
+        }, { status: 500 });
       }
     }
 
-    return NextResponse.json({
-      originalSize: result.src_size,
-      compressedSize: result.dest_size,
-      percent: result.percent,
-      optimizedImage,
-      fileName: file.name,
-      fileType: file.type,
+    const result = await response.json();
+    
+    // Download the compressed image
+    const downloadResponse = await fetch(result.output.url, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Basic ${Buffer.from(`api:${process.env.TINYPNG_API_KEY || 'Ccjkr5zJDdDwsW968KNnByFYQwJShgrf'}`).toString('base64')}`,
+      },
     });
+
+    if (!downloadResponse.ok) {
+      throw new Error('Failed to download compressed image');
+    }
+
+    // Convert compressed image to base64 for easy display
+    const compressedBuffer = await downloadResponse.arrayBuffer();
+    const base64Image = Buffer.from(compressedBuffer).toString('base64');
+    const dataUrl = `data:${downloadResponse.headers.get('content-type')};base64,${base64Image}`;
+
+    return NextResponse.json({
+      originalSize: result.input.size,
+      compressedSize: result.output.size,
+      percent: Math.round((1 - result.output.size / result.input.size) * 100),
+      optimizedImage: dataUrl, // Using base64 data URL instead of proxy
+      fileName: file.name,
+      fileType: downloadResponse.headers.get('content-type') || file.type,
+      downloadUrl: result.output.url, // Keep the download URL for reference
+    });
+
   } catch (err) {
     console.error("Image compression failed:", err);
-    return NextResponse.json({ error: "Compression service temporarily unavailable." }, { status: 500 });
+    return NextResponse.json({ 
+      error: "Compression service temporarily unavailable. Please try again." 
+    }, { status: 500 });
   }
 }

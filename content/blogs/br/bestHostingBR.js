@@ -64,7 +64,7 @@ const bestHostingBR = {
   author: "BrandoraLab",
   date: "29 de Setembro de 2025",
   description:
-    "Quer começar um blog em 2025? Descubra as melhores opções de hospedagem de sites baratas e confiáveis para iniciantes: InMotion, MissHosting, GreenGeeks, JetHosting e VeeroTech.",
+    "Quer começar um blog em 2025? Descubra as melhores opções de hospedagem de sites baratas e confiáveis para iniciantes: InMotion, MissHosting, GreenGeeks, JetHost e VeeroTech.",
   imageUrl:
     "https://res.cloudinary.com/dpgspconw/image/upload/v1759154339/web-hosting-for-bloggers_cbnl6u.avif",
   keywords: [

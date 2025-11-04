@@ -91,12 +91,8 @@ export default function ImageCompressorPage() {
         throw new Error(result.error || "Compression failed");
       }
 
-      // Fetch the compressed image
-      const imageResponse = await fetch(result.optimizedImage);
-      const blob = await imageResponse.blob();
-      const compressedUrl = URL.createObjectURL(blob);
-      
-      setCompressedImage(compressedUrl);
+      // ✅ Use the base64 data URL directly - no need to fetch again!
+      setCompressedImage(result.optimizedImage);
       setCompressionRatio(result.percent);
 
       // Scroll to output section after a brief delay to allow state update
@@ -113,6 +109,18 @@ export default function ImageCompressorPage() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleDownload = () => {
+    if (!compressedImage) return;
+    
+    // Create a temporary anchor element to download the base64 image
+    const link = document.createElement('a');
+    link.href = compressedImage;
+    link.download = `optimized-${originalImage.name}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const formatFileSize = (bytes) => {
@@ -406,14 +414,13 @@ export default function ImageCompressorPage() {
                     transition={{ delay: 0.3 }}
                     className="text-center"
                   >
-                    <a
-                      href={compressedImage}
-                      download={`optimized-${originalImage.name}`}
+                    <button
+                      onClick={handleDownload}
                       className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
                     >
                       <Download className="w-5 h-5" />
                       Download Optimized Image
-                    </a>
+                    </button>
                   </motion.div>
 
                   {/* Compression Stats */}
