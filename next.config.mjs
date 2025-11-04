@@ -2,10 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    unoptimized: false,
-    domains: [
-      'res.cloudinary.com',
-    ],
+    unoptimized: true, 
+    domains: ['res.cloudinary.com'],
   },
 };
 
