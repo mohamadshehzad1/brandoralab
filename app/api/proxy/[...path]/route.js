@@ -1,11 +1,6 @@
 // app/api/proxy/[...path]/route.js
 import { NextResponse } from "next/server";
 
-/**
- * Secure proxy to load external images (avoids mixed-content & SSL issues)
- * Handles over-encoded paths like %2520 gracefully.
- */
-
 const ALLOWED_HOSTS = new Set([
   "hel1.static.resmush.it",
   "hel2.static.resmush.it",
@@ -26,43 +21,57 @@ export async function GET(req, { params }) {
       return NextResponse.json({ error: "Host not allowed" }, { status: 403 });
     }
 
-    // ✅ Decode fully once — fix %2520 -> %20 — and do NOT re-encode.
-    const decodedPath = rest
-      .map((p) => {
-        try {
-          return decodeURIComponent(p);
-        } catch {
-          return p;
-        }
-      })
-      .join("/");
-
-    // ✅ Build final URL using decoded path
-    const upstreamUrl = `https://${host}/${decodedPath}`;
+    // ✅ Build URL with original encoding (don't decode)
+    const encodedPath = rest.join("/");
+    const upstreamUrl = `https://${host}/${encodedPath}`;
+    
     console.log("🔗 Fetching upstream:", upstreamUrl);
 
     const upstreamRes = await fetch(upstreamUrl, {
       method: "GET",
-      headers: { Accept: "image/*,application/octet-stream,*/*" },
+      headers: { 
+        "Accept": "image/*,application/octet-stream,*/*",
+        "User-Agent": "Mozilla/5.0 (compatible; BrandoraBot/1.0)"
+      },
     });
 
     if (!upstreamRes.ok) {
       console.error(
-        `❌ Upstream failed: ${upstreamRes.status} ${upstreamRes.statusText} (${upstreamUrl})`
+        `❌ Upstream failed: ${upstreamRes.status} ${upstreamRes.statusText}`,
+        `URL: ${upstreamUrl}`
       );
+      
+      // Try to get error details from upstream
+      let errorDetails = "";
+      try {
+        const errorText = await upstreamRes.text();
+        errorDetails = errorText.substring(0, 200); // Limit length
+      } catch (e) {
+        errorDetails = "Could not read error response";
+      }
+      
       return NextResponse.json(
-        { error: "Upstream image not found", status: upstreamRes.status },
+        { 
+          error: "Upstream image not found", 
+          status: upstreamRes.status,
+          details: errorDetails,
+          url: upstreamUrl 
+        },
         { status: upstreamRes.status }
       );
     }
 
-    const arrayBuffer = await upstreamRes.arrayBuffer();
+    // Get the content type and buffer
     const contentType = upstreamRes.headers.get("content-type") || "image/jpeg";
+    const arrayBuffer = await upstreamRes.arrayBuffer();
 
+    // Return the image
     return new NextResponse(arrayBuffer, {
+      status: 200,
       headers: {
         "Content-Type": contentType,
-        "Cache-Control": "public, max-age=0, s-maxage=86400, stale-while-revalidate=86400",
+        "Cache-Control": "public, max-age=31536000, immutable", // Cache for longer
+        "Access-Control-Allow-Origin": "*",
       },
     });
   } catch (err) {
