@@ -35,8 +35,8 @@ export default function SchemaMarkup() {
       ],
       "priceRange": "$$",
       "sameAs": [
-        "https://www.facebook.com/thestockit/",
-        "https://pk.linkedin.com/company/the-stockit"
+        "https://www.facebook.com/brandoralab/",
+        "https://pk.linkedin.com/company/brandoralab",
       ]
     };
   

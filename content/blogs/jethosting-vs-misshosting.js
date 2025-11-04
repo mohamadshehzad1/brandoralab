@@ -8,9 +8,9 @@ const JetHostVsMissHostingContent = () => {
       {/* Cover Section with Breadcrumbs */}
       <section className="relative w-full h-48 sm:h-72 md:h-96 bg-gray-900">
   <img
-    src="https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/JetHost-vs-misshosting_yaml26.avif"
+    src="https://res.cloudinary.com/dpgspconw/image/upload/v1762269121/jethost-vs-misshosting_ip2pdv.avif"
     alt="Jet Hosting vs Miss Hosting 2025 cover image with comparison graphic"
-    className="absolute inset-0 w-full h-full object-cover opacity-70"
+    className="absolute inset-0 w-full h-auto object-cover"
   />
 </section>
 
@@ -278,13 +278,13 @@ const JetHostVsMissHostingContent = () => {
 /* Blog metadata + exported object */
 const jetVsMissHosting = {
   slug: "jet-web-hosting-vs-misshosting",
-  title: "Jet Web Hosting vs Miss Hosting (2025): An Honest, Hands-On Comparison",
+  title: "Jet Web Hosting vs Miss Hosting: An Honest, Hands-On Comparison",
   author: "John Doe",
-  date: "September 18, 2024",
+  date: "November 10, 2025",
   description:
     "Jet Hosting vs Miss Hosting — full hands-on comparison of speed, uptime, pricing, and support to help you choose the right host in 2024.",
   imageUrl:
-    "https://res.cloudinary.com/dpgspconw/image/upload/v1758032626/JetHost-vs-misshosting_yaml26.avif",
+    "https://res.cloudinary.com/dpgspconw/image/upload/v1762269121/jethost-vs-misshosting_ip2pdv.avif",
   keywords: [
     "jet vs miss hosting",
     "jet hosting vs miss hosting",
@@ -300,4 +300,4 @@ const jetVsMissHosting = {
   content: JetHostVsMissHostingContent,
 }
 
-export default JetVsMissHosting
+export default jetVsMissHosting

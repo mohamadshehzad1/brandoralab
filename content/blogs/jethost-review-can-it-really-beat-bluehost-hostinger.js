@@ -20,7 +20,7 @@ const JetHostReviewContent = () => {
       </section>
 
       {/* Blog Content */}
-      <section className="container mx-auto px-5 md:px-0 max-w-3xl py-10 font-serif leading-relaxed text-lg text-gray-800 space-y-8">
+      <section className="container mx-auto px-5 md:px-0 max-w-5xl py-10 font-serif leading-relaxed text-lg text-gray-800 space-y-8">
         <p>
           Web hosting is one of the most crowded and competitive industries online. From budget providers to premium enterprise solutions,
           every company promises fast performance, bulletproof security, and stellar support. But how do you separate marketing hype

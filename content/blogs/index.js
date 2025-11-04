@@ -12,6 +12,7 @@ import a2hostingReview from './a2-hosting-review-turbo-speed-tested'
 import dreamhostReview from './dreamhost-review'
 import scalahostingReview from './scalahosting-review'
 import accuwebHostingReview from './accuweb-hosting-review'
+import JetHostVsMissHosting from './jethosting-vs-misshosting'
 // later: import more blogs here (like payment-gateway.js, themes.js, etc)
 
 export const blogData = [
@@ -29,6 +30,6 @@ export const blogData = [
   dreamhostReview,
   scalahostingReview,
   accuwebHostingReview,
-
+  JetHostVsMissHosting,
   // more blogs here
 ]
