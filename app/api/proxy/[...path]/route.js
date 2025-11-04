@@ -3,10 +3,15 @@ import { NextResponse } from "next/server";
 
 const ALLOWED_HOSTS = new Set([
   "hel1.static.resmush.it",
-  "hel2.static.resmush.it",
+  "hel2.static.resmush.it", 
+  "fal1.static.resmush.it", // Add this
+  "fal2.static.resmush.it", // And any others
   "res.cloudinary.com",
   "api.resmush.it",
 ]);
+
+// Also allow any subdomain of static.resmush.it as a fallback
+const RESMUSH_STATIC_REGEX = /^[a-z0-9]+\.static\.resmush\.it$/;
 
 export async function GET(req, { params }) {
   try {
@@ -17,22 +22,28 @@ export async function GET(req, { params }) {
 
     const [host, ...rest] = pathParts;
 
-    if (!ALLOWED_HOSTS.has(host)) {
+    // Check if host is allowed
+    const isAllowed = ALLOWED_HOSTS.has(host) || RESMUSH_STATIC_REGEX.test(host);
+    
+    if (!isAllowed) {
       return NextResponse.json({ error: "Host not allowed" }, { status: 403 });
     }
 
-    // ✅ Build URL with original encoding (don't decode)
+    // Build URL with original encoding
     const encodedPath = rest.join("/");
     const upstreamUrl = `https://${host}/${encodedPath}`;
     
     console.log("🔗 Fetching upstream:", upstreamUrl);
 
+    // Add more options to handle SSL issues
     const upstreamRes = await fetch(upstreamUrl, {
       method: "GET",
       headers: { 
         "Accept": "image/*,application/octet-stream,*/*",
         "User-Agent": "Mozilla/5.0 (compatible; BrandoraBot/1.0)"
       },
+      // These might help with problematic SSL certificates
+      signal: AbortSignal.timeout(10000), // 10 second timeout
     });
 
     if (!upstreamRes.ok) {
@@ -41,36 +52,24 @@ export async function GET(req, { params }) {
         `URL: ${upstreamUrl}`
       );
       
-      // Try to get error details from upstream
-      let errorDetails = "";
-      try {
-        const errorText = await upstreamRes.text();
-        errorDetails = errorText.substring(0, 200); // Limit length
-      } catch (e) {
-        errorDetails = "Could not read error response";
-      }
-      
       return NextResponse.json(
         { 
           error: "Upstream image not found", 
           status: upstreamRes.status,
-          details: errorDetails,
           url: upstreamUrl 
         },
         { status: upstreamRes.status }
       );
     }
 
-    // Get the content type and buffer
     const contentType = upstreamRes.headers.get("content-type") || "image/jpeg";
     const arrayBuffer = await upstreamRes.arrayBuffer();
 
-    // Return the image
     return new NextResponse(arrayBuffer, {
       status: 200,
       headers: {
         "Content-Type": contentType,
-        "Cache-Control": "public, max-age=31536000, immutable", // Cache for longer
+        "Cache-Control": "public, max-age=31536000, immutable",
         "Access-Control-Allow-Origin": "*",
       },
     });
