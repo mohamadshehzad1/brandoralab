@@ -13,6 +13,12 @@ import dreamhostReview from './dreamhost-review'
 import scalahostingReview from './scalahosting-review'
 import accuwebHostingReview from './accuweb-hosting-review'
 import JetHostVsMissHosting from './jethosting-vs-misshosting'
+import crazydomainsReview from './crazydomains-review'
+import greengeeksReview from './greengeeks-review'
+import hostarmadaReview from './hostarmada-review'
+import inmotionReview from './inmotion-hosting-review'
+import webcentralReview from './webcentral-review'
+import hostmetroReview from './hostmetro-web-hosting-review'
 // later: import more blogs here (like payment-gateway.js, themes.js, etc)
 
 export const blogData = [
@@ -31,5 +37,11 @@ export const blogData = [
   scalahostingReview,
   accuwebHostingReview,
   JetHostVsMissHosting,
+  crazydomainsReview,
+  greengeeksReview,
+  hostarmadaReview,
+  inmotionReview,
+  webcentralReview,
+  hostmetroReview,
   // more blogs here
 ]
