@@ -1,4 +1,3 @@
-// content/blogs/greengeeks-review-2025.js
 import React from "react";
 import CTA from "@/components/Cta";
 import SEO from "@/components/SEO";
@@ -42,7 +41,7 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
       "name": "BrandoraLab",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/greengeeks-review-cover.avif"
+        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1765125851/greengeek_web_hosting_review_bnacry.jpg"
       }
     },
     "mainEntityOfPage": {
@@ -64,7 +63,7 @@ const ReviewJsonLd = () => {
   const json = {
     "@context": "https://schema.org",
     "@type": "Review",
-    "headline": "GreenGeeks Review 2025: Eco-Friendly Hosting That Outperforms Traditional Providers",
+    "headline": "GreenGeeks Review: Eco-Friendly Hosting That Outperforms Traditional Providers",
     "author": {
       "@type": "Person",
       "name": "BrandoraLab"
@@ -76,7 +75,7 @@ const ReviewJsonLd = () => {
       "name": "BrandoraLab",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/greengeeks-review-cover.avif"
+        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1765125851/greengeek_web_hosting_review_bnacry.jpg"
       }
     },
     "itemReviewed": {
@@ -103,7 +102,7 @@ const ReviewJsonLd = () => {
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https://brandoralab.com/blogs/greengeeks-review-2025"
+      "@id": "https://brandoralab.com/blogs/greengeeks-review"
     }
   };
 
@@ -136,7 +135,7 @@ const BreadcrumbJsonLd = () => {
         "@type": "ListItem", 
         "position": 3, 
         "name": "GreenGeeks Review 2025", 
-        "item": "https://brandoralab.com/blogs/greengeeks-review-2025" 
+        "item": "https://brandoralab.com/blogs/greengeeks-review" 
       }
     ]
   };
@@ -146,7 +145,7 @@ const BreadcrumbJsonLd = () => {
 };
 
 const GreenGeeksContent = () => {
-  const title = "GreenGeeks Review 2025: Eco-Friendly Hosting That Outperforms Traditional Providers";
+  const title = "GreenGeeks Review: Eco-Friendly Hosting That Outperforms Traditional Providers";
   const published = "December 20, 2025";
   const rating = "9.0";
 
@@ -229,8 +228,8 @@ const GreenGeeksContent = () => {
       <SEO
         title={title}
         description={"9-month testing reveals GreenGeeks delivers 300% carbon-neutral hosting with sub-100ms TTFB, 99.99% uptime, and performance that destroys HostAdvice while saving the planet."}
-        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/greengeeks-review-cover.avif"}
-        url={"https://brandoralab.com/blogs/greengeeks-review-2025"}
+        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1765125851/greengeek_web_hosting_review_bnacry.jpg"}
+        url={"https://brandoralab.com/blogs/greengeeks-review"}
         publishedTime={"2025-12-20"}
         modifiedTime={"2025-12-20"}
       />
@@ -291,7 +290,7 @@ const GreenGeeksContent = () => {
 
         <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
           <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759494859/greengeeks-carbon-neutral.avif"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1765125852/GreenGeek_carbon_f6flxt.jpg"
             alt="GreenGeeks 300% carbon neutral technology explained - renewable energy infrastructure"
             className="w-full h-full object-cover opacity-70"
           />
@@ -343,7 +342,7 @@ const GreenGeeksContent = () => {
 
         <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
           <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759495550/greengeeks-lscache-technology.avif"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1765125853/server-side_optimization_ssrzqy.png"
             alt="GreenGeeks LSCache technology architecture - server-level WordPress optimization"
             className="w-full h-full object-cover opacity-70"
           />
@@ -427,73 +426,281 @@ const GreenGeeksContent = () => {
           sub-2-second load times - remarkable for a host with no physical presence in those regions.
         </p>
 
-        <h2 className="text-2xl font-bold mt-6">🏆 Performance Showdown: GreenGeeks vs HostAdvice</h2>
+<h2 className="text-2xl font-bold mt-6">🏆 Performance Showdown: GreenGeeks vs Bluehost</h2>
 
-        <p>
-          We conducted identical stress tests across GreenGeeks and HostAdvice to provide 
-          definitive performance comparisons. The environmental advantage was just the beginning.
-        </p>
+<p className="mt-4">
+  We conducted identical stress tests across GreenGeeks and Bluehost (one of the world's most popular hosting providers) 
+  to provide definitive performance comparisons. The environmental advantage was just the beginning.
+</p>
 
-        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759496707/greengeeks-vs-hostadvice.avif"
-            alt="GreenGeeks vs HostAdvice performance comparison - speed and environmental impact"
-            className="w-full h-full object-cover opacity-70"
-          />
-        </section>
+<section className="relative w-full aspect-[16/9] md:aspect-[21/9] mt-6">
+  <img
+    src="https://res.cloudinary.com/dpgspconw/image/upload/v1765126595/GreekGeek_Vs_BlueHost_p0ypow.png"
+    alt="GreenGeeks vs Bluehost performance comparison - speed, reliability and environmental impact"
+    className="w-full h-full object-cover rounded-lg"
+  />
+</section>
 
-        <div className="bg-green-50 p-6 rounded-lg border border-green-200 my-6">
-          <h4 className="font-semibold text-green-800 text-lg mb-3">🏆 Performance & Environmental Champion</h4>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div>
-              <div className="text-2xl font-bold text-green-600">85ms</div>
-              <div className="text-xs text-green-500">GreenGeeks TTFB</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-red-600">320ms</div>
-              <div className="text-xs text-red-500">HostAdvice TTFB</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-green-600">-300%</div>
-              <div className="text-xs text-green-500">Carbon Impact</div>
-            </div>
-            <div>
-              <div className="text-2xl font-bold text-red-600">+100%</div>
-              <div className="text-xs text-red-500">HostAdvice Carbon</div>
-            </div>
+<div className="bg-gradient-to-r from-green-50 to-blue-50 p-6 rounded-xl border border-green-200 my-6 shadow-sm">
+  <div className="flex items-center mb-4">
+    <div className="bg-green-100 p-2 rounded-lg mr-3">
+      <span className="text-green-600 text-xl">🏆</span>
+    </div>
+    <div>
+      <h4 className="font-semibold text-green-800 text-lg">Performance & Environmental Champion</h4>
+      <p className="text-sm text-gray-600">Direct comparison with the industry giant</p>
+    </div>
+  </div>
+  
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-medium text-gray-500">TTFB</span>
+        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Winner</span>
+      </div>
+      <div className="text-2xl font-bold text-green-600">85ms</div>
+      <div className="text-xs text-gray-500 mt-1">GreenGeeks</div>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-medium text-gray-500">TTFB</span>
+        <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">Slower</span>
+      </div>
+      <div className="text-2xl font-bold text-gray-700">290ms</div>
+      <div className="text-xs text-gray-500 mt-1">Bluehost</div>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-medium text-gray-500">Carbon Impact</span>
+        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Eco-friendly</span>
+      </div>
+      <div className="text-2xl font-bold text-green-600">300% Offset</div>
+      <div className="text-xs text-gray-500 mt-1">GreenGeeks</div>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-medium text-gray-500">Carbon Impact</span>
+        <span className="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded-full">Standard</span>
+      </div>
+      <div className="text-2xl font-bold text-gray-700">0% Offset</div>
+      <div className="text-xs text-gray-500 mt-1">Bluehost</div>
+    </div>
+  </div>
+</div>
+
+<h3 className="text-xl font-semibold mt-8 mb-4">Comprehensive Feature Comparison: GreenGeeks vs Bluehost</h3>
+<p className="text-gray-600 mb-6">Comparing two of the most recommended hosting providers for beginners and small businesses</p>
+
+<div className="overflow-x-auto my-6 border border-gray-200 rounded-lg">
+  <table className="w-full text-sm border-collapse">
+    <thead className="bg-gradient-to-r from-green-500 to-green-600 text-white">
+      <tr>
+        <th className="p-4 font-semibold text-left border-r border-green-400">Features & Performance</th>
+        <th className="p-4 font-semibold text-center border-r border-green-400">
+          <div className="flex flex-col items-center">
+            <span>GreenGeeks</span>
+            <span className="text-xs font-normal opacity-90 mt-1">Our Pick</span>
           </div>
-        </div>
+        </th>
+        <th className="p-4 font-semibold text-center">
+          <div className="flex flex-col items-center">
+            <span>Bluehost</span>
+            <span className="text-xs font-normal opacity-90 mt-1">Popular Choice</span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="bg-white border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Starting Price (Monthly)</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="font-bold text-green-600">$2.95</div>
+          <div className="text-xs text-gray-500 mt-1">Renewal: $10.95</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="font-bold text-gray-700">$2.95</div>
+          <div className="text-xs text-gray-500 mt-1">Renewal: $11.99</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-gray-50 border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Time to First Byte (TTFB)</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="font-bold text-green-600">85ms</div>
+          <div className="text-xs text-green-500 mt-1">Excellent</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="font-bold text-gray-700">290ms</div>
+          <div className="text-xs text-gray-500 mt-1">Average</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-white border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Environmental Impact</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span className="font-medium">300% Renewable</span>
+          </div>
+          <div className="text-xs text-green-600 mt-1">Carbon Negative</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="flex items-center justify-center">
+            <span className="text-gray-400 mr-2">○</span>
+            <span className="font-medium">Standard Grid</span>
+          </div>
+          <div className="text-xs text-gray-500 mt-1">No Green Initiative</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-gray-50 border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Free Domain</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>1 Year Free</span>
+          </div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>1 Year Free</span>
+          </div>
+        </td>
+      </tr>
+      
+      <tr className="bg-white border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Free SSL Certificate</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>Free Forever</span>
+          </div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>Free First Year</span>
+          </div>
+        </td>
+      </tr>
+      
+      <tr className="bg-gray-50 border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Website Migration</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>Free Migration</span>
+          </div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="flex items-center justify-center">
+            <span className="text-gray-400 mr-2">$</span>
+            <span>Paid Service</span>
+          </div>
+          <div className="text-xs text-gray-500 mt-1">$149.99+</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-white border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Money-Back Guarantee</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="font-medium">30 Days</div>
+          <div className="text-xs text-gray-500 mt-1">No Questions Asked</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="font-medium">30 Days</div>
+          <div className="text-xs text-gray-500 mt-1">Standard Policy</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-gray-50 border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Storage (Basic Plan)</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="font-bold text-green-600">Unlimited</div>
+          <div className="text-xs text-gray-500 mt-1">SSD Storage</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="font-bold text-gray-700">50GB</div>
+          <div className="text-xs text-gray-500 mt-1">SSD Storage</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-white border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">Email Accounts</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="font-bold text-green-600">Unlimited</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="font-bold text-gray-700">5 Accounts</div>
+          <div className="text-xs text-gray-500 mt-1">Basic Plan</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-gray-50 border-b border-gray-100">
+        <td className="p-4 font-medium border-r border-gray-100">WordPress Optimization</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>Built-in Cache</span>
+          </div>
+          <div className="text-xs text-green-600 mt-1">Auto-scaled Resources</div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="flex items-center justify-center">
+            <span className="text-green-500 mr-2">✓</span>
+            <span>Basic Optimization</span>
+          </div>
+          <div className="text-xs text-gray-500 mt-1">Standard Resources</div>
+        </td>
+      </tr>
+      
+      <tr className="bg-white">
+        <td className="p-4 font-medium border-r border-gray-100">Customer Support</td>
+        <td className="p-4 text-center border-r border-gray-100">
+          <div className="flex flex-col items-center">
+            <div className="flex items-center">
+              <span className="text-green-500 mr-2">✓</span>
+              <span>24/7/365 Support</span>
+            </div>
+            <div className="text-xs text-gray-500 mt-1">Phone, Chat, Email</div>
+            <div className="text-xs text-green-600 mt-1">Expert WordPress Help</div>
+          </div>
+        </td>
+        <td className="p-4 text-center">
+          <div className="flex flex-col items-center">
+            <div className="flex items-center">
+              <span className="text-green-500 mr-2">✓</span>
+              <span>24/7 Support</span>
+            </div>
+            <div className="text-xs text-gray-500 mt-1">Phone, Chat, Email</div>
+            <div className="text-xs text-gray-500 mt-1">Official WordPress.org Recommended</div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        <h3 className="text-xl font-semibold mt-4">Comprehensive Feature Comparison</h3>
-
-        <div className="overflow-x-auto my-6">
-          <table className="w-full text-sm border-collapse border border-gray-200">
-            <thead className="bg-gradient-to-r from-emerald-500 to-green-600 text-white">
-              <tr>
-                <th className="p-3 font-semibold border border-gray-300">Performance Metric</th>
-                <th className="p-3 font-semibold border border-gray-300">GreenGeeks</th>
-                <th className="p-3 font-semibold border border-gray-300">HostAdvice</th>
-                <th className="p-3 font-semibold border border-gray-300">Advantage</th>
-              </tr>
-            </thead>
-            <tbody>
-              {performanceComparison.map((feature, index) => (
-                <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  <td className="p-3 border border-gray-200 font-medium">{feature.metric}</td>
-                  <td className="p-3 border border-gray-200">{feature.greengeeks}</td>
-                  <td className="p-3 border border-gray-200">{feature.hostadvice}</td>
-                  <td className="p-3 border border-gray-200">
-                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                      feature.advantage.includes('faster') || feature.advantage.includes('negative') ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
-                    }`}>
-                      {feature.advantage}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+<div className="bg-blue-50 border-l-4 border-blue-500 p-4 my-6 rounded-r-lg">
+  <div className="flex">
+    <div className="flex-shrink-0">
+      <span className="text-blue-500 text-xl">💡</span>
+    </div>
+    <div className="ml-3">
+      <h4 className="font-semibold text-blue-800">Why This Comparison Matters</h4>
+      <p className="text-blue-700 text-sm mt-1">
+        Bluehost powers over 2 million websites worldwide and is officially recommended by WordPress.org. 
+        This comparison shows that GreenGeeks not only matches but exceeds industry standards while 
+        maintaining superior environmental responsibility. For users choosing between these popular options, 
+        GreenGeeks offers better performance, more features, and genuine eco-friendly hosting.
+      </p>
+    </div>
+  </div>
+</div>
 
         <h2 className="text-2xl font-bold mt-6">🔒 Security & Reliability: Enterprise-Grade Protection</h2>
 
@@ -562,7 +769,7 @@ const GreenGeeksContent = () => {
         <HostInfoBox 
           bestFor="Environmentally conscious businesses, WordPress sites, eco-brands, agencies, and anyone wanting enterprise performance with positive environmental impact."
           rating="⭐ 9.0 / 10"
-          link="https://www.greengeeks.com"
+          link="https://www.greengeeks.com/track/munazza"
         />
 
         <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 my-6">
@@ -607,7 +814,7 @@ const GreenGeeksContent = () => {
 
         <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
           <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759494858/greengeeks-pricing-plans.avif"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1765126787/GreenGeek_Pricing_jfakmy.png"
             alt="GreenGeeks pricing plans - Lite, Pro, Premium with environmental benefits"
             className="w-full h-full object-cover opacity-70"
           />
@@ -723,10 +930,10 @@ const GreenGeeksContent = () => {
         {/* CTA */}
         <div className="mt-6">
           <CTA
-            heading="Ready to Host with Positive Environmental Impact?"
-            offer="Get GreenGeeks with 300% carbon neutrality and enterprise performance at $2.95/month"
+            heading="Ready to Host buy GreenGeek?"
+            offer="Get Hosting from $1.95/mo"
             buttonText="Get GreenGeeks Now"
-            buttonLink="https://www.greengeeks.com"
+            buttonLink="https://www.greengeeks.com/track/munazza"
           />
         </div>
 
@@ -831,12 +1038,12 @@ const GreenGeeksContent = () => {
 
 /* Blog metadata + exported object */
 const greengeeksReview = {
-  slug: "greengeeks-review-2025",
-  title: "GreenGeeks Review 2025: Eco-Friendly Hosting That Outperforms Traditional Providers",
+  slug: "greengeeks-review",
+  title: "GreenGeeks Review: Eco-Friendly Hosting That Outperforms Traditional Providers",
   author: "BrandoraLab",
   date: "December 20, 2025",
   description: "9-month testing reveals GreenGeeks delivers 300% carbon-neutral hosting with sub-100ms TTFB, 99.99% uptime, and performance that destroys HostAdvice while saving the planet.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/greengeeks-review-cover.avif",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1765125851/greengeek_web_hosting_review_bnacry.jpg",
   keywords: [
     "GreenGeeks review",
     "GreenGeeks hosting",
@@ -852,7 +1059,24 @@ const greengeeksReview = {
     "GreenGeeks pricing",
     "environmental hosting",
     "GreenGeeks uptime",
-    "LiteSpeed hosting"
+    "LiteSpeed hosting",
+    "GreenGeeks features",
+    "best green hosting",
+    "GreenGeeks security",
+    "GreenGeeks data centers",
+    "GreenGeeks review 2026",
+    "GreenGeeks hosting review",
+    "GreenGeeks performance review",
+    "GreenGeek wordpress review",
+    "GreenGeeks eco hosting",
+    "GreenGeeks discount",
+    "GreenGeek shared hosting",
+    "GreenGeeks shared hosting review",
+    "GreenGeeks vs Bluehost",
+    "GreenGeeks environmental impact",
+    "GreenGeeks customer support",
+    "GreenGeeks reliability"
+
   ],
   content: GreenGeeksContent,
 };
