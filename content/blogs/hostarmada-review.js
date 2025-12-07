@@ -42,7 +42,7 @@ const ArticleJsonLd = ({ title, datePublished, dateModified, rating }) => {
       "name": "BrandoraLab",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/hostarmada-review-cover.avif"
+        "url": "https://res.cloudinary.com/dpgspconw/image/upload/v1765128862/hostarmada_review_blog_soc6g4.jpg"
       }
     },
     "mainEntityOfPage": {
@@ -222,7 +222,7 @@ const HostArmadaContent = () => {
       <SEO
         title={title}
         description={"7-month testing reveals HostArmada's cloud SSD hosting delivers 300% faster speeds than HostAdvice, 9 global data centers, and enterprise features at $2.99/month. Raw performance data included."}
-        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/hostarmada-review-cover.avif"}
+        image={"res.cloudinary.com/dpgspconw/image/upload/v1765128862/hostarmada_review_blog_soc6g4.jpg"}
         url={"https://brandoralab.com/blogs/hostarmada-review-2025"}
         publishedTime={"2025-12-05"}
         modifiedTime={"2025-12-05"}
@@ -774,7 +774,7 @@ const hostarmadaReview = {
   author: "BrandoraLab",
   date: "December 5, 2025",
   description: "7-month testing reveals HostArmada's cloud SSD hosting delivers 300% faster speeds than HostAdvice, 9 global data centers, and enterprise features at $2.99/month. Raw performance data included.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/hostarmada-review-cover.avif",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1765128862/hostarmada_review_blog_soc6g4.jpg",
   keywords: [
     "HostArmada review",
     "HostArmada hosting",
