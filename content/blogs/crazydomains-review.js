@@ -514,7 +514,7 @@ const CrazyDomainsContent = () => {
         <HostInfoBox 
           bestFor="Australian businesses requiring compliance, healthcare providers, financial services, government agencies, and any organization needing Australian data sovereignty with enterprise performance."
           rating="⭐ 8.6 / 10"
-          link="https://www.crazydomains.com.au"
+          link="https://crazydomains.sjv.io/0ZvbGP"
         />
 
         <div className="bg-purple-50 border-l-4 border-purple-500 p-6 my-6">
@@ -676,9 +676,9 @@ const CrazyDomainsContent = () => {
         <div className="mt-6">
           <CTA
             heading="Ready to Host with Australian Compliance & Performance?"
-            offer="Get CrazyDomains"
+            offer="Get 30% Off Todays"
             buttonText="Visit Now"
-            buttonLink="https://www.crazydomains.com.au"
+            buttonLink="https://crazydomains.sjv.io/0ZvbGP"
           />
         </div>
 
@@ -812,6 +812,19 @@ const crazydomainsReview = {
     "affordable Australian hosting",
     "crazydomains pros and cons",
     "cheap hosting Australia",
+    "enterprise hosting Australia",
+    "crazydomains features",
+    "crazydomains security",
+    "crazydomains uptime",
+    "crazydomains business email",
+    "crazydomains domain registration",
+    "crazydomains customer support",
+    "crazydomains coupons",
+    "crazydomains discounts",
+    "crazydomains deals",
+    "crazydomains review 2026",
+    "best hosting australia 2026"
+
   ],
   content: CrazyDomainsContent,
 };

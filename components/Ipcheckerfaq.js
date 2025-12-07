@@ -16,7 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 
-const FAQ = () => {
+const Ipcheckerfaq = () => {  // CHANGED FROM: const FAQ = () => {
   const [openSection, setOpenSection] = useState('faqs');
   const [openItems, setOpenItems] = useState(new Set(['faq-0']));
 
@@ -373,4 +373,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Ipcheckerfaq;
