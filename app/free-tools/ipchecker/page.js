@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import IPcheckerfaq from "@/components/ipcheckerfaq";
+import Ipcheckerfaq from '@/components/Ipcheckerfaq';
 import IpDetails from "@/components/IpDetails";
 import PrivacyScore from "@/components/PrivacyScore";
 import TechnicalSpecs from "@/components/TechnicalSpecs";
@@ -508,7 +508,7 @@ export default function IPCheckerPage() {
 
         {/* FAQ Section */}
         <div className="mb-16">
-          <IPcheckerfaq />
+          <Ipcheckerfaq />
         </div>
 
 
