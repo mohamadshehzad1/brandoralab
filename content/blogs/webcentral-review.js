@@ -1,4 +1,3 @@
-// content/blogs/webcentral-review-2025.js
 import React from "react";
 import CTA from "@/components/Cta";
 import SEO from "@/components/SEO";
@@ -230,7 +229,7 @@ const WebCentralContent = () => {
       <SEO
         title={title}
         description={"8-month testing reveals WebCentral delivers sub-50ms TTFB in Australia, 150% faster than competitors, with local data centers and Australian compliance advantages."}
-        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/webcentral-review-cover.avif"}
+        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1765110435/webcentral_web_hosting_fzzm4y.jpg"}
         url={"https://brandoralab.com/blogs/webcentral-review-2025"}
         publishedTime={"2025-12-28"}
         modifiedTime={"2025-12-28"}
@@ -243,7 +242,7 @@ const WebCentralContent = () => {
       {/* Cover / header */}
       <section className="relative w-full h-72 md:h-96 flex items-center justify-center text-white">
         <img
-          src="https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/webcentral-review-cover.avif"
+          src="https://res.cloudinary.com/dpgspconw/image/upload/v1765110435/webcentral_web_hosting_fzzm4y.jpg"
           alt="WebCentral Australian hosting review - local performance and data center analysis"
           className="w-full h-auto object-contain opacity-100"
         />
@@ -293,7 +292,7 @@ const WebCentralContent = () => {
 
         <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
           <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759494859/webcentral-australian-datacenters.avif"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1765110435/webcentral_datacenter_rukerh.jpg"
             alt="WebCentral Australian data center locations - Sydney, Melbourne, Perth infrastructure"
             className="w-full h-full object-cover opacity-70"
           />
@@ -395,54 +394,104 @@ const WebCentralContent = () => {
           </div>
         </div>
 
-        <h2 className="text-2xl font-bold mt-6">🌏 International Comparison: WebCentral vs Global Hosts</h2>
+<h2 className="text-2xl font-bold mt-6">🌏 WebCentral vs GoDaddy: Australian Performance Comparison</h2>
 
-        <p>
-          To demonstrate the local advantage, we compared WebCentral's Australian performance 
-          against international hosts and local competitors.
-        </p>
+<p>
+  When it comes to hosting websites for Australian audiences, local hosting providers 
+  have a distinct advantage. Let's compare WebCentral's Australian performance against 
+  the international giant GoDaddy.
+</p>
 
-        <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
-          <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759495550/webcentral-vs-competitors.avif"
-            alt="WebCentral vs international hosts performance comparison for Australian audiences"
-            className="w-full h-full object-cover opacity-70"
-          />
-        </section>
+<section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
+  <img
+    src="https://res.cloudinary.com/dpgspconw/image/upload/v1765110759/webcentral_vs_Godaddy_cjqfzi.jpg"
+    alt="WebCentral vs GoDaddy performance comparison for Australian audiences"
+    className="w-full h-full object-cover opacity-70"
+  />
+</section>
 
-        <div className="overflow-x-auto my-6">
-          <table className="w-full text-sm border-collapse border border-gray-200">
-            <thead className="bg-gradient-to-r from-green-500 to-blue-500 text-white">
-              <tr>
-                <th className="p-3 font-semibold border border-gray-300">Location & Provider</th>
-                <th className="p-3 font-semibold border border-gray-300">TTFB</th>
-                <th className="p-3 font-semibold border border-gray-300">Load Time</th>
-                <th className="p-3 font-semibold border border-gray-300">Performance Gap</th>
-                <th className="p-3 font-semibold border border-gray-300">Advantage</th>
-              </tr>
-            </thead>
-            <tbody>
-              {internationalPerformance.map((location, index) => (
-                <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  <td className="p-3 border border-gray-200 font-medium">{location.location} ({location.provider})</td>
-                  <td className="p-3 border border-gray-200 font-mono text-sm">{location.ttfb}</td>
-                  <td className="p-3 border border-gray-200 font-mono text-sm">{location.loadTime}</td>
-                  <td className="p-3 border border-gray-200">
-                    {location.provider === "WebCentral" ? "Baseline" : 
-                     parseInt(location.ttfb) > 100 ? "511% slower" : "233% slower"}
-                  </td>
-                  <td className="p-3 border border-gray-200">
-                    <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
-                      location.provider === "WebCentral" ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                    }`}>
-                      {location.provider === "WebCentral" ? "Winner" : "Significantly Slower"}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+<div className="overflow-x-auto my-6">
+  <table className="w-full text-sm border-collapse border border-gray-200">
+    <thead className="bg-gradient-to-r from-green-500 to-blue-500 text-white">
+      <tr>
+        <th className="p-3 font-semibold border border-gray-300">Provider</th>
+        <th className="p-3 font-semibold border border-gray-300">Server Location</th>
+        <th className="p-3 font-semibold border border-gray-300">TTFB (ms)</th>
+        <th className="p-3 font-semibold border border-gray-300">Full Load Time</th>
+        <th className="p-3 font-semibold border border-gray-300">Performance Gap</th>
+        <th className="p-3 font-semibold border border-gray-300">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="bg-white">
+        <td className="p-3 border border-gray-200 font-medium">WebCentral</td>
+        <td className="p-3 border border-gray-200">Sydney, Australia</td>
+        <td className="p-3 border border-gray-200 font-mono text-sm">98 ms</td>
+        <td className="p-3 border border-gray-200 font-mono text-sm">1.2s</td>
+        <td className="p-3 border border-gray-200">Baseline</td>
+        <td className="p-3 border border-gray-200">
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            Winner 🏆
+          </span>
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="p-3 border border-gray-200 font-medium">GoDaddy</td>
+        <td className="p-3 border border-gray-200">Singapore/US</td>
+        <td className="p-3 border border-gray-200 font-mono text-sm">502 ms</td>
+        <td className="p-3 border border-gray-200 font-mono text-sm">3.8s</td>
+        <td className="p-3 border border-gray-200">511% slower</td>
+        <td className="p-3 border border-gray-200">
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+            Significantly Slower
+          </span>
+        </td>
+      </tr>
+      <tr className="bg-white">
+        <td className="p-3 border border-gray-200 font-medium">GoDaddy</td>
+        <td className="p-3 border border-gray-200">US West Coast</td>
+        <td className="p-3 border border-gray-200 font-mono text-sm">327 ms</td>
+        <td className="p-3 border border-gray-200 font-mono text-sm">2.8s</td>
+        <td className="p-3 border border-gray-200">233% slower</td>
+        <td className="p-3 border border-gray-200">
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+            Slower
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div className="bg-blue-50 border-l-4 border-blue-500 p-4 my-8 rounded">
+  <p className="text-sm text-gray-700 mb-2">
+    <strong>Key Insight:</strong> WebCentral's Australian-based servers provide 233-511% faster 
+    response times compared to GoDaddy's international servers when serving Australian visitors.
+  </p>
+</div>
+
+{/* Internal Link Section - UPDATED WITH CORRECT URL PATTERN */}
+<div className="mt-10 p-6 bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg border border-gray-200">
+  <h3 className="text-xl font-bold text-gray-800 mb-3">Continue Your Research</h3>
+  <p className="text-gray-600 mb-4">
+    Want to see how WebCentral compares to other Australian hosting providers? 
+    Check out our detailed comparison with CrazyDomains:
+  </p>
+  
+
+  <a 
+    href="/blogs/crazydomains-review"
+    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+  >
+    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path>
+    </svg>
+    CrazyDomains Review: Australian Hosting which beat Hostinger and WebCentral in benchmark
+  </a>
+  <p className="text-sm text-gray-500 mt-2">
+    7-month testing reveals CrazyDomains delivers sub-40ms TTFB in Australia with complete data sovereignty.
+  </p>
+</div>
 
         <h2 className="text-2xl font-bold mt-6">🏆 Competitive Analysis: WebCentral vs Australian Competitors</h2>
 
@@ -592,7 +641,7 @@ const WebCentralContent = () => {
 
         <section className="relative w-full aspect-[16/9] md:aspect-[21/9]">
           <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1759494858/webcentral-pricing-plans.avif"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1765111035/webcentral_pricing_plan_dcnw00.png"
             alt="WebCentral pricing plans - Starter, Business, Pro with Australian features"
             className="w-full h-full object-cover opacity-70"
           />
@@ -601,32 +650,32 @@ const WebCentralContent = () => {
         <div className="grid md:grid-cols-3 gap-4 my-6">
           <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center">
             <h4 className="font-semibold text-gray-800 text-lg mb-2">Starter</h4>
-            <div className="text-2xl font-bold text-blue-600 mb-2">$5.99<span className="text-sm text-gray-500">/mo AUD</span></div>
+            <div className="text-2xl font-bold text-blue-600 mb-2">$3.95<span className="text-sm text-gray-500">/mo AUD</span></div>
             <ul className="text-sm space-y-1 text-gray-600">
-              <li>1 Website</li>
-              <li>10GB SSD Storage</li>
-              <li>Free Business Email</li>
+              <li>2 Website</li>
+              <li>30GB SSD Storage</li>
+              <li>10 Free Business Email</li>
               <li>Australian Data Centers</li>
               <li>Free SSL Certificate</li>
             </ul>
           </div>
           <div className="bg-white p-6 rounded-lg border border-blue-200 shadow-sm text-center relative">
             <div className="absolute top-0 right-0 bg-blue-500 text-white px-3 py-1 text-xs font-semibold rounded-bl-lg">BUSINESS CHOICE</div>
-            <h4 className="font-semibold text-gray-800 text-lg mb-2">Business</h4>
-            <div className="text-2xl font-bold text-blue-600 mb-2">$9.99<span className="text-sm text-gray-500">/mo AUD</span></div>
+            <h4 className="font-semibold text-gray-800 text-lg mb-2">Pro</h4>
+            <div className="text-2xl font-bold text-blue-600 mb-2">$9.95<span className="text-sm text-gray-500">/mo AUD</span></div>
             <ul className="text-sm space-y-1 text-gray-600">
-              <li>5 Websites</li>
-              <li>30GB SSD Storage</li>
-              <li>Free Business Email</li>
+              <li>10 Websites</li>
+              <li>50GB SSD Storage</li>
+              <li>20 Email accounts</li>
               <li>Australian Data Centers</li>
               <li>Free SSL & Backups</li>
             </ul>
           </div>
           <div className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm text-center">
-            <h4 className="font-semibold text-gray-800 text-lg mb-2">Pro</h4>
-            <div className="text-2xl font-bold text-blue-600 mb-2">$19.99<span className="text-sm text-gray-500">/mo AUD</span></div>
+            <h4 className="font-semibold text-gray-800 text-lg mb-2">Max</h4>
+            <div className="text-2xl font-bold text-blue-600 mb-2">$14.95<span className="text-sm text-gray-500">/mo AUD</span></div>
             <ul className="text-sm space-y-1 text-gray-600">
-              <li>Unlimited Websites</li>
+              <li>100 Websites</li>
               <li>100GB SSD Storage</li>
               <li>Free Business Email</li>
               <li>Australian Data Centers</li>
@@ -709,8 +758,8 @@ const WebCentralContent = () => {
         {/* CTA */}
         <div className="mt-6">
           <CTA
-            heading="Ready to Experience Australian Hosting Performance?"
-            offer="Get WebCentral with sub-50ms TTFB and Australian data sovereignty from $5.99 AUD/month"
+            heading="Ready to Experience Hosting Performance?"
+            offer="Get WebCentral $3.95 AUD/month"
             buttonText="Get WebCentral Now"
             buttonLink="https://www.webcentral.com.au"
           />
@@ -817,12 +866,12 @@ const WebCentralContent = () => {
 
 /* Blog metadata + exported object */
 const webcentralReview = {
-  slug: "webcentral-review-2025",
-  title: "WebCentral Review 2025: Australian Hosting That Delivers Enterprise Performance",
+  slug: "webcentral-review",
+  title: "WebCentral Review: Australian Hosting That Delivers Enterprise Performance",
   author: "BrandoraLab",
   date: "December 28, 2025",
   description: "8-month testing reveals WebCentral delivers sub-50ms TTFB in Australia, 150% faster than competitors, with local data centers and Australian compliance advantages.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/webcentral-review-cover.avif",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1765110435/webcentral_web_hosting_fzzm4y.jpg",
   keywords: [
     "WebCentral review",
     "WebCentral hosting",
@@ -830,7 +879,7 @@ const webcentralReview = {
     "WebCentral Australia",
     "Australian data centers",
     "WebCentral performance",
-    "Australian hosting 2025",
+    "Australian hosting 2026",
     "WebCentral vs competitors",
     "data sovereignty Australia",
     "Australian business hosting",
@@ -838,7 +887,26 @@ const webcentralReview = {
     "local Australian hosting",
     "WebCentral pricing",
     "Australian WordPress hosting",
-    "Sydney data center"
+    "Sydney data center",
+    "webcentral hosting pricing",
+    "best australian web hosting",
+    "webcentral review 2026",
+    "webcentral vs godaddy",
+    "australian hosting comparison",
+    "webcentral uptime",
+    "webcentral support",
+    "webcentral features",
+    "webcentral security",
+    "webcentral compliance",
+    "webcentral business email",
+    "webcentral vs crazydomains",
+    "webcentral ttfb australia",
+    "webcentral local hosting",
+    "webcentral vs hostinger australia",
+    "webcentral review blog",
+    "webcentral hosting coupon",
+    "webcentral discount code",
+    "webcentral hosting discounts",
   ],
   content: WebCentralContent,
 };
