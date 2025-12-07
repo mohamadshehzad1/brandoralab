@@ -3,233 +3,206 @@
 import useIpDetails from '../hooks/useIpDetails';
 import useBrowserDetails from '../hooks/useBrowserDetails';
 import Loader from './Loader';
-
+import { 
+  ComputerDesktopIcon,
+  MapPinIcon,
+  GlobeAltIcon,
+  WifiIcon,
+  ClockIcon,
+  DevicePhoneMobileIcon,
+  BuildingLibraryIcon,
+  EnvelopeIcon,
+  DocumentTextIcon,
+  ViewfinderCircleIcon,
+  ShieldCheckIcon
+} from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 const IpDetails = () => {
   const { loading, error, data: ipData } = useIpDetails();
   const { browser, screenSize, cookiesEnabled } = useBrowserDetails();
-  // console.log('ipdata', ipData);
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const handleCopyIP = () => {
+    navigator.clipboard.writeText(ipData?.ip || '');
+    setCopySuccess(true);
+    setTimeout(() => setCopySuccess(false), 2000);
+  };
 
   if (loading) {
-    return <Loader />;
+    return (
+      <div className="min-h-[400px] flex items-center justify-center">
+        <Loader />
+      </div>
+    );
   }
 
   if (error) {
-    return <p className="text-red-500">Error: {error}</p>;
+    return (
+      <div className="bg-red-50 border border-red-200 rounded-xl p-8 text-center">
+        <p className="text-red-600 text-lg">Error loading IP details: {error}</p>
+        <p className="text-gray-600 mt-2">Please refresh the page or check your connection</p>
+      </div>
+    );
   }
-  // Extract latitude and longitude from the 'loc' field
+
   const loc = ipData?.loc;
   const [lat, lon] = loc ? loc.split(',') : [];
 
-  // Google Maps iframe URL based on lat, lon
   const mapUrl = lat && lon
-    ? `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d${lon}!3d${lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238`
-    : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238";
+    ? `https://maps.google.com/maps?q=${lat},${lon}&z=10&output=embed`
+    : "https://maps.google.com/maps?q=37.7749,-122.4194&z=10&output=embed";
+
+  const networkDetails = [
+    {
+      title: "ISP Provider",
+      value: ipData?.org?.split(' ').slice(1).join(' ') || "Unknown",
+      icon: <WifiIcon className="h-5 w-5" />,
+      color: "bg-blue-100 text-blue-600"
+    },
+    {
+      title: "Organization",
+      value: ipData?.org?.split(' ')[0] || "N/A",
+      icon: <BuildingLibraryIcon className="h-5 w-5" />,
+      color: "bg-purple-100 text-purple-600"
+    },
+    {
+      title: "Timezone",
+      value: ipData?.timezone || "Unknown",
+      icon: <ClockIcon className="h-5 w-5" />,
+      color: "bg-green-100 text-green-600"
+    },
+    {
+      title: "Hostname",
+      value: ipData?.hostname || "N/A",
+      icon: <DocumentTextIcon className="h-5 w-5" />,
+      color: "bg-amber-100 text-amber-600"
+    },
+    {
+      title: "Browser",
+      value: browser,
+      icon: <DevicePhoneMobileIcon className="h-5 w-5" />,
+      color: "bg-red-100 text-red-600"
+    },
+    {
+      title: "Screen Size",
+      value: screenSize,
+      icon: <ViewfinderCircleIcon className="h-5 w-5" />,
+      color: "bg-indigo-100 text-indigo-600"
+    },
+    {
+      title: "Postal Code",
+      value: ipData?.postal || "N/A",
+      icon: <EnvelopeIcon className="h-5 w-5" />,
+      color: "bg-pink-100 text-pink-600"
+    },
+    {
+      title: "Cookies",
+      value: cookiesEnabled ? "Enabled" : "Disabled",
+      icon: <ShieldCheckIcon className="h-5 w-5" />,
+      color: "bg-teal-100 text-teal-600"
+    }
+  ];
 
   return (
-    <section className="mb-20">
-      <div id="map" className="relative h-[350px] overflow-hidden bg-cover bg-[50%] bg-no-repeat">
-        <iframe
-          src={mapUrl}
-          width="100%" height="480" style={{ border: '0' }} allowFullScreen="" loading="lazy"></iframe>
-      </div>
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px] border border-gray-300">
-          <div className="flex flex-wrap">
-            {/* Four items per row */}
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3 mb-6"> {/* 1st item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for IP */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M14.25 9.75v-4.5m0 4.5h4.5m-4.5 0l6-6m-3 18c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    IP
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {ipData.ip}
-                  </p>
-                </div>
-              </div>
+    <div className="space-y-8">
+      {/* Location Map Section */}
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
+        <div className="p-6 border-b border-gray-200">
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 flex items-center">
+                <MapPinIcon className="h-6 w-6 mr-2 text-blue-500" />
+                Your Location Details
+              </h3>
+              <p className="text-gray-600 mt-1">
+                Approximate location based on IP geolocation data
+              </p>
             </div>
-
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3 mb-6"> {/* 2nd item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for City */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M12 2C8.13 2 5 5.13 5 9c0 3.35 2.79 6.53 6.28 9.61 1.26 1.01 2.56 2.01 3.72 3.09a.75.75 0 0 0 1.02 0c1.16-1.08 2.46-2.08 3.72-3.09C17.21 15.53 20 12.35 20 9c0-3.87-3.13-7-7-7zm0 10.5c-1.68 0-3-1.32-3-3s1.32-3 3-3 3 1.32 3 3-1.32 3-3 3z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    City
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {ipData.city}
-                  </p>
-                </div>
-              </div>
+            <div className="text-sm text-gray-500">
+              Accuracy: 5-10 km radius
             </div>
-
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3 mb-6"> {/* 3rd item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M12 5.25C7.753 5.25 4.5 8.503 4.5 12c0 3.785 2.771 7.25 6.5 7.25 2.591 0 4.837-1.494 5.806-3.707l3.156 2.083c.305.204.694.138.933-.152.239-.289.243-.689-.017-.993l-2.097-3.169c1.263-1.155 1.482-2.849 1.482-3.808 0-3.497-3.253-6.75-7.5-6.75z" />
-                    </svg>
-                  </div>
+          </div>
+        </div>
+        <div className="relative h-[400px]">
+          <iframe
+            src={mapUrl}
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            className="absolute inset-0"
+            title="IP Location Map"
+          />
+          <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg max-w-xs">
+            <div className="flex items-start">
+              <MapPinIcon className="h-5 w-5 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+              <div>
+                <div className="text-sm text-gray-500">Current Location</div>
+                <div className="font-semibold text-gray-900">
+                  {ipData?.city || "Unknown"}, {ipData?.region || "Unknown"}
                 </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    Country
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {ipData.country}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3 mb-6"> {/* 4th item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for Postal */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M3 5.25C3 4.007 4.007 3 5.25 3h13.5C19.993 3 21 4.007 21 5.25v13.5C21 19.993 19.993 21 18.75 21H5.25C4.007 21 3 19.993 3 18.75V5.25zm15.978 4.752l-3.722 5.039a1.125 1.125 0 01-1.592.221l-2.582-3.447a.75.75 0 00-1.243.536v6.5a.75.75 0 001.244.535l2.582-3.448a1.125 1.125 0 011.592.22l3.722 5.039a.75.75 0 000-.95l-5.039-7.144a1.125 1.125 0 00-1.742-.022L14.25 9.997a.75.75 0 00-1.243-.536l-2.582 3.447a.75.75 0 001.243.536l2.582-3.447 3.722 5.039z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    Postal
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {ipData.postal}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3 mb-6 md:mb-0 "> {/* 5th item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for Browser */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M3 4.5h18a1.5 1.5 0 011.5 1.5v12a1.5 1.5 0 01-1.5 1.5H3a1.5 1.5 0 01-1.5-1.5v-12a1.5 1.5 0 011.5-1.5zm0 2a.5.5 0 00-.5.5v11a.5.5 0 00.5.5h18a.5.5 0 00.5-.5v-11a.5.5 0 00-.5-.5H3zm2 1h14v9H5V7.5z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    Browser
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {browser}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3  mb-6 md:mb-0"> {/* 6th item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for Screen */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M3 4.5h18a1.5 1.5 0 011.5 1.5v12a1.5 1.5 0 01-1.5 1.5H3a1.5 1.5 0 01-1.5-1.5v-12a1.5 1.5 0 011.5-1.5zm0 2a.5.5 0 00-.5.5v11a.5.5 0 00.5.5h18a.5.5 0 00.5-.5v-11a.5.5 0 00-.5-.5H3zm2 1h14v9H5V7.5z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    Screen
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {screenSize}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3 mb-6 md:mb-0 "> {/* 7th item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for Cookies */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M12 2.25c5.25 0 9.75 4.5 9.75 9.75S17.25 21.75 12 21.75 2.25 17.25 2.25 12 6.75 2.25 12 2.25zm0 2c-1.125 0-2.25.75-2.25 2.25s1.125 2.25 2.25 2.25 2.25-.75 2.25-2.25-1.125-2.25-2.25-2.25zm0 10.5c-2.25 0-4.5-1.125-4.5-3.375S9.75 8.25 12 8.25s4.5 1.125 4.5 3.375-2.25 3.375-4.5 3.375zm0 2.25c2.625 0 5.25 1.5 5.25 3.75v.375H6.75v-.375c0-2.25 2.625-3.75 5.25-3.75z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    Cookies
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {cookiesEnabled.toString()}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-
-            <div className="w-full sm:w-6/12 lg:w-3/12 px-3  "> {/* 8th item */}
-              <div className="flex items-start">
-                <div className="shrink-0">
-                  <div className="inline-block rounded-md bg-blue-500 p-4 text-white">
-                    {/* SVG for Timezone (Globe with timezones) */}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                      stroke="currentColor" className="h-6 w-6">
-                      <path strokeLinecap="round" strokeLinejoin="round"
-                        d="M12 2.25c5.25 0 9.75 4.5 9.75 9.75S17.25 21.75 12 21.75 2.25 17.25 2.25 12 6.75 2.25 12 2.25zM12 0c-6.75 0-12 5.25-12 12s5.25 12 12 12 12-5.25 12-12-5.25-12-12-12zm0 17.25c-2.25 0-4.5 1.125-4.5 3.375v.375h9v-.375c0-2.25-2.25-3.375-4.5-3.375zm0-10.5c-1.5 0-3.375 1.5-3.375 3.375s1.875 3.375 3.375 3.375 3.375-1.5 3.375-3.375-1.875-3.375-3.375-3.375z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="ml-6 grow">
-                  <p className="mb-2 font-bold">
-                    Timezone
-                  </p>
-                  <p className="text-sm text-neutral-500">
-                    {ipData.timezone}
-                  </p>
-                </div>
+                <div className="text-sm text-gray-600">{ipData?.country || "Unknown"}</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+      {/* Network Details Grid */}
+      <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <h3 className="text-xl font-bold text-gray-900">Complete Network Information</h3>
+            <p className="text-gray-600 mt-1">Detailed connection and browser data</p>
+          </div>
+          <div className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+            Real-time data
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {networkDetails.map((item, index) => (
+            <div
+              key={index}
+              className="border border-gray-100 rounded-xl p-5 hover:shadow-md transition-all duration-200 hover:border-blue-200 bg-gray-50/50"
+            >
+              <div className="flex items-start">
+                <div className={`p-3 rounded-lg ${item.color.split(' ')[0]} mr-4`}>
+                  <div className={item.color.split(' ')[1]}>
+                    {item.icon}
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="text-sm text-gray-500 font-medium mb-1">{item.title}</div>
+                  <div className="text-lg font-semibold text-gray-900 truncate">
+                    {item.value}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-8 pt-6 border-t border-gray-100">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="text-sm text-gray-500 mb-4 md:mb-0">
+              Data updated: Just now • Last checked: {new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+            </div>
+            <button
+              onClick={handleCopyIP}
+              className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 flex items-center text-sm"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+              Copy All Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 

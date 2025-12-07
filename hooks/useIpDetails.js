@@ -28,13 +28,12 @@ const useIpDetails = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_INIT' });
       try {
-        const accessKey = process.env.NEXT_PUBLIC_IPAPI_ACCESS_KEY;
         const response = await fetch(`https://ipinfo.io?token=ff54dabd6117c7`);
         const result = await response.json();
         if (response.ok) {
           dispatch({ type: 'FETCH_SUCCESS', payload: result });
         } else {
-          dispatch({ type: 'FETCH_FAILURE', payload: result.message });
+          dispatch({ type: 'FETCH_FAILURE', payload: result.error || 'Failed to fetch IP details' });
         }
       } catch (error) {
         dispatch({ type: 'FETCH_FAILURE', payload: error.message });
