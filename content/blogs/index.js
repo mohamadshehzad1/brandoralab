@@ -19,6 +19,10 @@ import hostarmadaReview from './hostarmada-review'
 import inmotionReview from './inmotion-hosting-review'
 import webcentralReview from './webcentral-review'
 import hostmetroReview from './hostmetro-web-hosting-review'
+import ultimateWebsiteCachingGuide from './ultimate-website-caching-guide-hosting'  
+import quickImageOptimizationGuide from './quick-image-optimization-speed-guide'
+import websiteSpeedSEORankingsGuide from './website-speed-seo-rankings-guide'
+import hostingDotComReview from './hosting-com-review'
 // later: import more blogs here (like payment-gateway.js, themes.js, etc)
 
 export const blogData = [
@@ -43,5 +47,9 @@ export const blogData = [
   inmotionReview,
   webcentralReview,
   hostmetroReview,
+  ultimateWebsiteCachingGuide,
+  quickImageOptimizationGuide,
+  websiteSpeedSEORankingsGuide,
+  hostingDotComReview,
   // more blogs here
 ]

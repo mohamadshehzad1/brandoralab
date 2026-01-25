@@ -7,11 +7,11 @@ const JetHostVsMissHostingContent = () => {
     <main>
       {/* Cover Section with Breadcrumbs */}
       <section className="relative w-full h-48 sm:h-72 md:h-96 bg-gray-900">
-  <img
-    src="https://res.cloudinary.com/dpgspconw/image/upload/v1762269121/jethost-vs-misshosting_ip2pdv.avif"
-    alt="Jet Hosting vs Miss Hosting 2025 cover image with comparison graphic"
-    className="absolute inset-0 w-full h-auto object-cover"
-  />
+      <img
+      src="https://res.cloudinary.com/dpgspconw/image/upload/v1762269121/jethost-vs-misshosting_ip2pdv.avif"
+      alt="Jet Hosting vs Miss Hosting 2025 cover image with comparison graphic"
+      className="absolute inset-0 w-full h-auto object-cover"
+    />
 </section>
 
 
