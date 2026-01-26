@@ -7,64 +7,64 @@ import RatingBreakdown from "@/components/RatingBreakdown";
 
 const BestUKHostingContent = () => {
   return (
-  <main className="bg-white">
+    <main className="bg-white">
 
-    {/* Top Image Section */}
-    <section className="container mx-auto max-w-6xl px-4 pt-10">
-      <img
-        src="https://res.cloudinary.com/dpgspconw/image/upload/v1758909653/10-web-hosting-for-uk-2025_f6koll.avif"
-        alt="Best Web Hosting for UK Small Businesses"
-        className="w-full rounded-2xl shadow-md object-cover"
-      />
-    </section>
+      {/* Top Image Section */}
+      <section className="container mx-auto max-w-6xl px-4 pt-10">
+        <img
+          src="https://res.cloudinary.com/dpgspconw/image/upload/v1758909653/10-web-hosting-for-uk-2025_f6koll.avif"
+          alt="Best Web Hosting for UK Small Businesses"
+          className="w-full rounded-2xl shadow-md object-cover"
+        />
+      </section>
 
-    {/* Hero Content Section */}
-    <section className="py-16 md:py-20">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center max-w-4xl mx-auto">
+      {/* Hero Content Section */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center max-w-4xl mx-auto">
 
-          {/* Badge */}
-          <span className="inline-block mb-6 px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full">
-            UPDATED: January 25, 2026 • TESTED FOR UK BUSINESSES
-          </span>
+            {/* Badge */}
+            <span className="inline-block mb-6 px-4 py-2 text-sm font-semibold text-blue-700 bg-blue-100 rounded-full">
+              UPDATED: January 25, 2026 • TESTED FOR UK BUSINESSES
+            </span>
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Best Web Hosting for Small Business UK: 2026 Expert Guide
-          </h1>
+            {/* Heading */}
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              Best Web Hosting for Small Business UK: 2026 Expert Guide
+            </h1>
 
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-600 mb-12">
-            After testing 14 UK hosting providers for 8 months, we reveal which
-            ones actually deliver for UK small businesses — and which to avoid.
-          </p>
+            {/* Description */}
+            <p className="text-lg md:text-xl text-gray-600 mb-12">
+              After testing 14 UK hosting providers for 8 months, we reveal which
+              ones actually deliver for UK small businesses — and which to avoid.
+            </p>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <div className="text-2xl font-bold text-gray-900">⭐ 4.7/5</div>
-              <div className="text-sm text-gray-600 mt-1">Average Rating</div>
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="border rounded-xl p-5 bg-gray-50">
+                <div className="text-2xl font-bold text-gray-900">⭐ 4.7/5</div>
+                <div className="text-sm text-gray-600 mt-1">Average Rating</div>
+              </div>
+
+              <div className="border rounded-xl p-5 bg-gray-50">
+                <div className="text-2xl font-bold text-gray-900">£1/mo</div>
+                <div className="text-sm text-gray-600 mt-1">Starting Price</div>
+              </div>
+
+              <div className="border rounded-xl p-5 bg-gray-50">
+                <div className="text-2xl font-bold text-gray-900">99.97%</div>
+                <div className="text-sm text-gray-600 mt-1">Average Uptime</div>
+              </div>
+
+              <div className="border rounded-xl p-5 bg-gray-50">
+                <div className="text-2xl font-bold text-gray-900">14</div>
+                <div className="text-sm text-gray-600 mt-1">Providers Tested</div>
+              </div>
             </div>
 
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <div className="text-2xl font-bold text-gray-900">£1/mo</div>
-              <div className="text-sm text-gray-600 mt-1">Starting Price</div>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <div className="text-2xl font-bold text-gray-900">99.97%</div>
-              <div className="text-sm text-gray-600 mt-1">Average Uptime</div>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <div className="text-2xl font-bold text-gray-900">14</div>
-              <div className="text-sm text-gray-600 mt-1">Providers Tested</div>
-            </div>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Author Credibility */}
       <div className="bg-white border-b border-gray-200 py-6">
@@ -168,7 +168,7 @@ const BestUKHostingContent = () => {
         
         <div className="overflow-x-auto rounded-xl shadow-lg border border-gray-200 bg-white">
           <table className="min-w-full divide-y divide-gray-200">
-            <thead className=" text-white">
+            <thead className="bg-blue-600 text-white">
               <tr>
                 <th className="px-6 py-4 text-left text-sm font-semibold">Provider</th>
                 <th className="px-6 py-4 text-left text-sm font-semibold">Starting Price (VAT Inc.)</th>
@@ -250,7 +250,7 @@ const BestUKHostingContent = () => {
         {/* Image 1: UK Data Centres */}
         <div className="my-8">
           <img 
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1738250300/hosting-performance-dashboard_fkjq5w.jpg" 
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769413435/16_oxwe0d.jpg" 
             alt="UK Data Centre Infrastructure for Business Hosting" 
             className="w-full h-auto rounded-xl shadow-lg"
           />
@@ -340,19 +340,43 @@ const BestUKHostingContent = () => {
         <h2 id="reviews" className="text-3xl font-bold mt-12">🔍 Detailed Reviews: Top 7 UK Business Hosting Providers</h2>
 
         {/* 1. Krystal Review */}
-        <div className="bg-white p-8 rounded-xl shadow-lg mb-10 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900">1. Krystal Hosting: Best Overall for UK Businesses</h3>
-              <div className="flex items-center mt-2">
-                <div className="text-yellow-400 flex">
-                  {'⭐'.repeat(5)}
-                </div>
-                <span className="ml-2 font-bold text-gray-700">4.7/5 Rating</span>
+        <div className="bg-white">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">1. Krystal Hosting: Best Overall for UK Businesses</h2>
+          </div>
+          
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769410325/krystal_hosting_k95n0s.png"
+            alt="Krystal Hosting - Best Web Hosting for UK Small Businesses"
+            className="w-full rounded-2xl shadow-md object-cover mb-6"
+          />
+          
+          {/* New Rating Block */}
+          <div className="mb-6 p-6 bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl border border-blue-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Rating</div>
+                <div className="text-yellow-500 text-2xl">⭐⭐⭐⭐⭐</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Overall</div>
+                <div className="text-2xl font-bold text-blue-700">4.7/5</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Best for</div>
+                <div className="text-lg font-bold text-gray-900">Eco-conscious businesses</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Visit</div>
+                <a href="https://www.krystal.co.uk" target="_blank" rel="noopener noreferrer" className="inline-block text-lg font-bold text-blue-700 hover:text-blue-900 transition-colors">
+                  Krystal.co.uk →
+                </a>
               </div>
             </div>
-            <span className="mt-2 md:mt-0 bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold">🏆 BEST OVERALL</span>
           </div>
+          
+          <p className="text-gray-700 mb-4">Krystal offers exceptional value with transparent pricing starting at just £5/month, making it an excellent choice for startups and small businesses in the UK. With 100% UK-based data centres, carbon-neutral hosting, and a strong commitment to customer support, Krystal provides reliable and ethical hosting without hidden fees or aggressive renewal hikes.</p>
+          <p className="text-gray-700 mb-6">Our 8-month testing showed a stellar 99.99% uptime and impressive loading speeds for UK visitors. The 24/7 UK-based support team consistently delivered quick, knowledgeable assistance, averaging just 2 minutes per response. Overall, Krystal stands out as the top choice for UK businesses prioritizing performance, reliability, and sustainability.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 p-4 rounded-lg">
@@ -409,27 +433,42 @@ const BestUKHostingContent = () => {
 
         {/* 2. IONOS Review */}
         <div className="bg-white">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">2. IONOS: Best Budget Choice for Startups</h2>      
-              <img
-              src="https://res.cloudinary.com/dpgspconw/image/upload/v1769345948/ionos_d8ac9n.png"
-              alt="Best Web Hosting for UK Small Businesses"
-              className="w-full rounded-2xl shadow-md object-cover"
-              />
-
-             <p className="mt-4 text-gray-700">IONOS offers unbeatable entry pricing starting at just £1.20/month, making it an ideal choice for startups and small businesses on a tight budget. With UK data centres and a solid uptime record, IONOS provides essential features without breaking the bank. However, be cautious of significant price increases upon renewal.</p>
-             <p className="mt-2 text-gray-700">Our 8-month testing revealed a reliable 99.95% uptime and decent performance for the price point. While support is available 24/7, response times can vary during peak hours. Overall, IONOS is a strong contender for budget-conscious UK businesses willing to navigate renewal pricing carefully.</p>
-              <div className="flex items-center mt-2">
-                <div className="text-yellow-400 flex">
-                  {'⭐'.repeat(4)}
-                  <span className="text-gray-300">⭐</span>
-                </div>
-                <span className="ml-2 font-bold text-gray-700">4.5/5 Rating</span>
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">2. IONOS: Best Budget Choice for Startups</h2>
+          </div>
+          
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769345948/ionos_d8ac9n.png"
+            alt="IONOS - Best Budget Web Hosting for UK Small Businesses"
+            className="w-full rounded-2xl shadow-md object-cover mb-6"
+          />
+          
+          {/* New Rating Block */}
+          <div className="mb-6 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Rating</div>
+                <div className="text-yellow-500 text-2xl">⭐⭐⭐⭐☆</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Overall</div>
+                <div className="text-2xl font-bold text-blue-700">4.5/5</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Best for</div>
+                <div className="text-lg font-bold text-gray-900">Startups on budget</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Visit</div>
+                <a href="https://ionos.com" target="_blank" rel="noopener noreferrer" className="inline-block text-lg font-bold text-blue-700 hover:text-blue-900 transition-colors">
+                  IONOS.com →
+                </a>
               </div>
             </div>
-            <span className="mt-2 md:mt-0 bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold">💰 BEST BUDGET</span>
           </div>
+          
+          <p className="text-gray-700 mb-4">IONOS offers unbeatable entry pricing starting at just £1.20/month, making it an ideal choice for startups and small businesses on a tight budget. With UK data centres and a solid uptime record, IONOS provides essential features without breaking the bank. However, be cautious of significant price increases upon renewal.</p>
+          <p className="text-gray-700 mb-6">Our 8-month testing revealed a reliable 99.95% uptime and decent performance for the price point. While support is available 24/7, response times can vary during peak hours. Overall, IONOS is a strong contender for budget-conscious UK businesses willing to navigate renewal pricing carefully.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 p-4 rounded-lg">
@@ -482,19 +521,43 @@ const BestUKHostingContent = () => {
         </div>
 
         {/* 3. SiteGround Review */}
-        <div className="bg-white p-8 rounded-xl shadow-lg mb-10 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900">3. SiteGround: Best for WordPress Performance</h3>
-              <div className="flex items-center mt-2">
-                <div className="text-yellow-400 flex">
-                  {'⭐'.repeat(5)}
-                </div>
-                <span className="ml-2 font-bold text-gray-700">4.6/5 Rating</span>
+        <div className="bg-white">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">3. SiteGround: Best for WordPress Performance</h2>
+          </div>
+          
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769410560/siteground_devuto.png"
+            alt="SiteGround - Best WordPress Hosting for UK Small Businesses"
+            className="w-full rounded-2xl shadow-md object-cover mb-6"
+          />
+          
+          {/* New Rating Block */}
+          <div className="mb-6 p-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Rating</div>
+                <div className="text-yellow-500 text-2xl">⭐⭐⭐⭐⭐</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Overall</div>
+                <div className="text-2xl font-bold text-blue-700">4.6/5</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Best for</div>
+                <div className="text-lg font-bold text-gray-900">WordPress sites</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Visit</div>
+                <a href="https://siteground.com" target="_blank" rel="noopener noreferrer" className="inline-block text-lg font-bold text-blue-700 hover:text-blue-900 transition-colors">
+                  SiteGround.com →
+                </a>
               </div>
             </div>
-            <span className="mt-2 md:mt-0 bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-bold">⚡ BEST FOR WORDPRESS</span>
           </div>
+          
+          <p className="text-gray-700 mb-4">SiteGround is renowned for its exceptional WordPress hosting, making it the top choice for UK businesses relying on WordPress for their online presence. With Google Cloud infrastructure and UK data centres, SiteGround delivers fast loading times and robust uptime performance. Their managed WordPress features, including automatic updates and built-in caching, ensure optimal site performance.</p>
+          <p className="text-gray-700 mb-6">During our 8-month evaluation, SiteGround achieved a strong 99.98% uptime and impressive speed scores for UK visitors. Their customer support team, available 24/7, demonstrated deep WordPress expertise, resolving issues efficiently. While pricing is higher than some competitors, the value for WordPress-centric businesses is undeniable.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 p-4 rounded-lg">
@@ -540,20 +603,43 @@ const BestUKHostingContent = () => {
         </div>
 
         {/* 4. Hosting.com Review */}
-        <div className="bg-white p-8 rounded-xl shadow-lg mb-10 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900">4. Hosting.com: Best for Speed-Focused Businesses</h3>
-              <div className="flex items-center mt-2">
-                <div className="text-yellow-400 flex">
-                  {'⭐'.repeat(4)}
-                  <span className="text-gray-300">⭐</span>
-                </div>
-                <span className="ml-2 font-bold text-gray-700">4.4/5 Rating</span>
+        <div className="bg-white">
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">4. Hosting.com: Best for Speed-Focused Businesses</h2>
+          </div>
+          
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769410560/siteground_devuto.png"
+            alt="Hosting.com - Best Speed Hosting for UK Small Businesses"
+            className="w-full rounded-2xl shadow-md object-cover mb-6"
+          />
+          
+          {/* New Rating Block */}
+          <div className="mb-6 p-6 bg-gradient-to-r from-green-50 to-teal-50 rounded-xl border border-green-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Rating</div>
+                <div className="text-yellow-500 text-2xl">⭐⭐⭐⭐☆</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Overall</div>
+                <div className="text-2xl font-bold text-blue-700">4.4/5</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Best for</div>
+                <div className="text-lg font-bold text-gray-900">Speed-focused businesses</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Visit</div>
+                <a href="https://hosting.com?aid=695f54098c685" target="_blank" rel="noopener noreferrer" className="inline-block text-lg font-bold text-blue-700 hover:text-blue-900 transition-colors">
+                  Hosting.com →
+                </a>
               </div>
             </div>
-            <span className="mt-2 md:mt-0 bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold">🚀 BEST SPEED</span>
           </div>
+          
+          <p className="text-gray-700 mb-4">Hosting.com (formerly A2 Hosting) is a standout choice for UK businesses prioritizing speed and performance. With LiteSpeed web servers and NVMe storage, Hosting.com delivers lightning-fast loading times, making it ideal for ecommerce sites and high-traffic business websites. Their UK data centres ensure low latency for local visitors, enhancing user experience and SEO rankings.</p>
+          <p className="text-gray-700 mb-6">Our extensive 8-month testing recorded an impressive average server response time of just 189ms and a solid 99.97% uptime. The 24/7 support team is knowledgeable, though response times can vary during peak US hours. Overall, Hosting.com offers excellent value for speed-focused UK businesses seeking reliable and high-performance hosting solutions.</p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 p-4 rounded-lg">
@@ -646,25 +732,43 @@ const BestUKHostingContent = () => {
 
         {/* 5. HostPapa Review */}
         <div className="bg-white">         
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900">5. HostPapa: Best for Email Hosting Needs</h2>
-              <img
-               src="https://res.cloudinary.com/dpgspconw/image/upload/v1769345656/Hostpapa_u8w9le.png"
-               alt="Best Web Hosting for UK Small Businesses"
-               className="w-full rounded-2xl shadow-md object-cover"
-              />
-              <p className="mt-4 text-gray-700">HostPapa stands out as the ideal choice for UK businesses prioritizing professional email hosting. With unlimited email accounts on business plans and 24/7 UK-based phone support, it's perfect for service-oriented companies needing reliable communication tools.</p>
-              <p className="mt-4 text-gray-700">Their UK data centres ensure fast email delivery and compliance with local regulations. While not the fastest in website performance, HostPapa's focus on email functionality and customer support makes it a top pick for businesses where email is critical.</p>
-              <div className="flex items-center mt-2">
-                <div className="text-yellow-400 flex">
-                  {'⭐'.repeat(4)}
-                  <span className="text-gray-300">⭐</span>
-                </div>
-                <span className="ml-2 font-bold text-gray-700">4.3/5 Rating</span>
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900">5. HostPapa: Best for Email Hosting Needs</h2>
+          </div>
+          
+          <img
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769345656/Hostpapa_u8w9le.png"
+            alt="HostPapa - Best Email Hosting for UK Small Businesses"
+            className="w-full rounded-2xl shadow-md object-cover mb-6"
+          />
+          
+          {/* New Rating Block */}
+          <div className="mb-6 p-6 bg-gradient-to-r from-cyan-50 to-blue-50 rounded-xl border border-cyan-200">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Rating</div>
+                <div className="text-yellow-500 text-2xl">⭐⭐⭐⭐☆</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Overall</div>
+                <div className="text-2xl font-bold text-blue-700">4.3/5</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Best for</div>
+                <div className="text-lg font-bold text-gray-900">Email hosting needs</div>
+              </div>
+              <div>
+                <div className="text-sm font-semibold text-gray-700 mb-2">Visit</div>
+                <a href="https://hostpapa.com" target="_blank" rel="noopener noreferrer" className="inline-block text-lg font-bold text-blue-700 hover:text-blue-900 transition-colors">
+                  HostPapa.com →
+                </a>
               </div>
             </div>
-          </div>     
+          </div>
+          
+          <p className="text-gray-700 mb-4">HostPapa stands out as the ideal choice for UK businesses prioritizing professional email hosting. With unlimited email accounts on business plans and 24/7 UK-based phone support, it's perfect for service-oriented companies needing reliable communication tools.</p>
+          <p className="text-gray-700 mb-6">Their UK data centres ensure fast email delivery and compliance with local regulations. While not the fastest in website performance, HostPapa's focus on email functionality and customer support makes it a top pick for businesses where email is critical.</p>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
             <div className="bg-gray-50 p-4 rounded-lg">
               <div className="font-bold text-gray-800 mb-1">Starting Price:</div>
@@ -682,6 +786,7 @@ const BestUKHostingContent = () => {
               <div className="text-sm text-gray-600">Local phone support</div>
             </div>
           </div>         
+          
           <ProsConsCard
             pros={[
               "Unlimited email accounts on business plans",
@@ -698,6 +803,7 @@ const BestUKHostingContent = () => {
               "Uptime slightly lower than top-tier providers"
             ]}
           />
+          
           <div className="mt-6 p-4 bg-blue-50 rounded-lg">
             <h4 className="font-bold text-blue-800 mb-2">🎯 Who Should Choose HostPapa?</h4>
             <p className="text-gray-700">
@@ -894,7 +1000,7 @@ const BestUKHostingContent = () => {
         {/* Image 3: UK Business Support */}
         <div className="my-8">
           <img 
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1738250300/hosting-support-team_du4sjc.jpg" 
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769411005/15_qvawgv.png" 
             alt="UK Business Hosting Support Team" 
             className="w-full h-auto rounded-xl shadow-lg"
           />
@@ -1012,45 +1118,45 @@ const BestUKHostingContent = () => {
           </div>
         </div>
 
-        {/* Final CTA */}
-        <div className="text-center mt-12 p-10 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl text-white relative overflow-hidden">
+        {/* Final CTA - FIXED VERSION */}
+        <div className="text-center mt-12 p-10 bg-gradient-to-br from-blue-600 to-blue-900 rounded-2xl text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-grid"></div>
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">🚀 Ready to Upgrade Your UK Business Hosting?</h2>
-            <p className="text-xl mb-6 opacity-90 max-w-2xl mx-auto">Choose from our top-rated UK hosting providers and get your business website performing at its best</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">🚀 Ready to Upgrade Your UK Business Hosting?</h2>
+            <p className="text-xl mb-6 text-blue-100 max-w-2xl mx-auto">Choose from our top-rated UK hosting providers and get your business website performing at its best</p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
-              <a href="https://www.krystal.co.uk" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                <div className="text-2xl mb-2">🏆</div>
-                <div className="font-bold text-lg mb-2">Krystal</div>
-                <div className="text-sm opacity-90">Best Overall</div>
-                <div className="mt-4 text-sm bg-white/20 text-white p-2 rounded">From £5.99/mo</div>
+              <a href="https://www.krystal.co.uk" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-xl border border-blue-200 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-gray-800">
+                <div className="text-3xl mb-2">🏆</div>
+                <div className="font-bold text-lg mb-2 text-gray-900">Krystal</div>
+                <div className="text-sm text-gray-600 mb-3">Best Overall</div>
+                <div className="mt-4 text-sm bg-blue-100 text-blue-800 font-semibold p-2 rounded">From £5.99/mo</div>
               </a>
               
-              <a href="https://ionos.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                <div className="text-2xl mb-2">💰</div>
-                <div className="font-bold text-lg mb-2">IONOS</div>
-                <div className="text-sm opacity-90">Best Budget</div>
-                <div className="mt-4 text-sm bg-white/20 text-white p-2 rounded">From £1.20/mo</div>
+              <a href="https://ionos.com" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-xl border border-blue-200 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-gray-800">
+                <div className="text-3xl mb-2">💰</div>
+                <div className="font-bold text-lg mb-2 text-gray-900">IONOS</div>
+                <div className="text-sm text-gray-600 mb-3">Best Budget</div>
+                <div className="mt-4 text-sm bg-blue-100 text-blue-800 font-semibold p-2 rounded">From £1.20/mo</div>
               </a>
               
-              <a href="https://siteground.com" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                <div className="text-2xl mb-2">⚡</div>
-                <div className="font-bold text-lg mb-2">SiteGround</div>
-                <div className="text-sm opacity-90">Best WordPress</div>
-                <div className="mt-4 text-sm bg-white/20 text-white p-2 rounded">From £3.59/mo</div>
+              <a href="https://siteground.com" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-xl border border-blue-200 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-gray-800">
+                <div className="text-3xl mb-2">⚡</div>
+                <div className="font-bold text-lg mb-2 text-gray-900">SiteGround</div>
+                <div className="text-sm text-gray-600 mb-3">Best WordPress</div>
+                <div className="mt-4 text-sm bg-blue-100 text-blue-800 font-semibold p-2 rounded">From £3.59/mo</div>
               </a>
               
-              <a href="https://hosting.com?aid=695f54098c685" target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
-                <div className="text-2xl mb-2">🚀</div>
-                <div className="font-bold text-lg mb-2">Hosting.com</div>
-                <div className="text-sm opacity-90">Best Speed</div>
-                <div className="mt-4 text-sm bg-white/20 text-white p-2 rounded">From £2.39/mo</div>
+              <a href="https://hosting.com?aid=695f54098c685" target="_blank" rel="noopener noreferrer" className="bg-white p-6 rounded-xl border border-blue-200 hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-gray-800">
+                <div className="text-3xl mb-2">🚀</div>
+                <div className="font-bold text-lg mb-2 text-gray-900">Hosting.com</div>
+                <div className="text-sm text-gray-600 mb-3">Best Speed</div>
+                <div className="mt-4 text-sm bg-blue-100 text-blue-800 font-semibold p-2 rounded">From £2.39/mo</div>
               </a>
             </div>
             
             <div className="mt-8 text-sm text-blue-200 max-w-xl mx-auto">
-              <p><strong>Disclosure:</strong> We earn commissions through affiliate links at no extra cost to you. Our reviews remain unbiased - we test all providers independently and never accept payment for positive reviews.</p>
+              <p><strong className="text-white">Disclosure:</strong> We earn commissions through affiliate links at no extra cost to you. Our reviews remain unbiased - we test all providers independently and never accept payment for positive reviews.</p>
             </div>
           </div>
         </div>
@@ -1082,7 +1188,22 @@ const bestUkHosting = {
     "gdpr compliant hosting uk",
     "best hosting for uk startups",
     "uk ecommerce hosting",
-    "uk business website hosting"
+    "uk business website hosting",
+    "uk managed wordpress hosting",
+    "uk hosting reviews 2026",
+    "best uk hosting providers",
+    "uk hosting comparison 2026",
+    "uk small business website hosting",
+    "best hosting for uk small business 2026",
+    "uk hosting for entrepreneurs",
+    "uk hosting for freelancers",
+    "uk hosting for agencies",
+    "uk hosting for bloggers",
+    "uk hosting for developers",
+    "uk hosting for nonprofits",
+    "uk hosting for educational sites",
+    "uk hosting for portfolios",
+    "uk hosting for personal websites",
   ],
   content: BestUKHostingContent,
 };
