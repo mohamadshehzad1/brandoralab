@@ -24,6 +24,7 @@ import quickImageOptimizationGuide from './quick-image-optimization-speed-guide'
 import websiteSpeedSEORankingsGuide from './website-speed-seo-rankings-guide'
 import hostingDotComReview from './hosting-com-review'
 import topwindowshostingproviders from './top-windows-hosting-providers'
+import BlueHostReview from './bluehost-hosting-review'
 // later: import more blogs here (like payment-gateway.js, themes.js, etc)
 
 export const blogData = [
@@ -53,5 +54,6 @@ export const blogData = [
   websiteSpeedSEORankingsGuide,
   hostingDotComReview,
   topwindowshostingproviders,
+  BlueHostReview,
   // more blogs here
 ]
