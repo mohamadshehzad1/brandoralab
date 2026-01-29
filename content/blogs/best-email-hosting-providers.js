@@ -12,7 +12,7 @@ const EmailHostingContent = () => {
       {/* Top Image Section */}
       <section className="container mx-auto max-w-6xl px-4 pt-10">
         <img
-          src="https://res.cloudinary.com/dpgspconw/image/upload/v1769411005/15_qvawgv.png"
+          src="https://res.cloudinary.com/dpgspconw/image/upload/v1769670616/Email_hosting_mpjsmg.png"
           alt="Best Email Hosting Providers 2026"
           className="w-full rounded-2xl shadow-md object-cover"
         />
@@ -1129,7 +1129,7 @@ const emailHosting = {
   author: "Brandora Lab",
   date: "January 25, 2026",
   description: "Comprehensive guide to the best email hosting providers for 2026. We tested 12 providers for 6 months. Compare Google Workspace, Microsoft 365, Zoho Mail, Proton Mail, Titan Email for business, security, and value.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769411005/15_qvawgv.png",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769670616/Email_hosting_mpjsmg.png",
   keywords: [
     "email hosting",
     "business email hosting",

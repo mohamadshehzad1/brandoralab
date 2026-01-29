@@ -792,7 +792,7 @@ const websiteSpeedSEORankingsGuide = {
   type: "guide",
   description: "Complete technical guide on how website speed affects SEO rankings in 2025. Learn about Google's Core Web Vitals, Page Experience update, hosting impact on rankings, and actionable optimization strategies. Includes case studies and 30-day action plan.",
   
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1738250201/website-speed-seo-rankings-hero_jyluwc.jpg",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769687025/Speed_impact_on_ranking_bqp7s0.jpg",
   
   keywords: [
     "website speed affects SEO rankings",

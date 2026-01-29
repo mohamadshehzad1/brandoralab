@@ -12,7 +12,7 @@ const SharedHostingContent = () => {
       {/* Top Image Section */}
       <section className="container mx-auto max-w-6xl px-4 pt-10">
         <img
-          src="https://res.cloudinary.com/dpgspconw/image/upload/v1758909653/10-web-hosting-for-uk-2025_f6koll.avif"
+          src="https://res.cloudinary.com/dpgspconw/image/upload/v1769670605/shared_hosting_vm9lof.png"
           alt="Top Shared Hosting Providers 2026"
           className="w-full rounded-2xl shadow-md object-cover"
         />
@@ -1235,7 +1235,7 @@ const sharedHosting = {
   author: "Brandora Lab",
   date: "January 25, 2026",
   description: "Comprehensive guide to the best shared hosting providers for 2026. We tested 15 providers for 7 months. Compare Bluehost, Hostinger, A2 Hosting, SiteGround, DreamHost prices, performance, and features.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1758909653/10-web-hosting-for-uk-2025_f6koll.avif",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769670605/shared_hosting_vm9lof.png",
   keywords: [
     "shared hosting",
     "best shared hosting",

@@ -12,7 +12,7 @@ const LinuxHostingContent = () => {
       {/* Top Image Section */}
       <section className="container mx-auto max-w-6xl px-4 pt-10">
         <img
-          src="https://res.cloudinary.com/dpgspconw/image/upload/v1769411005/15_qvawgv.png"
+          src="https://res.cloudinary.com/dpgspconw/image/upload/v1769670628/linux_hosting_a80ssg.png"
           alt="Best Linux Hosting Providers 2026"
           className="w-full rounded-2xl shadow-md object-cover"
         />
@@ -1168,7 +1168,7 @@ const linuxHosting = {
   author: "Brandora Lab",
   date: "January 25, 2026",
   description: "Comprehensive guide to the best Linux hosting providers for 2026. We tested 18 providers for 9 months. Compare Cloudways, A2 Hosting, SiteGround, Hostinger, Bluehost prices, performance, speed tests, and features.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769411005/15_qvawgv.png",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769670628/linux_hosting_a80ssg.png",
   keywords: [
     "linux hosting",
     "best linux hosting",

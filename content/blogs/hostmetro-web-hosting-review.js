@@ -199,7 +199,7 @@ const HostmetroContent = () => {
       <SEO
         title={title}
         description={"After 6 months of rigorous testing, discover if Hostmetro's $2.95/month hosting delivers adequate performance for budget-conscious website owners. Real data and honest assessment."}
-        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/hostmetro-review-cover.avif"}
+        image={"https://res.cloudinary.com/dpgspconw/image/upload/v1769671329/hostmestro_kjt4yw.png"}
         url={"https://brandoralab.com/blogs/hostmetro-web-hosting-review"}
         publishedTime={"2025-10-15"}
         modifiedTime={"2025-10-15"}
@@ -662,7 +662,7 @@ const hostmetroReview = {
   author: "BrandoraLab",
   date: "October 15, 2025",
   description: "After 6 months of rigorous testing, discover if Hostmetro's $2.95/month hosting delivers adequate performance for budget-conscious website owners. Real data and honest assessment.",
-  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1759425714/hostmetro-review-cover.avif",
+  imageUrl: "https://res.cloudinary.com/dpgspconw/image/upload/v1769671329/hostmestro_kjt4yw.png",
   keywords: [
     "Hostmetro review",
     "Hostmetro hosting",
