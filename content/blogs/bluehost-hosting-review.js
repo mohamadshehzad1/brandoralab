@@ -266,7 +266,7 @@ const BlueHostReviewContent = () => {
           </div>
 
           <img
-            src="https://res.cloudinary.com/dpgspconw/image/upload/v1738250300/hosting-performance-dashboard_fkjq5w.jpg"
+            src="https://res.cloudinary.com/dpgspconw/image/upload/v1769791346/gtmatrix_g42gjs.jpg"
             alt="BlueHost GTmetrix Performance Results 2026 - Load Time 2.6s, TTFB 230ms, Performance Score 68/100"
             className="rounded-xl shadow-lg my-8 w-full h-auto"
           />
@@ -480,7 +480,7 @@ const BlueHostReviewContent = () => {
           <h3 className="text-2xl font-bold mt-12 mb-4">Global Performance Analysis</h3>
           <div className="bg-gray-50 p-6 rounded-xl mb-8">
             <img
-              src="https://res.cloudinary.com/dpgspconw/image/upload/v1769410325/krystal_hosting_k95n0s.png"
+              src="https://res.cloudinary.com/dpgspconw/image/upload/v1769792048/BlueHost_speed_xwlvwg.jpg"
               alt="BlueHost Global Performance Map 2026 - Load times from different regions showing US fastest, Asia slowest"
               className="rounded-lg shadow-md mb-6"
             />
@@ -488,6 +488,10 @@ const BlueHostReviewContent = () => {
               <strong>Critical Finding:</strong> BlueHost's single data center in Utah causes significant performance degradation for international visitors. 
               While US West Coast users see 2.4s load times, Australian visitors experience 4.8s delays - unacceptable for modern websites.
             </p>
+            <p> For benchmarking, the WordPress Benchmark plugin measures CPU and memory use, object cache, filesystem access, and network speed. It then provides a final benchmark score. Meanwhile, the command line tool Siege can simulate multiple concurrent visits, providing us with an idea of the server’s reliability when demand is high.</p>
+            <p>Meanwhile, the Siege testing found the hosting able to handle 9 and 15 concurrent visitors comfortably, responding well and with over 95% availability. Considered together, these test results offer some confidence that even with Bluehost’s most affordable hosting plans, you can expect reliable performance.</p>
+            <p><strong>Note</strong> that these tests determine performance on a shared hosting plan. As such, they don’t offer any insights into speeds on dedicated hosting, cloud hosting, or VPS hosting plans.</p>
+            <p>However, for websites with a global audience or high traffic volumes, BlueHost's limitations become apparent. Competitors like Hostinger and SiteGround, with multiple data centers worldwide, deliver consistently faster load times and better user experiences across regions.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div className="bg-white p-4 rounded-lg border">
                 <h4 className="font-bold text-gray-800 mb-3">🚫 Performance Limitations</h4>
@@ -532,6 +536,12 @@ const BlueHostReviewContent = () => {
         {/* 2. Features Analysis - DETAILED */}
         <div id="features">
           <h2 className="text-3xl font-bold mt-12 mb-6 pb-4 border-b border-gray-200">2. 🔧 BlueHost Features 2026: What You Actually Get</h2>
+          <p className="mb-6">
+          BlueHost has long been a titan in the hosting industry, largely thanks to its official recommendation from WordPress.org and an aggressive marketing strategy that emphasizes "all-in-one" value.
+          </p>
+          <p className="mb-6">
+            BlueHost advertises a range of features, but our testing revealed several limitations and missing modern capabilities compared to competitors. Below is a breakdown of key features:
+          </p>
           
           <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-xl mb-8">
             <div className="flex items-start">
@@ -729,6 +739,15 @@ const BlueHostReviewContent = () => {
             <p className="mb-6">
               While BlueHost advertises "NVMe SSD storage," the reality is limited capacity. The Basic plan's 10GB 
               fills quickly with WordPress core, plugins, themes, and media files.
+            </p>
+            <p className="mb-6">
+              For context, a typical WordPress installation uses about 500MB for core files, 1-2GB for plugins, 
+              and 500MB for themes. This leaves only around 5-6GB for media uploads, which can be consumed rapidly 
+              by images and videos.
+            </p>
+            <p className="mb-6">
+              Upgrading to Plus/Choice Plus (50GB) or Pro (100GB) plans provides more breathing room, but still 
+              falls short compared to competitors offering unlimited or higher storage limits.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -988,14 +1007,14 @@ const BlueHostReviewContent = () => {
           </div>
 
           {/* Affiliate Banner - After Pricing Section */}
-          <div className="my-10 bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+          <div className="my-10 bg-orange-50 border border-green-200 rounded-lg p-6 text-center color-white" >
             <p className="mb-4">Want Better Value Than BlueHost?</p>
             <a 
               href="https://hostinger.sjv.io/brandoralab" 
               target="_blank"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-opacity"
+              className="inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg transition-opacity"
             >
-              View Hostinger Plans (From $1.99/mo)
+              View JetHost Plans (From $1.99/mo)
             </a>
             <p className="text-sm text-gray-600 mt-3">Special link: Save up to 80% on Hostinger hosting</p>
           </div>
@@ -1013,6 +1032,10 @@ const BlueHostReviewContent = () => {
                 <p className="text-gray-700">
                   We contacted BlueHost support 15 times over 90 days via live chat, phone, and email. 
                   We asked beginner, intermediate, and advanced technical questions to test their expertise.
+                </p>
+                <p className="text-gray-700 mt-2">
+                  Each interaction was rated on response time, technical knowledge, problem-solving ability, 
+                  and overall customer experience.
                 </p>
               </div>
             </div>
@@ -1619,164 +1642,236 @@ const BlueHostReviewContent = () => {
           </div>
         </div>
 
-        {/* 8. Final Verdict - AUTHORITATIVE */}
-        <div id="verdict" className="mt-16">
-          <h2 className="text-3xl font-bold mb-6 pb-4 border-b border-gray-200 text-gray-800">8. 🏆 Final Verdict: Is BlueHost Worth It in 2026?</h2>
-          
-          <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900 text-white p-10 rounded-3xl shadow-2xl mb-12">
-            <div className="text-center mb-10">
-              <div className="text-5xl font-bold mb-4">Expert Rating: 6.5/10</div>
-              <div className="text-xl opacity-90">Adequate for absolute beginners, outclassed by modern alternatives</div>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-              <div className="bg-white bg-opacity-10 p-6 rounded-2xl backdrop-blur-sm">
-                <div className="text-4xl mb-4">👍</div>
-                <h3 className="text-2xl font-bold mb-4">The Good</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-green-300 text-xl mr-3">✓</span>
-                    <div>
-                      <div className="font-bold">WordPress.org Official Recommendation</div>
-                      <div className="text-sm opacity-80">Since 2005 - trusted by beginners</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-300 text-xl mr-3">✓</span>
-                    <div>
-                      <div className="font-bold">Beginner-Friendly Setup</div>
-                      <div className="text-sm opacity-80">1-click WordPress, guided wizard</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-300 text-xl mr-3">✓</span>
-                    <div>
-                      <div className="font-bold">Free Domain First Year</div>
-                      <div className="text-sm opacity-80">Save $15-20 on registration</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-green-300 text-xl mr-3">✓</span>
-                    <div>
-                      <div className="font-bold">Responsive Basic Support</div>
-                      <div className="text-sm opacity-80">24/7 chat and phone</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-white bg-opacity-10 p-6 rounded-2xl backdrop-blur-sm">
-                <div className="text-4xl mb-4">👎</div>
-                <h3 className="text-2xl font-bold mb-4">The Bad</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-red-300 text-xl mr-3">✗</span>
-                    <div>
-                      <div className="font-bold">372% Renewal Price Increase</div>
-                      <div className="text-sm opacity-80">$2.95 → $10.99/month</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-300 text-xl mr-3">✗</span>
-                    <div>
-                      <div className="font-bold">Slow & Inconsistent Performance</div>
-                      <div className="text-sm opacity-80">2.6s load time, 200-450ms TTFB</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-300 text-xl mr-3">✗</span>
-                    <div>
-                      <div className="font-bold">Single Data Center Location</div>
-                      <div className="text-sm opacity-80">Utah only - terrible globally</div>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-red-300 text-xl mr-3">✗</span>
-                    <div>
-                      <div className="font-bold">Missing Modern Features</div>
-                      <div className="text-sm opacity-80">No LiteSpeed, HTTP/3, staging</div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              
-              <div className="bg-white bg-opacity-10 p-6 rounded-2xl backdrop-blur-sm">
-                <div className="text-4xl mb-4">💡</div>
-                <h3 className="text-2xl font-bold mb-4">The Bottom Line</h3>
-                <div className="space-y-4">
-                  <p className="opacity-90">
-                    BlueHost serves as an adequate entry point for absolute WordPress beginners who value simplicity above all else.
-                  </p>
-                  <p className="opacity-90">
-                    However, our 90-day testing reveals significant limitations in speed, features, and long-term value compared to modern alternatives.
-                  </p>
-                  <div className="bg-white bg-opacity-20 p-4 rounded-lg">
-                    <p className="font-bold">
-                      "For 90% of users in 2026, better options exist at similar or lower price points with superior performance."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center pt-8 border-t border-white border-opacity-20">
-              <p className="text-xl font-bold mb-4">🎯 Our Expert Recommendation</p>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-green-300">Hostinger</div>
-                  <div className="text-sm opacity-80">Best overall value in 2026</div>
-                </div>
-                <div className="hidden md:block text-2xl opacity-50">→</div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-yellow-300">SiteGround</div>
-                  <div className="text-sm opacity-80">Premium performance & support</div>
-                </div>
-                <div className="hidden md:block text-2xl opacity-50">→</div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-red-300">BlueHost</div>
-                  <div className="text-sm opacity-80">Absolute beginners only</div>
-                </div>
-              </div>
-            </div>
+{/* 8. Final Verdict - PROFESSIONAL & CONSISTENT DESIGN */}
+<div id="verdict" className="mt-16 font-sans">
+  <h2 className="text-3xl font-bold mb-6 pb-4 border-b border-gray-200 text-gray-800">
+    8. 🏆 Final Verdict: Is BlueHost Worth It in 2026?
+  </h2>
+  
+  {/* Main Rating Card */}
+  <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl border-2 border-blue-300 shadow-xl overflow-hidden mb-8">
+    {/* Header with Rating */}
+    <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-8 px-6 text-center">
+      <div className="text-sm uppercase tracking-widest font-bold mb-2 text-blue-100">Expert Rating 2026</div>
+      <div className="flex justify-center items-baseline gap-2 mb-3">
+        <span className="text-6xl font-bold text-white">6.5</span>
+        <span className="text-2xl text-blue-200">/10</span>
+      </div>
+      <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+        "Adequate for absolute beginners, but outclassed by modern alternatives in 2026."
+      </p>
+    </div>
+    
+    {/* Three Columns Layout */}
+    <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-blue-200">
+      
+      {/* The Good Column */}
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-2 rounded-lg bg-green-100">
+            <span className="text-2xl text-green-600">✅</span>
           </div>
-
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border-2 border-blue-300 shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-center text-gray-800">📈 The Final Word</h3>
-            <div className="prose prose-lg max-w-none text-gray-700">
-              <p className="text-xl mb-6">
-                BlueHost maintains its position as a beginner-friendly option, but fails to compete on performance, 
-                features, and long-term value in 2026. The WordPress.org recommendation gives it credibility with 
-                first-time users, but our 90-day testing shows modern alternatives have evolved beyond what BlueHost offers.
-              </p>
-              
-              <p className="mb-6">
-                <strong>If you prioritize simplicity</strong> and don't mind paying premium renewal rates for average 
-                performance, BlueHost will work for your first website. The setup is straightforward, support is 
-                responsive for basic questions, and you get a free domain for the first year.
-              </p>
-              
-              <p className="mb-8">
-                <strong>However, for better speed, more features, and superior long-term value,</strong> consider 
-                <Link href="./hostinger-review" className="text-blue-600 font-bold hover:underline mx-1"> Hostinger</Link> 
-                (37% faster, lower renewal costs) or 
-                <Link href="./siteground-review" className="text-blue-600 font-bold hover:underline mx-1"> SiteGround</Link> 
-                (premium performance and support) instead.
-              </p>
-              
-              <div className="bg-white p-6 rounded-xl border-l-4 border-blue-500">
-                <p className="font-bold text-gray-800 mb-2">⚡ Quick Decision Guide:</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm"><span className="font-bold text-green-600">Choose BlueHost if:</span> First website ever, US audience only, need maximum hand-holding, don't care about $10.99/month renewal.</p>
-                  </div>
-                  <div>
-                    <p className="text-sm"><span className="font-bold text-red-600">Choose Hostinger if:</span> Want better performance (1.9s vs 2.6s), lower long-term costs, global visitors, modern features.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h3 className="text-xl font-bold text-gray-800">The Good</h3>
         </div>
+        <ul className="space-y-4">
+          <li className="flex gap-3">
+            <svg className="w-5 h-5 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <div className="font-bold text-gray-800">WordPress.org Recommended</div>
+              <div className="text-sm text-gray-600">Official recommendation since 2005</div>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <svg className="w-5 h-5 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <div className="font-bold text-gray-800">Beginner-Friendly Setup</div>
+              <div className="text-sm text-gray-600">1-click WordPress, guided wizard</div>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <svg className="w-5 h-5 text-green-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <div>
+              <div className="font-bold text-gray-800">Free Domain First Year</div>
+              <div className="text-sm text-gray-600">Save $15-20 on registration</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      {/* The Bad Column */}
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-2 rounded-lg bg-red-100">
+            <span className="text-2xl text-red-600">❌</span>
+          </div>
+          <h3 className="text-xl font-bold text-gray-800">The Bad</h3>
+        </div>
+        <ul className="space-y-4">
+          <li className="flex gap-3">
+            <svg className="w-5 h-5 text-red-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div>
+              <div className="font-bold text-gray-800">372% Price Increase</div>
+              <div className="text-sm text-gray-600">$2.95 → $10.99/month at renewal</div>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <svg className="w-5 h-5 text-red-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div>
+              <div className="font-bold text-gray-800">Slow & Inconsistent Speed</div>
+              <div className="text-sm text-gray-600">2.6s load time (37% slower than Hostinger)</div>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <svg className="w-5 h-5 text-red-500 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <div>
+              <div className="font-bold text-gray-800">Single Data Center</div>
+              <div className="text-sm text-gray-600">Utah, USA only - poor for global visitors</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      {/* Bottom Line Column */}
+      <div className="p-6">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-2 rounded-lg bg-yellow-100">
+            <span className="text-2xl text-yellow-600">💡</span>
+          </div>
+          <h3 className="text-xl font-bold text-gray-800">Bottom Line</h3>
+        </div>
+        <p className="text-gray-700 leading-relaxed mb-4">
+          BlueHost serves as an adequate entry point for absolute WordPress beginners who need maximum hand-holding.
+        </p>
+        <p className="text-gray-700 leading-relaxed mb-6">
+          However, our 90-day testing reveals significant limitations in speed, features, and long-term value compared to modern alternatives.
+        </p>
+        <div className="bg-blue-100 border-l-4 border-blue-500 p-4 rounded-r-lg">
+          <p className="text-sm font-bold text-blue-800">
+            "For 90% of users in 2026, better options exist at similar or lower price points with superior performance."
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    {/* Expert Recommendation Footer */}
+    <div className="bg-gradient-to-r from-gray-50 to-blue-50 py-6 px-4 text-center border-t border-blue-200">
+      <p className="text-sm uppercase tracking-wider text-gray-600 font-bold mb-4">🎯 Our Expert Recommendation</p>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-green-600">Hostinger</div>
+          <div className="text-sm text-gray-600">Best overall value</div>
+          <a 
+            href="https://hostinger.sjv.io/brandoralab" 
+            target="_blank"
+            className="mt-2 inline-block bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-4 rounded transition-colors"
+          >
+            View Plans
+          </a>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-yellow-600">SiteGround</div>
+          <div className="text-sm text-gray-600">Premium performance</div>
+          <a 
+            href="https://siteground.com" 
+            target="_blank"
+            className="mt-2 inline-block bg-yellow-600 hover:bg-yellow-700 text-white text-sm font-medium py-2 px-4 rounded transition-colors"
+          >
+            View Plans
+          </a>
+        </div>
+        <div className="text-center">
+          <div className="text-2xl font-bold text-blue-600">BlueHost</div>
+          <div className="text-sm text-gray-600">Absolute beginners only</div>
+          <a 
+            href="https://bluehost.sjv.io/c/3600799/2147539/11352" 
+            target="_blank"
+            className="mt-2 inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded transition-colors"
+          >
+            View Plans
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Decision Guide */}
+  <div className="bg-white rounded-2xl border border-gray-300 shadow-lg overflow-hidden">
+    <div className="bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-4 border-b border-gray-300">
+      <h3 className="font-bold text-gray-800 flex items-center gap-2">
+        ⚡ Quick Decision Guide
+      </h3>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-300">
+      <div className="p-6">
+        <span className="inline-block px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-bold mb-3">
+          ✅ CHOOSE BLUEHOST IF:
+        </span>
+        <ul className="text-gray-700 text-sm space-y-2 ml-1">
+          <li className="flex items-start">
+            <span className="text-green-500 mr-2">•</span>
+            You're creating your first WordPress website ever
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 mr-2">•</span>
+            Need maximum hand-holding and simple setup
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 mr-2">•</span>
+            Don't mind the $10.99/month renewal price
+          </li>
+          <li className="flex items-start">
+            <span className="text-green-500 mr-2">•</span>
+            Your audience is 90% in Western USA
+          </li>
+        </ul>
+      </div>
+      <div className="p-6">
+        <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-bold mb-3">
+          🚀 CHOOSE HOSTINGER IF:
+        </span>
+        <ul className="text-gray-700 text-sm space-y-2 ml-1">
+          <li className="flex items-start">
+            <span className="text-blue-500 mr-2">•</span>
+            You want faster loading (1.9s vs 2.6s)
+          </li>
+          <li className="flex items-start">
+            <span className="text-blue-500 mr-2">•</span>
+            Need global data centers for international visitors
+          </li>
+          <li className="flex items-start">
+            <span className="text-blue-500 mr-2">•</span>
+            Want better long-term value ($3.99/mo renewal)
+          </li>
+          <li className="flex items-start">
+            <span className="text-blue-500 mr-2">•</span>
+            Need modern features like staging and LiteSpeed
+          </li>
+        </ul>
+        <div className="mt-4">
+          <a 
+            href="https://hostinger.sjv.io/brandoralab" 
+            target="_blank"
+            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition-colors"
+          >
+            View Hostinger Plans (From $1.99/mo)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* 9. FAQ - COMPREHENSIVE */}
         <div className="mt-16">
@@ -2038,9 +2133,9 @@ const BlueHostReviewContent = () => {
 
         {/* Final CTA Section */}
         <CTA
-          heading="Exclusive Hosting Recommendations for 2026"
-          offer="🔥 While BlueHost works for absolute beginners, we recommend Hostinger for better performance, more features, and lower long-term costs"
-          buttonText="See Hostinger Plans (From $1.99/mo)"
+          heading="On Bluehost Plans Today"
+          offer="🔥 Save 60%"
+          buttonText="Visit BlueHost"
           buttonLink="https://hostinger.sjv.io/brandoralab"
           secondaryButton={true}
           secondaryText="Or Try BlueHost Risk-Free (30-day refund)"
@@ -2049,44 +2144,60 @@ const BlueHostReviewContent = () => {
 
       </section>
       
-      {/* Final Affiliate Banner */}
-      <div className="container mx-auto px-5 md:px-0 max-w-5xl py-10">
-        <div className="bg-gradient-to-r from-blue-900 to-purple-900 text-white p-8 rounded-2xl text-center">
-          <h3 className="text-2xl font-bold mb-4">🚀 Ready to Choose Your Hosting?</h3>
-          <p className="mb-6 opacity-90">Get the best deal with our exclusive affiliate links</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
-              <h4 className="font-bold text-xl mb-3">🟢 Hostinger</h4>
-              <p className="mb-4 opacity-90">Best overall value in 2026</p>
-              <a 
-                href="https://hostinger.sjv.io/brandoralab" 
-                target="_blank"
-                className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg w-full"
-              >
-                View Hostinger Plans
-              </a>
-              <p className="text-xs opacity-75 mt-2">From $1.99/month • Free domain • 30-day refund</p>
-            </div>
-            <div className="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
-              <h4 className="font-bold text-xl mb-3">🔵 BlueHost</h4>
-              <p className="mb-4 opacity-90">For absolute WordPress beginners</p>
-              <a 
-                rel="sponsored"
-                href="https://bluehost.sjv.io/MXOn22" 
-                target="_blank"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg w-full"
-              >
-                View BlueHost Plans
-              </a>
-              <p className="text-xs opacity-75 mt-2">From $2.95/month • Free domain • 30-day refund</p>
-            </div>
-          </div>
-        </div>
+{/* Final Affiliate Banner */}
+<div className="container mx-auto px-5 md:px-0 max-w-5xl py-10">
+  <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-8 rounded-2xl text-center">
+    <h3 className="text-2xl font-bold mb-4">🚀 Ready to Choose Your Hosting?</h3>
+    <p className="mb-6 text-blue-100">Get the best deal with our exclusive affiliate links</p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20">
+        <h4 className="font-bold text-xl mb-3 text-white">🟢 Hostinger</h4>
+        <p className="mb-4 text-white">Best overall value in 2026</p>
+        <a 
+          href="https://hostinger.sjv.io/brandoralab" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg w-full transition-colors duration-200"
+        >
+          View Hostinger Plans
+        </a>
+        <p className="text-xs text-blue-200 mt-2">From $1.99/month • Free domain • 30-day refund</p>
       </div>
+      
+      <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20">
+        <h4 className="font-bold text-xl mb-3 text-white">🔵 BlueHost</h4>
+        <p className="mb-4 text-white">For absolute WordPress beginners</p>
+        <a 
+          rel="sponsored"
+          href="https://bluehost.sjv.io/MXOn22" 
+          target="_blank"
+          className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg w-full transition-colors duration-200"
+        >
+          View BlueHost Plans
+        </a>
+        <p className="text-xs text-blue-200 mt-2">From $2.95/month • Free domain • 30-day refund</p>
+      </div>
+      
+      <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20">
+        <h4 className="font-bold text-xl mb-3 text-white">🟡 SiteGround</h4>
+        <p className="mb-4 text-white">Premium performance & support</p>
+        <a 
+          href="https://siteground.com" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg w-full transition-colors duration-200"
+        >
+          View SiteGround Plans
+        </a>
+        <p className="text-xs text-blue-200 mt-2">Premium hosting • Best support • 30-day refund</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <AuthorBox />
-    </main>
-  )
+<AuthorBox />
+</main>
+)
 }
 
 /* Enhanced Blog metadata */
