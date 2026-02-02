@@ -1,0 +1,74 @@
+{
+  "fastcomet-review": {
+    "logoUrl": "https://res.cloudinary.com/dpgspconw/image/upload/v1758116752/fastcomet-review-by-brandora-lab_dbh1so.avif",
+    "brandName": "FastComet",
+    "couponCount": 3,
+    "primaryButtonUrl": "https://tracking.missaffiliate.com/aff_c?offer_id=30&aff_id=6559",
+    "secondaryButtonUrl": "#coupons",
+    "ratings": [
+      { "label": "Performance", "score": 4.8 },
+      { "label": "Features", "score": 4.5 },
+      { "label": "Support", "score": 4.9 },
+      { "label": "Value", "score": 4.2 }
+    ],
+    "primaryButtonText": "Visit FastComet",
+    "secondaryButtonText": "Check Coupons",
+    "accentColor": "orange",
+    "overviewTitle": "Editor's Choice"
+  },
+  
+  "hostinger-review": {
+    "logoUrl": "/brands/hostinger-logo.svg",
+    "brandName": "Hostinger",
+    "couponCount": 5,
+    "primaryButtonUrl": "https://www.hostinger.com",
+    "secondaryButtonUrl": "/coupons/hostinger",
+    "ratings": [
+      { "label": "Price", "score": 4.9 },
+      { "label": "Ease of Use", "score": 4.7 },
+      { "label": "Features", "score": 4.5 },
+      { "label": "Support", "score": 4.3 }
+    ],
+    "primaryButtonText": "Visit Hostinger",
+    "secondaryButtonText": "Check Coupons",
+    "accentColor": "blue",
+    "overviewTitle": "Best Budget Hosting"
+  },
+  
+  "hostarmada-review": {
+    "logoUrl": "/brands/hostarmada-logo-alt.svg",
+    "brandName": "HostArmada",
+    "couponCount": 5,
+    "primaryButtonUrl": "https://hostarmada.com",
+    "secondaryButtonUrl": "/coupons/hostarmada",
+    "ratings": [
+      { "label": "Features", "score": 4.8 },
+      { "label": "Ease of Use", "score": 4.9 },
+      { "label": "Performance", "score": 4.7 },
+      { "label": "Support", "score": 4.9 },
+      { "label": "Pricing", "score": 4.8 }
+    ],
+    "primaryButtonText": "Visit HostArmada",
+    "secondaryButtonText": "Check Coupons",
+    "accentColor": "purple",
+    "overviewTitle": "HostArmada Overview"
+  },
+  
+  "shopify-review-2024": {
+    "logoUrl": "/brands/shopify-logo.svg",
+    "brandName": "Shopify",
+    "couponCount": 12,
+    "primaryButtonUrl": "https://shopify.com",
+    "secondaryButtonUrl": "/coupons/shopify",
+    "ratings": [
+      { "label": "Ease of Use", "score": 4.8 },
+      { "label": "Features", "score": 4.5 },
+      { "label": "Value for Money", "score": 4.2 },
+      { "label": "Customer Support", "score": 4.0 }
+    ],
+    "primaryButtonText": "Visit Shopify",
+    "secondaryButtonText": "Check Coupons",
+    "accentColor": "green",
+    "overviewTitle": "Shopify Ratings"
+  }
+}
