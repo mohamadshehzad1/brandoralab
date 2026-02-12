@@ -39,8 +39,9 @@ export default function RootLayout({ children }) {
           src="https://the.gatekeeperconsent.com/cmp.min.js"
           strategy="beforeInteractive"
           data-cfasync="false"
-        />
-
+       />
+       {/* ---------- EZOIC Verification ---------- */}
+       <meta name="ezoic-site-verification" content="r0QMAE8flXLoIDq6TJMUjaMfBddMYB" />
         {/* ---------- EZOIC HEADER SCRIPT ---------- */}
         <Script
           src="//www.ezojs.com/ezoic/sa.min.js"
