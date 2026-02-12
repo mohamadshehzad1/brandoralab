@@ -42,6 +42,17 @@ export default function RootLayout({ children }) {
         {/* 🚀 ADD SCHEMA MARKUP HERE */}
         <SchemaMarkup />
 
+        {/* 🚀 Ezoic */}
+        <script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+        <script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+        <script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+        <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+        </script>
+        {/* 🚀 Adsense */}
+        <meta name="google-adsense-account" content="ca-pub-9280103042501049"></meta>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
