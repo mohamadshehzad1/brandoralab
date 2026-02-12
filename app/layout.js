@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
           strategy="beforeInteractive"
           data-cfasync="false"
         />
-
         <Script
           src="https://the.gatekeeperconsent.com/cmp.min.js"
           strategy="beforeInteractive"
@@ -47,7 +46,6 @@ export default function RootLayout({ children }) {
           src="//www.ezojs.com/ezoic/sa.min.js"
           strategy="beforeInteractive"
         />
-
         <Script id="ezoic-init" strategy="beforeInteractive">
           {`
             window.ezstandalone = window.ezstandalone || {};
@@ -71,7 +69,31 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+
+        {/* ---------- EZOIC AD PLACEMENTS EXAMPLE ---------- */}
+        {/* 
+          Example placeholders can be added in your pages individually. 
+          For instance, on a page you can do:
+
+          <div id="ezoic-pub-ad-placeholder-115"></div>
+          <div id="ezoic-pub-ad-placeholder-114"></div>
+          <div id="ezoic-pub-ad-placeholder-113"></div>
+          <div id="ezoic-pub-ad-placeholder-111"></div>
+          <div id="ezoic-pub-ad-placeholder-110"></div>
+
+          <script dangerouslySetInnerHTML={{
+            __html: \`
+              if(window.ezstandalone) {
+                ezstandalone.cmd.push(function() {
+                  ezstandalone.showAds(115,114,113,111,110);
+                });
+              }
+            \`
+          }}></script>
+        */}
+      </body>
     </html>
   );
 }
